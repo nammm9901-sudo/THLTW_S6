@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Sản Phẩm | Luxe Living</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { --gold: #d4a373; --dark: #1a1a1a; --text: #444; --light-bg: #f9f9f9; }
+        body { margin: 0; font-family: 'Montserrat', sans-serif; color: var(--text); line-height: 1.6; }
+
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: #fff; box-shadow: 0 2px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-family: 'Cinzel', serif; font-size: 24px; font-weight: 700; color: var(--dark); letter-spacing: 2px; }
+        nav ul { display: flex; list-style: none; margin: 0; padding: 0; }
+        nav ul li { margin-left: 30px; }
+        nav ul li a { text-decoration: none; color: var(--dark) !important; font-size: 13px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
+        nav ul li a:hover { color: var(--gold) !important; }
+
+        .product-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; padding: 60px 8%; max-width: 1400px; margin: 0 auto; }
+        .main-image img { width: 100%; height: auto; border-radius: 4px; object-fit: cover; background: #eee; min-height: 400px; }
+        .product-info h1 { font-family: 'Cinzel', serif; font-size: 32px; color: var(--dark); margin-top: 0; }
+        .product-price { font-size: 24px; color: var(--gold); font-weight: 500; margin: 20px 0; }
+        .product-desc { font-size: 15px; color: #666; margin-bottom: 30px; }
+
+        .option-group { margin-bottom: 25px; }
+        .option-group label { display: block; font-size: 12px; text-transform: uppercase; font-weight: 600; margin-bottom: 10px; color: #888; }
+        .option-btn { padding: 10px 25px; border: 1px solid #ddd; background: #fff; cursor: pointer; font-size: 13px; margin-right: 10px; transition: 0.3s; }
+        .option-btn:hover { border-color: var(--dark); }
+        .buy-btn { width: 100%; padding: 18px; background: var(--dark); color: #fff; border: none; font-weight: 600; letter-spacing: 2px; cursor: pointer; margin-top: 20px; transition: 0.4s; }
+        .buy-btn:hover { background: var(--gold); }
+
+        .product-tabs { padding: 80px 15%; background: var(--light-bg); }
+        .product-tabs h2 { font-family: 'Cinzel', serif; text-align: center; font-size: 28px; margin-bottom: 50px; position: relative; }
+        .product-tabs h2::after { content: ''; display: block; width: 50px; height: 2px; background: var(--gold); margin: 15px auto; }
+        .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .detail-item { margin-bottom: 15px; font-size: 14px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+
+        footer { background: var(--dark); color: #fff; padding: 60px 8%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 50px; }
+        footer h4 { font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 20px; }
+        footer a, footer p { color: #bbb; text-decoration: none; font-size: 13px; display: block; margin-bottom: 10px; }
+        
+        @media (max-width: 992px) { .product-detail { grid-template-columns: 1fr; } .detail-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">LUXE LIVING</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="index.html#products">Sản phẩm</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="product-detail">
+    <div class="product-gallery">
+        <div class="main-image">
+            <img id="display-image" src="" alt="Sản phẩm">
+        </div>
+    </div>
+
+    <div class="product-info">
+        <h1 id="display-name">Đang tải...</h1>
+        <div id="display-price" class="product-price">0 VNĐ</div>
+        <p id="display-desc" class="product-desc">Đang tải mô tả sản phẩm...</p>
+
+        <div class="option-group">
+            <label>Phân loại</label>
+            <button class="option-btn">Classic</button>
+            <button class="option-btn">Modern</button>
+        </div>
+
+        <button class="buy-btn">THÊM VÀO GIỎ HÀNG</button>
+    </div>
+</section>
+
+<section class="product-tabs">
+    <h2>Thông Số Kỹ Thuật</h2>
+    <div class="detail-grid">
+        <div class="detail-item"><strong>Chất liệu:</strong> <span id="display-material">...</span></div>
+        <div class="detail-item"><strong>Xuất xứ:</strong> <span id="display-origin">...</span></div>
+        <div class="detail-item"><strong>Bảo hành:</strong> 5 - 10 năm</div>
+        <div class="detail-item"><strong>Tình trạng:</strong> Còn hàng</div>
+    </div>
+</section>
+
+<footer>
+    <div><h4>LUXE LIVING</h4><p>Kiến tạo không gian sống thượng lưu.</p></div>
+    <div><h4>Khám Phá</h4><a href="#">Phòng khách</a><a href="#">Phòng ngủ</a></div>
+    <div><h4>Liên Hệ</h4><p>Quận 1, TP. Hồ Chí Minh</p><p>Hotline: 1900 8888</p></div>
+</footer>
+
+<script>
+    // 1. DỮ LIỆU 6 SẢN PHẨM
+    const productsData = {
+        "1": {
+            name: "Luxury Velvet Sofa Heritage",
+            price: "150.000.000 VNĐ",
+            desc: "Sofa bọc nhung Italy cao cấp, khung gỗ sồi nguyên khối. Mang lại sự êm ái và vẻ đẹp cổ điển cho phòng khách biệt thự.",
+            img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc",
+            material: "Nhung Italy, Gỗ Sồi", origin: "Italy"
+        },
+        "2": {
+            name: "Royal Gold Dining Table",
+            price: "220.000.000 VNĐ",
+            desc: "Bàn ăn hoàng gia với mặt đá Marble tự nhiên và chân bàn dát vàng 24k tỉ mỉ, phù hợp cho những bữa tiệc sang trọng.",
+            img: "https://vuongquocnoithat.vn/images/2017/04/17/Bo-ban-ghe-phong-an-phong-cach-hoang-gia%20GDT715+Y707-1.jpg",
+            material: "Đá Marble, Vàng 24k", origin: "Châu Âu"
+        },
+        "3": {
+            name: "Presidential Silk Bed",
+            price: "180.000.000 VNĐ",
+            desc: "Giường ngủ bọc lụa tơ tằm cao cấp, thiết kế công thái học giúp giấc ngủ sâu và thư giãn tối đa.",
+            img: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
+            material: "Lụa tơ tằm, Gỗ Óc Chó", origin: "Pháp"
+        },
+        "4": {
+            name: "Crystal Palace Lamp",
+            price: "75.000.000 VNĐ",
+            desc: "Đèn chùm pha lê cao cấp với hàng ngàn viên pha lê Swarovski tán sắc ánh sáng rực rỡ.",
+            img: "https://tse2.mm.bing.net/th/id/OIP.uFIPfyJrMpdbFdXVrmSTnAHaHa?r=0&w=474&h=379&c=7&p=0",
+            material: "Pha lê Swarovski, Đồng thau", origin: "Áo"
+        },
+        "5": {
+            name: "Classic Wine Cabinet",
+            price: "95.000.000 VNĐ",
+            desc: "Tủ rượu bảo quản chuyên dụng với hệ thống kiểm soát nhiệt độ chuẩn, giúp giữ trọn hương vị rượu quý.",
+            img: "https://media.noithatcaco.vn/uploads/product/thumb3/tu-ruou-go-mdf-canh-kinh-co-den-led-cao-cap-sang-trong-tr07-0123456789.jpg",
+            material: "Gỗ Anh Đào, Kính cường lực", origin: "Đức"
+        },
+        "6": {
+            name: "Premium Art Decor",
+            price: "45.000.000 VNĐ",
+            desc: "Tác phẩm trang trí treo tường bằng thép sơn tĩnh điện, tạo điểm nhấn nghệ thuật hiện đại cho bức tường trống.",
+            img: "https://binhandecor.vn/wp-content/uploads/2025/01/tranh-sat-treo-tuong-decor-hoa-trang-sang-trong2.jpg",
+            material: "Thép nghệ thuật", origin: "Việt Nam"
+        }
+    };
+
+    // 2. LOGIC LẤY ID TỪ LINK (Vd: product.html?id=2)
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+
+    // 3. HIỂN THỊ DỮ LIỆU
+    if (productId && productsData[productId]) {
+        const item = productsData[productId];
+        document.getElementById("display-name").innerText = item.name;
+        document.getElementById("display-price").innerText = item.price;
+        document.getElementById("display-desc").innerText = item.desc;
+        document.getElementById("display-image").src = item.img;
+        document.getElementById("display-material").innerText = item.material;
+        document.getElementById("display-origin").innerText = item.origin;
+        document.title = item.name + " | Luxe Living";
+    } else {
+        // Nếu lỡ vào trang mà không có ID, hiện mặc định sản phẩm 1
+        const item = productsData["1"];
+        document.getElementById("display-name").innerText = item.name;
+        document.getElementById("display-image").src = item.img;
+    }
+</script>
+
+</body>
+</html>

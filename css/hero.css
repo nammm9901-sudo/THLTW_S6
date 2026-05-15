@@ -1,0 +1,56 @@
+.hero{
+    position:relative;
+    height:420px;
+    overflow:hidden;
+}
+
+.carousel-item img{
+    height:420px;
+    object-fit:cover;
+    filter:brightness(60%);
+}
+
+.hero-overlay{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    color:white;
+    z-index:10;
+    width:100%;
+}
+
+.hero-overlay h1{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.hero-overlay p{
+    font-size:24px;
+    margin-bottom:20px;
+}
+
+/* fade mượt */
+.carousel-fade .carousel-item{
+    opacity:0;
+    transition: opacity 1.8s ease-in-out;
+}
+
+.carousel-fade .carousel-item.active{
+    opacity:1;
+}
+
+/* zoom nhẹ khi chuyển */
+.carousel-item img{
+    animation: zoomHero 3s ease forwards;
+}
+
+@keyframes zoomHero{
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(1.06);
+    }
+}

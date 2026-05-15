@@ -1,0 +1,85 @@
+/* HEADER */
+header{
+    position: relative;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92%;
+    max-width: 1400px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 16px 40px;
+
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+
+    z-index: 999;
+    transition: all .3s ease;
+}
+
+/* hover nhẹ */
+header:hover{
+    background: rgba(255,255,255,0.25);
+}
+
+/* logo */
+.logo{
+    font-size: 26px;
+    font-weight: 700;
+    color: #d4a373;
+    letter-spacing: 4px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.logo:hover{
+    transform: scale(1.03);
+}
+
+/* menu */
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+    margin:0;
+    padding:0;
+}
+
+nav a{
+    position:relative;
+    text-decoration:none;
+    color:white;
+    font-size:15px;
+    font-weight:600;
+    letter-spacing:1px;
+    transition:.3s;
+}
+
+/* line hover */
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:#d4a373;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#d4a373;
+}
+
+nav a:hover::after{
+    width:100%;
+}

@@ -1,0 +1,135 @@
+.sidebar{
+    position: sticky;
+    top: 30px;
+
+    background: linear-gradient(145deg,#ffffff,#fdf8ef);
+
+    padding: 38px 32px;
+
+    border: 2px solid rgba(212,175,55,0.30);
+    border-radius: 28px;
+
+    max-width: 320px;
+    height: fit-content;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.10),
+        inset 0 0 0 1px rgba(255,255,255,0.7);
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* viền trong */
+.sidebar::before{
+    content:"";
+    position:absolute;
+    inset:12px;
+
+    border:1px solid rgba(212,175,55,0.25);
+    border-radius:18px;
+
+    pointer-events:none;
+}
+
+
+/* ornament */
+.sidebar::after{
+    content:"✦";
+    position:absolute;
+    top:18px;
+    right:22px;
+
+    color:#d4af37;
+    font-size:22px;
+    opacity:.75;
+}
+
+
+/* title */
+.sidebar h3{
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+    text-transform: uppercase;
+
+    color: #9c6f19;
+    letter-spacing: 2px;
+
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+/* nhóm filter */
+.filter-group{
+    margin-bottom: 28px;
+}
+
+
+/* label */
+.filter-label{
+    display: block;
+
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+
+    color: #7b6b42;
+    text-transform: uppercase;
+}
+
+
+/* select */
+.custom-select{
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid rgba(212,175,55,0.35);
+    border-radius: 14px;
+
+    background: rgba(255,255,255,0.95);
+    color: #333;
+
+    font-size: 15px;
+
+    outline: none;
+    transition: .3s;
+}
+
+.custom-select:focus{
+    border-color: #d4af37;
+    box-shadow: 0 0 12px rgba(212,175,55,0.25);
+}
+
+
+/* button */
+.filter-submit-btn{
+    width: 100%;
+    padding: 16px;
+
+    border: none;
+    border-radius: 16px;
+
+    background: linear-gradient(135deg,#e3c76b,#b8860b);
+
+    color: white;
+
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    transition: .35s;
+}
+
+.filter-submit-btn:hover{
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(212,175,55,0.35);
+}
