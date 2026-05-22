@@ -236,3 +236,4 @@ M:\Webbanhang\NoiThatCaoCap\NoiThatCaoCap\obj\Debug\net8.0\refint\NoiThatCaoCap.
 M:\Webbanhang\NoiThatCaoCap\NoiThatCaoCap\obj\Debug\net8.0\NoiThatCaoCap.pdb
 M:\Webbanhang\NoiThatCaoCap\NoiThatCaoCap\obj\Debug\net8.0\NoiThatCaoCap.genruntimeconfig.cache
 M:\Webbanhang\NoiThatCaoCap\NoiThatCaoCap\obj\Debug\net8.0\ref\NoiThatCaoCap.dll
+M:\Webbanhang\NoiThatCaoCap\NoiThatCaoCap\obj\Debug\net8.0\NoiThatCaoCap.sourcelink.json

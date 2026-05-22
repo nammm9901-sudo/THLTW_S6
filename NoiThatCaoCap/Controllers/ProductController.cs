@@ -24,45 +24,82 @@ namespace NoiThatCaoCap.Controllers
         // ==========================================
         // 1. HIỂN THỊ DANH SÁCH SẢN PHẨM (INDEX)
         // ==========================================
-        public async Task<IActionResult> Index(List<int> categories,
-                                       List<string> prices,
-                                       List<string> materials)
+        public async Task<IActionResult> Index(
+    string search,
+    List<int> categories,
+    List<string> prices,
+    List<string> materials)
         {
             var products = _productRepository.GetAll().AsQueryable();
 
+            // SEARCH
+            if (!string.IsNullOrEmpty(search))
+            {
+                products = products.Where(p => p.Name.Contains(search));
+            }
+
+            // FILTER CATEGORY
             if (categories != null && categories.Any())
             {
                 products = products.Where(p => categories.Contains(p.CategoryId));
             }
 
+            // FILTER MATERIAL
             if (materials != null && materials.Any())
             {
                 products = products.Where(p => materials.Contains(p.Material));
             }
 
+            // FILTER PRICE
             if (prices != null && prices.Any())
             {
                 var priceFiltered = products.Where(p => false);
 
                 if (prices.Contains("Under20"))
-                    priceFiltered = priceFiltered.Union(products.Where(p => p.Price < 20000000));
+                {
+                    priceFiltered = priceFiltered.Union(
+                        products.Where(p => p.Price < 20000000)
+                    );
+                }
 
                 if (prices.Contains("20to50"))
-                    priceFiltered = priceFiltered.Union(products.Where(p => p.Price >= 20000000 && p.Price <= 50000000));
+                {
+                    priceFiltered = priceFiltered.Union(
+                        products.Where(p =>
+                            p.Price >= 20000000 &&
+                            p.Price <= 50000000)
+                    );
+                }
 
                 if (prices.Contains("50to100"))
-                    priceFiltered = priceFiltered.Union(products.Where(p => p.Price > 50000000 && p.Price <= 100000000));
+                {
+                    priceFiltered = priceFiltered.Union(
+                        products.Where(p =>
+                            p.Price > 50000000 &&
+                            p.Price <= 100000000)
+                    );
+                }
 
                 if (prices.Contains("Above100"))
-                    priceFiltered = priceFiltered.Union(products.Where(p => p.Price > 100000000));
+                {
+                    priceFiltered = priceFiltered.Union(
+                        products.Where(p => p.Price > 100000000)
+                    );
+                }
 
                 products = priceFiltered;
             }
 
-            ViewBag.Categories = _categoryRepository.GetAll();   // thêm dòng này
+            // VIEWBAG
+            ViewBag.Categories = _categoryRepository.GetAll();
+
             ViewBag.SelectedCategories = categories ?? new List<int>();
+
             ViewBag.SelectedPrices = prices ?? new List<string>();
+
             ViewBag.SelectedMaterials = materials ?? new List<string>();
+
+            ViewBag.Search = search;
 
             return View(products.ToList());
         }
