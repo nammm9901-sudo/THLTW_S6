@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LUXE LIVING</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="custom-navbar">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <a class="navbar-logo" asp-controller="Product" asp-action="Index">LUXE LIVING</a>
+
+            <nav class="navbar-menu d-none d-lg-flex">
+                <a asp-controller="Product" asp-action="Index">Tất Cả</a>
+                <a asp-controller="Product" asp-action="Index" asp-route-category="1">Phòng Khách</a>
+                <a asp-controller="Product" asp-action="Index" asp-route-category="2">Phòng Ăn</a>
+                <a asp-controller="Product" asp-action="Index" asp-route-category="3">Phòng Ngủ</a>
+            </nav>
+
+            <div class="navbar-utilities d-flex align-items-center gap-4">
+
+                <form asp-controller="Product" asp-action="Search" method="get" class="search-premium-form d-flex align-items-center position-relative">
+                    <input type="text" name="searchTerm" class="search-input-field font-montserrat" placeholder="Tìm tuyệt tác..." value="@ViewBag.SearchTerm" />
+                    <button type="submit" class="btn-utility-icon" title="Tìm kiếm">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
+
+                <a asp-controller="Cart" asp-action="Wishlist" class="btn-utility-icon position-relative" title="Danh sách yêu thích">
+                    <i class="bi bi-heart"></i> <span class="badge-premium-counter">0</span>
+                </a>
+
+                <a asp-controller="Cart" asp-action="Index" class="btn-utility-icon position-relative" title="Giỏ hàng của bạn">
+                    <i class="bi bi-bag"></i> <span class="badge-premium-counter active">1</span>
+                </a>
+
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="custom-footer">
+        <div class="container">
+            <div class="row gy-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="footer-logo">LUXE LIVING</h4>
+                    <p class="footer-text mt-3">Kiến tạo không gian nội thất đẳng cấp tinh tế cho giới thượng lưu từ năm 2010.</p>
+                    <div class="footer-socials mt-4 d-flex gap-3">
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-heading">CỬA HÀNG</h5>
+                    <ul class="footer-links list-unstyled mt-3">
+                        <li><a href="#">Phòng Khách</a></li>
+                        <li><a href="#">Phòng Ăn</a></li>
+                        <li><a href="#">Phòng Ngủ</a></li>
+                        <li><a href="#">Văn Phòng</a></li>
+                        <li><a href="#">Tất Cả Sản Phẩm</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-heading">DỊCH VỤ KHÁCH HÀNG</h5>
+                    <ul class="footer-links list-unstyled mt-3">
+                        <li><a href="#">Theo Dõi Đơn Hàng</a></li>
+                        <li><a href="#">Vận Chuyển & Giao Hàng</a></li>
+                        <li><a href="#">Chính Sách Đổi Trả</a></li>
+                        <li><a href="#">Câu Hỏi Thường Gặp</a></li>
+                        <li><a href="#">Liên Hệ Chúng Tôi</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-heading">LIÊN HỆ</h5>
+                    <ul class="footer-contact list-unstyled mt-3">
+                        <li><i class="bi bi-geo-alt me-2"></i> 123 Đại Lộ Thượng Lưu, Quận 1, TP. HCM</li>
+                        <li><i class="bi bi-telephone me-2"></i> +1 (800) 555-LUXE</li>
+                        <li><i class="bi bi-envelope me-2"></i> hello@@luxeliving.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom text-center mt-5 pt-4">
+                <p>&copy; 2026 LUXE LIVING. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

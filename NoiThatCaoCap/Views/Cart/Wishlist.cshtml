@@ -1,0 +1,41 @@
+﻿@model List<NoiThatCaoCap.Models.Product>
+
+<div class="container py-5" style="min-height: 60vh;">
+    <h2 class="font-cormorant mb-5 text-center" style="font-size: 2.5rem; letter-spacing: 2px;">SẢN PHẨM HOÀNG GIA YÊU THÍCH</h2>
+
+    @if (Model == null || !Model.Any())
+    {
+        <div class="text-center py-5">
+            <i class="bi bi-heart text-muted fs-1 d-block mb-3"></i>
+            <p class="font-montserrat text-muted" style="letter-spacing: 1px;">Danh sách mong ước của bạn hiện đang trống.</p>
+            <a asp-controller="Product" asp-action="Index" class="btn btn-outline-dark rounded-0 mt-3 px-4 py-2 font-montserrat text-uppercase" style="font-size: 11px; letter-spacing: 2px;">Lướt Xem Sản Phẩm</a>
+        </div>
+    }
+    else
+    {
+        <div class="row g-4">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-3 col-md-6 position-relative">
+                    <a asp-action="RemoveFromWishlist" asp-route-id="@item.Id" class="position-absolute btn btn-sm bg-white text-danger shadow-sm rounded-circle" style="top: 15px; right: 25px; z-index: 5; padding: 4px 8px;" title="Xóa khỏi mục yêu thích">
+                        <i class="bi bi-x-lg" style="font-size: 10px;"></i>
+                    </a>
+
+                    <div class="product-card-premium border p-2 bg-white">
+                        <div class="img-wrapper" style="height: 220px; overflow: hidden;">
+                            <img src="@item.ImageUrl" alt="@item.Name" style="width: 100%; height: 100%; object-fit: cover;" />
+                        </div>
+                        <div class="p-3">
+                            <h4 class="font-cormorant mb-1" style="font-size: 18px;">@item.Name</h4>
+                            <p class="font-montserrat small mb-3" style="color: #c5a880;">@String.Format("{0:N0}", item.Price) VNĐ</p>
+
+                            <a asp-action="AddToCart" asp-route-id="@item.Id" class="btn btn-dark btn-sm rounded-0 w-100 font-montserrat text-uppercase" style="font-size: 10px; letter-spacing: 1px;">
+                                <i class="bi bi-bag-plus ms-1"></i> Thêm Vào Giỏ Hàng
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

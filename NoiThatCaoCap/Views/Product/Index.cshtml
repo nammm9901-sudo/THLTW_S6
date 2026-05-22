@@ -1,0 +1,332 @@
+﻿@model IEnumerable<NoiThatCaoCap.Models.Product>
+
+@{
+    ViewData["Title"] = "Trang Chủ | Nội Thất Thượng Lưu";
+}
+
+<section class="hero-section">
+    <div class="hero-bg-img">
+        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000" alt="Luxe Banner" />
+    </div>
+    <div class="hero-content text-center">
+        <h1 class="font-cormorant animate-fade-in">Sự Thanh Lịch Vượt Thời Gian</h1>
+        <p class="font-montserrat mt-3">Nội thất cao cấp được tuyển chọn cho những nhà sưu tầm hiện đại</p>
+        <a href="#featured-collection" class="btn btn-gold mt-4 font-montserrat">KHÁM PHÁ BỘ SƯU TẬP <i class="bi bi-arrow-right ms-2"></i></a>
+    </div>
+</section>
+
+<section class="services-section py-5">
+    <div class="container">
+        <div class="row text-center gy-4">
+            <div class="col-lg-3 col-sm-6">
+                <div class="service-box">
+                    <div class="service-icon"><i class="bi bi-truck"></i></div>
+                    <h5>MIỄN PHÍ VẬN CHUYỂN</h5>
+                    <p>Áp dụng cho đơn hàng trên 50 triệu</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="service-box">
+                    <div class="service-icon"><i class="bi bi-award"></i></div>
+                    <h5>CHẤT LƯỢNG CAO CẤP</h5>
+                    <p>Chế tác thủ công độc bản nghệ thuật</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="service-box">
+                    <div class="service-icon"><i class="bi bi-shield-check"></i></div>
+                    <h5>THANH TOÁN AN TOÀN</h5>
+                    <p>Bảo mật thông tin khách hàng 100%</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="service-box">
+                    <div class="service-icon"><i class="bi bi-clock-history"></i></div>
+                    <h5>HỖ TRỢ 24/7</h5>
+                    <p>Dịch vụ quản gia tư vấn tận tâm</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="collection-section py-5" id="featured-collection">
+    <div class="container text-center mb-5">
+        <h2 class="font-cormorant section-title">Bộ Sưu Tập Nổi Bật</h2>
+        <p class="font-montserrat text-muted subtitle-text">Những tuyệt tác định nghĩa không gian sống thượng lưu</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar Lọc Sản Phẩm -->
+            <aside class="col-lg-3 col-md-4 mb-5 pe-lg-4">
+                <form asp-controller="Product"
+                      asp-action="Index"
+                      method="get"
+                      class="sidebar-filter-wrapper p-4 bg-light"
+                      style="border-radius:8px;">
+
+                    <h4 class="mb-4">Lọc Sản Phẩm</h4>
+
+                    <!-- Danh mục -->
+                    <div class="mb-4">
+                        <h6>Danh mục</h6>
+
+                        @foreach (var category in ViewBag.Categories)
+                        {
+                            <div>
+                                <input type="checkbox"
+                                       name="categories"
+                                       value="@category.Id"
+                                @(ViewBag.SelectedCategories.Contains(category.Id) ? "checked" : "") />
+                                @category.Name
+                            </div>
+                        }
+                    </div>
+
+                    <!-- Giá -->
+                    <div class="mb-4">
+                        <h6>Mức giá</h6>
+
+                        <div>
+                            <input type="checkbox"
+                                   name="prices"
+                                   value="Under20"
+                            @(ViewBag.SelectedPrices.Contains("Under20") ? "checked" : "") />
+                            Dưới 20 triệu
+                        </div>
+
+                        <div>
+                            <input type="checkbox"
+                                   name="prices"
+                                   value="20to50"
+                            @(ViewBag.SelectedPrices.Contains("20to50") ? "checked" : "") />
+                            20 - 50 triệu
+                        </div>
+
+                        <div>
+                            <input type="checkbox"
+                                   name="prices"
+                                   value="50to100"
+                            @(ViewBag.SelectedPrices.Contains("50to100") ? "checked" : "") />
+                            50 - 100 triệu
+                        </div>
+
+                        <div>
+                            <input type="checkbox"
+                                   name="prices"
+                                   value="Above100"
+                            @(ViewBag.SelectedPrices.Contains("Above100") ? "checked" : "") />
+                            Trên 100 triệu
+                        </div>
+                    </div>
+
+                    <!-- Chất liệu -->
+                    <div class="mb-4">
+                        <h6>Chất liệu</h6>
+
+                        <div>
+                            <input type="checkbox"
+                                   name="materials"
+                                   value="Gỗ Óc Chó"
+                            @(ViewBag.SelectedMaterials.Contains("Gỗ Óc Chó") ? "checked" : "") />
+                            Gỗ Óc Chó
+                        </div>
+
+                        <div>
+                            <input type="checkbox"
+                                   name="materials"
+                                   value="Gỗ Sồi"
+                            @(ViewBag.SelectedMaterials.Contains("Gỗ Sồi") ? "checked" : "") />
+                            Gỗ Sồi
+                        </div>
+
+                        <div>
+                            <input type="checkbox"
+                                   name="materials"
+                                   value="Da"
+                            @(ViewBag.SelectedMaterials.Contains("Da") ? "checked" : "") />
+                            Da
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-dark w-100">
+                        Áp Dụng Lọc
+                    </button>
+                </form>
+            </aside>
+
+            <!-- Khu vực danh sách sản phẩm -->
+            <div class="col-lg-9 col-md-8">
+                <div class="row gy-4">
+                    @foreach (var item in Model)
+                    {
+                        <!-- Điều chỉnh thành col-lg-4 để hiển thị 3 sản phẩm 1 hàng -->
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="product-card-premium">
+                                <div class="img-wrapper">
+                                    <img src="@item.ImageUrl" alt="@item.Name" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=600';" class="img-fluid w-100" />
+
+                                    <div class="action-overlay-btn">
+                                        <a asp-action="Detail" asp-route-id="@item.Id" class="btn-view-detail" title="Xem nhanh">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+
+                                        <a asp-controller="Cart" asp-action="AddToWishlist" asp-route-id="@item.Id" class="btn-wishlist-product" title="Yêu thích">
+                                            <i class="bi bi-heart"></i>
+                                        </a>
+
+                                        <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@item.Id" class="btn-cart-product" title="Thêm vào giỏ">
+                                            <i class="bi bi-bag-plus"></i>
+                                        </a>
+
+                                        <a asp-action="Update" asp-route-id="@item.Id" class="btn-edit-product" title="Sửa">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </a>
+
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn-delete-product" title="Xóa">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-info-box text-start mt-3">
+                                    <span class="category-tag text-uppercase" style="font-size: 11px; color: #888;">PHÒNG KHÁCH / PHÒNG NGỦ</span>
+                                    <h5 class="product-name-title font-cormorant mt-1 mb-1">
+                                        <a asp-action="Detail" asp-route-id="@item.Id" class="text-dark text-decoration-none">@item.Name</a>
+                                    </h5>
+                                    <p class="product-price-vn font-montserrat fw-bold" style="color: #bfa15f;">@String.Format("{0:N0}", item.Price) VNĐ</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <div class="text-center mt-5 pt-3">
+                    <a asp-controller="Product" asp-action="Index" class="btn btn-view-all font-montserrat" style="text-decoration: none; border: 1px solid #333; padding: 10px 25px; color: #333;">
+                        XEM TẤT CẢ SẢN PHẨM <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="story-section py-5 my-5">
+    <div class="container-fluid p-0">
+        <div class="row g-0 align-items-center">
+            <div class="col-lg-6 p-5 bg-cream d-flex flex-column justify-content-center align-items-start text-start" style="min-height: 500px; background-color: #f9f8f6;">
+                <div class="story-wrapper-padding" style="max-width: 500px; margin: 0 auto;">
+                    <h2 class="font-cormorant mb-4" style="font-size: 2.8rem; font-weight: 500;">Chế Tác Hoàn Hảo</h2>
+                    <p class="font-montserrat text-muted mb-4" style="line-height: 1.8; font-size: 14px;">Mỗi sản phẩm trong bộ sưu tập của chúng tôi đều được lựa chọn tỉ mỉ từ những nghệ nhân lành nghề nhất trên thế giới. Chúng tôi tin rằng nội thất không chỉ để dùng, mà là để kể lại một câu chuyện, là tài sản giá trị truyền lại qua nhiều thế hệ.</p>
+                    <p class="font-montserrat text-muted mb-4" style="line-height: 1.8; font-size: 14px;">Từ đá thạch anh tự nhiên nguyên khối của Ý cho đến các thớ gỗ quý được khai thác bền vững, mọi vật liệu đều được chọn vì chất lượng vượt trội và vẻ đẹp bất tử với thời gian.</p>
+                    <a href="#" class="btn-discover font-montserrat mt-2 text-dark text-decoration-none fw-bold" style="border-bottom: 1px solid #333; padding-bottom: 2px;">KHÁM PHÁ CÂU CHUYỆN <i class="bi bi-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="story-img-box">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200" alt="Story Interior" class="img-fluid w-100" style="object-fit: cover; min-height: 500px; max-height: 600px;" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<aside class="col-lg-3 col-md-4 mb-5 pe-lg-4">
+    <form asp-controller="Product" asp-action="Index" method="get" class="sidebar-filter-wrapper p-4 bg-light" style="border-radius: 8px;">
+        <h4 class="font-cormorant mb-4" style="font-weight: 600; border-bottom: 1px solid #ddd; padding-bottom: 10px;">Lọc Sản Phẩm</h4>
+
+        <div class="filter-group mb-4">
+            <h6 class="font-montserrat fw-bold mb-3 text-uppercase" style="font-size: 14px; letter-spacing: 1px;">Danh Mục</h6>
+            <ul class="list-unstyled font-montserrat" style="font-size: 14px;">
+                <li class="mb-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="categories" value="Sofa" id="cat-sofa">
+                        <label class="form-check-label" for="cat-sofa">Sofa & Ghế bành</label>
+                    </div>
+                </li>
+                <li class="mb-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="categories" value="Ban" id="cat-ban">
+                        <label class="form-check-label" for="cat-ban">Bàn phòng khách</label>
+                    </div>
+                </li>
+                <li class="mb-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="categories" value="Giuong" id="cat-giuong">
+                        <label class="form-check-label" for="cat-giuong">Giường ngủ cao cấp</label>
+                    </div>
+                </li>
+                <li class="mb-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="categories" value="Tu" id="cat-tu">
+                        <label class="form-check-label" for="cat-tu">Tủ & Kệ trang trí</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="filter-group mb-4">
+            <h6 class="font-montserrat fw-bold mb-3 text-uppercase" style="font-size: 14px; letter-spacing: 1px;">Mức Giá</h6>
+            <ul class="list-unstyled font-montserrat" style="font-size: 14px;">
+                <li class="mb-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="prices" value="Under20" id="price-1">
+                        <label class="form-check-label" for="price-1">Dưới 20 Triệu</label>
+                    </div>
+                </li>
+                <li class="mb-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="prices" value="20to50" id="price-2">
+                        <label class="form-check-label" for="price-2">20 - 50 Triệu</label>
+                    </div>
+                </li>
+                <li class="mb-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="prices" value="50to100" id="price-3">
+                        <label class="form-check-label" for="price-3">50 - 100 Triệu</label>
+                    </div>
+                </li>
+                <li class="mb-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="prices" value="Above100" id="price-4">
+                        <label class="form-check-label" for="price-4">Trên 100 Triệu</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="filter-group mb-4">
+            <h6 class="font-montserrat fw-bold mb-3 text-uppercase" style="font-size: 14px; letter-spacing: 1px;">Chất Liệu</h6>
+            <ul class="list-unstyled font-montserrat" style="font-size: 14px;">
+                <li class="mb-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="materials" value="Walnut" id="mat-go">
+                        <label class="form-check-label" for="mat-go">Gỗ Óc Chó (Walnut)</label>
+                    </div>
+                </li>
+                <li class="mb-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="materials" value="Marble" id="mat-da">
+                        <label class="form-check-label" for="mat-da">Đá Marble Ý</label>
+                    </div>
+                </li>
+                <li class="mb-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="materials" value="Leather" id="mat-da-bo">
+                        <label class="form-check-label" for="mat-da-bo">Da Bò Tự Nhiên</label>
+                    </div>
+                </li>
+                <li class="mb-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="materials" value="GoldAlloy" id="mat-kimloai">
+                        <label class="form-check-label" for="mat-kimloai">Hợp Kim Mạ Vàng</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <button type="submit" class="btn btn-dark w-100 font-montserrat text-uppercase mt-2" style="font-size: 13px; letter-spacing: 1px;">
+            Áp Dụng Lọc
+        </button>
+    </form>
+</aside>

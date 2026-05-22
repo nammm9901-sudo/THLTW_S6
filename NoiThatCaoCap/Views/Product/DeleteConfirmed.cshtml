@@ -1,0 +1,41 @@
+﻿@model NoiThatCaoCap.Models.Product
+
+@{
+    ViewData["Title"] = "Xác Nhận Xóa Tuyệt Tác";
+}
+
+<div class="container my-5" style="max-width: 600px;">
+    <div class="card border-danger">
+        <div class="card-header bg-danger text-white text-uppercase fw-bold text-center py-3">
+            Cảnh báo: Xác nhận xóa sản phẩm
+        </div>
+        <div class="card-body p-4">
+            <h5 class="text-center mb-4 text-secondary">Bạn có chắc chắn muốn xóa vĩnh viễn sản phẩm này không?</h5>
+
+            <div class="row align-items-center mb-3">
+                <div class="col-4">
+                    <img src="@Model.ImageUrl" alt="@Model.Name" class="img-fluid rounded border" style="max-height: 120px; object-fit: cover;" />
+                </div>
+                <div class="col-8">
+                    <h4 class="font-cinzel text-dark mb-1">@Model.Name</h4>
+                    <p class="text-muted small mb-1"><strong>Chất liệu:</strong> @Model.Material | <strong>Xuất xứ:</strong> @Model.Origin</p>
+                    <p class="text-danger fw-bold fs-5 mb-0">@String.Format("{0:N0}", Model.Price) VNĐ</p>
+                </div>
+            </div>
+
+            <div class="bg-light p-3 rounded mb-4 small text-muted border">
+                <strong>Mô tả tóm tắt:</strong> @Model.Description
+            </div>
+
+            <form asp-action="Delete" method="post">
+                @Html.AntiForgeryToken()
+                <input type="hidden" asp-for="Id" />
+
+                <div class="d-flex gap-2 justify-content-center">
+                    <a asp-action="Index" class="btn btn-secondary w-50 py-2 fw-bold text-uppercase" style="font-size: 12px;">Không, Quay lại</a>
+                    <button type="submit" class="btn btn-danger w-50 py-2 fw-bold text-uppercase" style="font-size: 12px;">Đồng ý, Xóa</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

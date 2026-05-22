@@ -1,0 +1,74 @@
+﻿@model NoiThatCaoCap.Models.Product
+
+@{
+    ViewData["Title"] = Model.Name + " | Chi Tiết Tuyệt Tác";
+}
+
+<div class="container premium-detail-container">
+    <div class="breadcrumbs-nav mb-5">
+        <a asp-action="Index">Cửa Hàng</a> <span>/</span>
+        <a href="#">Danh Mục</a> <span>/</span>
+        <span class="current-product">@Model.Name</span>
+    </div>
+
+    <div class="row g-5">
+        <div class="col-lg-6">
+            <div class="detail-img-wrapper">
+                <img src="@Model.ImageUrl" alt="@Model.Name" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=600';" />
+            </div>
+        </div>
+
+        <div class="col-lg-6 product-specs-aside">
+            <span class="detail-brand-tag text-uppercase">LUXE LIVING CRAFTED</span>
+            <h1 class="detail-title font-cormorant">@Model.Name</h1>
+            <p class="detail-price font-montserrat">@String.Format("{0:N0}", Model.Price) VNĐ</p>
+
+            <div class="detail-divider"></div>
+
+            <p class="detail-description">@Model.Description</p>
+
+            <div class="premium-variant-selector mt-4">
+                <label class="variant-label font-montserrat">PHONG CÁCH CHẾ TÁC</label>
+                <div class="variant-options-group d-flex gap-3 mt-2">
+                    <button class="btn-variant active">Classic Luxe</button>
+                    <button class="btn-variant">Modern Minimalist</button>
+                </div>
+            </div>
+
+            <div class="detail-actions-group d-flex gap-3 mt-5">
+                <button class="btn btn-add-to-cart font-montserrat flex-grow-1">
+                    THÊM VÀO GIỎ HÀNG <i class="bi bi-bag-plus ms-2"></i>
+                </button>
+                <a asp-action="Index" class="btn btn-back-store" title="Quay lại cửa hàng">
+                    <i class="bi bi-arrow-left"></i>
+                </a>
+            </div>
+
+            <div class="detail-divider mt-5"></div>
+
+            <div class="technical-accordion mt-4">
+                <h3 class="tech-heading font-cormorant"><i class="bi bi-sliders me-2"></i> Thông Số Kỹ Thuật & Tư Vấn</h3>
+                <table class="table table-premium-specs mt-3">
+                    <tbody>
+                        <tr>
+                            <td>Chất liệu cốt lõi</td>
+                            <td class="text-end fw-medium text-dark">@Model.Material</td>
+                        </tr>
+                        <tr>
+                            <td>Nguồn gốc xuất xứ</td>
+                            <td class="text-end fw-medium text-dark">@Model.Origin</td>
+                        </tr>
+                        <tr>
+                            <td>Chế độ bảo hành</td>
+                            <td class="text-end fw-medium text-dark">05 - 10 Năm Toàn Cầu</td>
+                        </tr>
+                        <tr>
+                            <td>Tình trạng vật lý</td>
+                            <td class="text-end fw-medium text-dark text-success"><i class="bi bi-check-circle-fill me-1"></i> Sẵn sàng bàn giao</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
