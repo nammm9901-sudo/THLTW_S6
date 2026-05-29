@@ -1,287 +1,299 @@
 {
   "Files": [
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\NoiThatCaoCap.bundle.scp.css",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\NoiThatCaoCap.bundle.scp.css",
       "PackagePath": "staticwebassets\\NoiThatCaoCap.bundle.scp.css"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\css\\site.css",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\favicon.ico",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\images\\bed.jpg",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\bed.jpg",
       "PackagePath": "staticwebassets\\images\\bed.jpg"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\images\\cabinet.jpg",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\cabinet.jpg",
       "PackagePath": "staticwebassets\\images\\cabinet.jpg"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\images\\chair.jpg",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\chair.jpg",
       "PackagePath": "staticwebassets\\images\\chair.jpg"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\images\\chandelier.jpg",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\chandelier.jpg",
       "PackagePath": "staticwebassets\\images\\chandelier.jpg"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\images\\decor.jpg",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\decor.jpg",
       "PackagePath": "staticwebassets\\images\\decor.jpg"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\images\\dining.jpg",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\dining.jpg",
       "PackagePath": "staticwebassets\\images\\dining.jpg"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\images\\lamp.jpg",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\lamp.jpg",
       "PackagePath": "staticwebassets\\images\\lamp.jpg"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\images\\sofa.jpg",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\products\\6052c4a0-7c85-4cd7-a0e3-b0cd1be72fee_sofa.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\6052c4a0-7c85-4cd7-a0e3-b0cd1be72fee_sofa.jpg"
+    },
+    {
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\products\\ac087760-cd28-4af8-9cfe-46ef24ac625f_bed.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\ac087760-cd28-4af8-9cfe-46ef24ac625f_bed.jpg"
+    },
+    {
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\products\\af2231b1-20d6-43e2-ba9b-11f29aa0757a_bed.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\af2231b1-20d6-43e2-ba9b-11f29aa0757a_bed.jpg"
+    },
+    {
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\sofa.jpg",
       "PackagePath": "staticwebassets\\images\\sofa.jpg"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\images\\teatable.jpg",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\teatable.jpg",
       "PackagePath": "staticwebassets\\images\\teatable.jpg"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\images\\wardrobe.jpg",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\wardrobe.jpg",
       "PackagePath": "staticwebassets\\images\\wardrobe.jpg"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\js\\site.js",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

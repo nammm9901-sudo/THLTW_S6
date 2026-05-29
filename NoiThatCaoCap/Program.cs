@@ -1,9 +1,12 @@
-﻿using NoiThatCaoCap.Repositories;
+﻿using Microsoft.EntityFrameworkCore;
+using NoiThatCaoCap.Models;
+using NoiThatCaoCap.Repositories;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSingleton<ICategoryRepository, MockCategoryRepository>();
-builder.Services.AddSingleton<IProductRepository, MockProductRepository>();
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
@@ -14,7 +17,15 @@ builder.Services.AddSession(options =>
 });
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews()
+    .AddJsonOptions(options =>
+    {
+        // Cấu hình ngắt và bỏ qua các liên kết vòng lặp tự động
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    });
+
+builder.Services.AddScoped<IProductRepository, EFProductRepository>();
+builder.Services.AddScoped<ICategoryRepository, EFCategoryRepository>();
 
 var app = builder.Build();
 

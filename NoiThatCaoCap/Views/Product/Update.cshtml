@@ -1,72 +1,206 @@
 ﻿@model NoiThatCaoCap.Models.Product
 
 @{
-    ViewData["Title"] = "Cập Nhật Tuyệt Tác";
+    ViewData["Title"] = "Cập Nhật Tuyệt Tác Nội Thất | LUXE LIVING";
 }
 
-<div class="container my-5" style="max-width: 700px;">
-    <h2 class="font-cinzel text-uppercase mb-4 text-center">Chỉnh Sửa Sản Phẩm</h2>
-    <hr />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <form asp-action="Update" method="post">
-        @Html.AntiForgeryToken()
-        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+<style>
+    :root {
+        --lux-gold: #C9A961;
+        --lux-dark: #0D0D0D;
+        --lux-muted: #6B6B6B;
+        --lux-bg-soft: #F8F5F0;
+        --font-serif: 'Cormorant Garamond', serif;
+        --font-sans: 'Montserrat', sans-serif;
+    }
 
+    body {
+        font-family: var(--font-sans);
+        color: var(--lux-dark);
+        background-color: var(--lux-bg-soft);
+    }
+
+    .serif-heading {
+        font-family: var(--font-serif) !important;
+        font-weight: 600;
+    }
+
+    .lux-form-container {
+        background: #fff;
+        padding: 40px;
+        border: 1px solid rgba(13, 13, 13, 0.05);
+    }
+
+    .form-label {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+        color: var(--lux-muted);
+        margin-bottom: 8px;
+    }
+
+    .form-control, .form-select {
+        border-radius: 0;
+        border: 1px solid rgba(13, 13, 13, 0.2);
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--lux-gold);
+            box-shadow: none;
+        }
+
+    .btn-lux-submit {
+        background-color: var(--lux-dark);
+        color: #fff;
+        border: none;
+        padding: 14px 30px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+        .btn-lux-submit:hover {
+            background-color: var(--lux-gold);
+            color: var(--lux-dark);
+        }
+
+    .btn-lux-outline {
+        background: transparent;
+        border: 1px solid var(--lux-dark);
+        color: var(--lux-dark);
+        padding: 14px 30px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+        .btn-lux-outline:hover {
+            background: var(--lux-bg-soft);
+        }
+
+    /* Style riêng cho khu vực ảnh */
+    .img-preview-box {
+        width: 120px;
+        height: 120px;
+        border: 1px solid rgba(13,13,13,0.1);
+        position: relative;
+        background: #fff;
+        padding: 4px;
+    }
+
+        .img-preview-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    .img-badge {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: var(--lux-dark);
+        color: #fff;
+        font-size: 9px;
+        padding: 2px 6px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+</style>
+
+<div class="container py-5" style="max-width: 900px;">
+    <h2 class="serif-heading text-center mb-5" style="font-size: 32px; letter-spacing: 1px;">CẬP NHẬT SẢN PHẨM</h2>
+
+    <form asp-action="Update" method="post" enctype="multipart/form-data" class="lux-form-container shadow-sm">
         <input type="hidden" asp-for="Id" />
 
-        <div class="mb-3">
-            <label asp-for="Name" class="form-label fw-bold">Tên Sản Phẩm</label>
-            <input asp-for="Name" class="form-control" />
-            <span asp-validation-for="Name" class="text-danger"></span>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6 mb-3">
-                <label asp-for="Price" class="form-label fw-bold">Giá Bán (VNĐ)</label>
-                <input asp-for="Price" type="number" class="form-control" />
-                <span asp-validation-for="Price" class="text-danger"></span>
-            </div>
-            <div class="col-md-6 mb-3">
-                <label asp-for="CategoryId" class="form-label fw-bold">Danh Mục Nội Thất</label>
-                <select asp-for="CategoryId" class="form-select" asp-items="ViewBag.Categories"></select>
-                <span asp-validation-for="CategoryId" class="text-danger"></span>
-            </div>
-        </div>
-
-        <div class="mb-3">
-            <label asp-for="ImageUrl" class="form-label fw-bold">Đường Dẫn Ảnh</label>
-            <input asp-for="ImageUrl" class="form-control" />
-            <span asp-validation-for="ImageUrl" class="text-danger"></span>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6 mb-3">
-                <label asp-for="Material" class="form-label fw-bold">Chất Liệu</label>
-                <input asp-for="Material" class="form-control" />
-                <span asp-validation-for="Material" class="text-danger"></span>
-            </div>
-            <div class="col-md-6 mb-3">
-                <label asp-for="Origin" class="form-label fw-bold">Xuất Xứ</label>
-                <input asp-for="Origin" class="form-control" />
-                <span asp-validation-for="Origin" class="text-danger"></span>
-            </div>
-        </div>
-
         <div class="mb-4">
-            <label asp-for="Description" class="form-label fw-bold">Mô Tả Sản Phẩm</label>
-            <textarea asp-for="Description" class="form-control" rows="4"></textarea>
-            <span asp-validation-for="Description" class="text-danger"></span>
+            <label asp-for="Name" class="form-label">Tên Sản Phẩm Tuyệt Tác</label>
+            <input asp-for="Name" class="form-control" required />
+            <span asp-validation-for="Name" class="text-danger small"></span>
         </div>
 
-        <div class="d-flex gap-2 justify-content-end">
-            <a asp-action="Index" class="btn btn-secondary px-4 text-uppercase" style="font-size: 13px; font-weight: 600;">Hủy</a>
-            <button type="submit" class="btn btn-warning px-4 text-uppercase fw-bold text-white" style="font-size: 13px; background: #d4a373; border: none;">Cập nhật</button>
+        <div class="row g-4 mb-4">
+            <div class="col-md-6">
+                <label asp-for="Price" class="form-label">Giá Bán (VNĐ)</label>
+                <input asp-for="Price" type="number" step="1" min="0" class="form-control" required />
+                <span asp-validation-for="Price" class="text-danger small"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="CategoryId" class="form-label">Danh Mục Nội Thất</label>
+                <select asp-for="CategoryId" class="form-select" asp-items="ViewBag.CategoryId" required>
+                    <option value="">-- Chọn danh mục sản phẩm --</option>
+                </select>
+                <span asp-validation-for="CategoryId" class="text-danger small"></span>
+            </div>
+        </div>
+
+        <div class="mb-4 p-4 border" style="background-color: #faf9f7;">
+            <label class="form-label d-block text-center mb-3 text-dark">Thêm Hình Ảnh Vào Thư Viện</label>
+
+            <input type="file" name="ImageFiles" class="form-control mb-3" accept="image/*" multiple />
+            <p class="text-muted text-center mb-4" style="font-size: 12px;">
+                Bỏ trống mục này nếu bạn chỉ muốn cập nhật thông tin chữ và giữ nguyên hình ảnh hiện tại.<br />
+                Nhấn giữ phím <strong>Ctrl/Cmd</strong> để chọn tải thêm nhiều ảnh cùng lúc.
+            </p>
+
+            <hr class="mb-4" style="opacity: 0.1;" />
+            <label class="form-label mb-3"><i class="bi bi-images me-1"></i> Hình ảnh đang hiển thị hiện tại:</label>
+
+            <div class="d-flex flex-wrap gap-3">
+                <div class="img-preview-box shadow-sm">
+                    <span class="img-badge">Ảnh Chính</span>
+                    <img src="@(string.IsNullOrEmpty(Model.ImageUrl) ? "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=200" : Model.ImageUrl)"
+                         alt="Main Image"
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=200';" />
+                </div>
+
+                @if (Model.Images != null && Model.Images.Any())
+                {
+                    foreach (var img in Model.Images)
+                    {
+                        <div class="img-preview-box shadow-sm">
+                            <span class="img-badge" style="background: var(--lux-muted);">Gallery</span>
+                            <img src="@img.Url"
+                                 alt="Gallery Image"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=200';" />
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+
+        <div class="row g-4 mb-4">
+            <div class="col-md-6">
+                <label asp-for="Material" class="form-label">Chất Liệu Cốt Lõi</label>
+                <input asp-for="Material" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Origin" class="form-label">Nguồn Gốc Xuất Xứ</label>
+                <input asp-for="Origin" class="form-control" />
+            </div>
+        </div>
+
+        <div class="mb-5">
+            <label asp-for="Description" class="form-label">Mô Tả Sản Phẩm Chi Tiết</label>
+            <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center border-top pt-4">
+            <a asp-action="Index" class="btn-lux-outline"><i class="bi bi-arrow-left me-2"></i> Quay Lại</a>
+            <button type="submit" class="btn-lux-submit"><i class="bi bi-pencil-square me-2"></i> CẬP NHẬT SẢN PHẨM</button>
         </div>
     </form>
 </div>
-
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}

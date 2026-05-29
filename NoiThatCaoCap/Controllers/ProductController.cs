@@ -1,10 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using NoiThatCaoCap.Models;
 using NoiThatCaoCap.Repositories;
 using System;
+using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace NoiThatCaoCap.Controllers
 {
@@ -12,228 +16,164 @@ namespace NoiThatCaoCap.Controllers
     {
         private readonly IProductRepository _productRepository;
         private readonly ICategoryRepository _categoryRepository;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
         public ProductController(
             IProductRepository productRepository,
-            ICategoryRepository categoryRepository)
+            ICategoryRepository categoryRepository,
+            IWebHostEnvironment webHostEnvironment)
         {
             _productRepository = productRepository;
             _categoryRepository = categoryRepository;
+            _webHostEnvironment = webHostEnvironment;
         }
 
-        // ==========================================
-        // 1. HIỂN THỊ DANH SÁCH SẢN PHẨM (INDEX)
-        // ==========================================
-        public async Task<IActionResult> Index(
-    string search,
-    List<int> categories,
-    List<string> prices,
-    List<string> materials)
+        private async Task<IEnumerable<Category>> GetCategoriesAsync()
         {
-            var products = _productRepository.GetAll().AsQueryable();
+            var categories = await _categoryRepository.GetAllAsync();
+            if (categories == null || !categories.Any())
+            {
+                var samples = new List<Category> {
+                    new Category { Name = "Sofa Phòng Khách" },
+                    new Category { Name = "Bàn Ghế Ăn" },
+                    new Category { Name = "Giường Ngủ Cao Cấp" },
+                    new Category { Name = "Tủ Kệ Trang Trí" }
+                };
+                foreach (var cat in samples) await _categoryRepository.AddAsync(cat);
+                categories = await _categoryRepository.GetAllAsync();
+            }
+            return categories;
+        }
 
-            // SEARCH
+        public async Task<IActionResult> Index(string search, List<int> categories, List<string> prices, List<string> materials)
+        {
+            var allProducts = await _productRepository.GetAllAsync();
+            var products = allProducts.AsQueryable();
+
             if (!string.IsNullOrEmpty(search))
-            {
-                products = products.Where(p => p.Name.Contains(search));
-            }
+                products = products.Where(p => p.Name.Contains(search, StringComparison.OrdinalIgnoreCase));
 
-            // FILTER CATEGORY
             if (categories != null && categories.Any())
-            {
                 products = products.Where(p => categories.Contains(p.CategoryId));
-            }
-
-            // FILTER MATERIAL
-            if (materials != null && materials.Any())
-            {
-                products = products.Where(p => materials.Contains(p.Material));
-            }
-
-            // FILTER PRICE
-            if (prices != null && prices.Any())
-            {
-                var priceFiltered = products.Where(p => false);
-
-                if (prices.Contains("Under20"))
-                {
-                    priceFiltered = priceFiltered.Union(
-                        products.Where(p => p.Price < 20000000)
-                    );
-                }
-
-                if (prices.Contains("20to50"))
-                {
-                    priceFiltered = priceFiltered.Union(
-                        products.Where(p =>
-                            p.Price >= 20000000 &&
-                            p.Price <= 50000000)
-                    );
-                }
-
-                if (prices.Contains("50to100"))
-                {
-                    priceFiltered = priceFiltered.Union(
-                        products.Where(p =>
-                            p.Price > 50000000 &&
-                            p.Price <= 100000000)
-                    );
-                }
-
-                if (prices.Contains("Above100"))
-                {
-                    priceFiltered = priceFiltered.Union(
-                        products.Where(p => p.Price > 100000000)
-                    );
-                }
-
-                products = priceFiltered;
-            }
-
-            // VIEWBAG
-            ViewBag.Categories = _categoryRepository.GetAll();
 
             ViewBag.SelectedCategories = categories ?? new List<int>();
-
             ViewBag.SelectedPrices = prices ?? new List<string>();
-
             ViewBag.SelectedMaterials = materials ?? new List<string>();
-
-            ViewBag.Search = search;
+            ViewBag.Categories = await GetCategoriesAsync();
 
             return View(products.ToList());
         }
 
-        // ==========================================
-        // 2. CHI TIẾT SẢN PHẨM (DETAIL)
-        // ==========================================
-        public IActionResult Detail(int id)
+        public async Task<IActionResult> Detail(int id)
         {
-            var product = _productRepository.GetById(id);
+            var product = await _productRepository.GetByIdAsync(id);
+            if (product == null) return NotFound();
 
-            if (product == null)
-            {
-                return NotFound();
-            }
+            var all = await _productRepository.GetAllAsync();
+            ViewBag.RelatedProducts = all.Where(p => p.CategoryId == product.CategoryId && p.Id != product.Id).Take(4).ToList();
 
             return View(product);
         }
 
-        // ==========================================
-        // 3. FORM THÊM MỚI SẢN PHẨM (GET)
-        // ==========================================
-        public IActionResult Add()
+        [HttpGet]
+        public async Task<IActionResult> Add()
         {
-            // Load danh mục để hiển thị lên thẻ <select> trong View
-            var categories = _categoryRepository.GetAll();
-            ViewBag.Categories = new SelectList(categories, "Id", "Name");
-
+            ViewBag.CategoryId = new SelectList(await GetCategoriesAsync(), "Id", "Name");
             return View();
         }
 
-        // ==========================================
-        // 4. XỬ LÝ THÊM MỚI SẢN PHẨM (POST)
-        // ==========================================
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Add(Product product)
+        public async Task<IActionResult> Add(Product product, List<IFormFile> ImageFiles)
         {
             if (ModelState.IsValid)
             {
-                _productRepository.Add(product);
+                product.Images ??= new List<ProductImage>();
+
+                if (ImageFiles != null)
+                {
+                    string folder = Path.Combine(_webHostEnvironment.WebRootPath, "images/products");
+                    Directory.CreateDirectory(folder);
+
+                    foreach (var file in ImageFiles.Where(f => f.Length > 0))
+                    {
+                        string fileName = Guid.NewGuid().ToString() + "_" + file.FileName;
+                        using (var stream = new FileStream(Path.Combine(folder, fileName), FileMode.Create))
+                        {
+                            await file.CopyToAsync(stream);
+                        }
+                        string url = "/images/products/" + fileName;
+                        product.Images.Add(new ProductImage { Url = url });
+                        if (string.IsNullOrEmpty(product.ImageUrl)) product.ImageUrl = url;
+                    }
+                }
+                await _productRepository.AddAsync(product);
                 return RedirectToAction(nameof(Index));
             }
-
-            // Nếu dữ liệu lỗi, load lại SelectList để người dùng chọn lại không bị crash
-            ViewBag.Categories = new SelectList(_categoryRepository.GetAll(), "Id", "Name", product.CategoryId);
+            ViewBag.CategoryId = new SelectList(await GetCategoriesAsync(), "Id", "Name", product.CategoryId);
             return View(product);
         }
 
-        // ==========================================
-        // 5. FORM CẬP NHẬT SẢN PHẨM (GET)
-        // ==========================================
-        public IActionResult Update(int id)
+        [HttpGet]
+        public async Task<IActionResult> Update(int id)
         {
-            var product = _productRepository.GetById(id);
-
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            // Điền sẵn danh mục cũ của sản phẩm vào thẻ select
-            ViewBag.Categories = new SelectList(_categoryRepository.GetAll(), "Id", "Name", product.CategoryId);
+            var product = await _productRepository.GetByIdAsync(id);
+            if (product == null) return NotFound();
+            ViewBag.CategoryId = new SelectList(await GetCategoriesAsync(), "Id", "Name", product.CategoryId);
             return View(product);
         }
 
-        // ==========================================
-        // 6. XỬ LÝ CẬP NHẬT SẢN PHẨM (POST)
-        // ==========================================
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Update(Product product)
+        public async Task<IActionResult> Update(Product product, List<IFormFile> ImageFiles)
         {
-            if (ModelState.IsValid)
+            // Lấy thực thể đang được track từ Database
+            var existing = await _productRepository.GetByIdAsync(product.Id);
+            if (existing == null) return NotFound();
+
+            // Cập nhật các trường dữ liệu
+            existing.Name = product.Name;
+            existing.Price = product.Price;
+            existing.CategoryId = product.CategoryId;
+            existing.Material = product.Material;
+            existing.Origin = product.Origin;
+            existing.Description = product.Description;
+
+            // Xử lý ảnh mới
+            if (ImageFiles != null && ImageFiles.Count > 0)
             {
-                _productRepository.Update(product);
-                return RedirectToAction(nameof(Index));
+                string folder = Path.Combine(_webHostEnvironment.WebRootPath, "images/products");
+                existing.Images ??= new List<ProductImage>();
+
+                foreach (var file in ImageFiles.Where(f => f.Length > 0))
+                {
+                    string fileName = Guid.NewGuid().ToString() + "_" + file.FileName;
+                    using (var stream = new FileStream(Path.Combine(folder, fileName), FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream);
+                    }
+                    string url = "/images/products/" + fileName;
+                    existing.Images.Add(new ProductImage { Url = url, ProductId = existing.Id });
+                    if (string.IsNullOrEmpty(existing.ImageUrl)) existing.ImageUrl = url;
+                }
             }
 
-            ViewBag.Categories = new SelectList(_categoryRepository.GetAll(), "Id", "Name", product.CategoryId);
-            return View(product);
-        }
-
-        // ==========================================
-        // 7. XÁC NHẬN XÓA SẢN PHẨM (GET)
-        // ==========================================
-        public IActionResult Delete(int id)
-        {
-            var product = _productRepository.GetById(id);
-
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            return View(product);
-        }
-
-        // ==========================================
-        // 8. XỬ LÝ XÓA SẢN PHẨM (POST)
-        // ==========================================
-        [HttpPost]
-        [ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public IActionResult DeleteConfirmed(int id)
-        {
-            var product = _productRepository.GetById(id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            _productRepository.Delete(id);
+            await _productRepository.UpdateAsync(existing);
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: /Product/Search?searchTerm=Sofa
-        public IActionResult Search(string searchTerm)
+        public async Task<IActionResult> Delete(int id)
         {
-            var products = _productRepository.GetAll() ?? new List<Product>();
+            var p = await _productRepository.GetByIdAsync(id);
+            return p == null ? NotFound() : View(p);
+        }
 
-            if (!string.IsNullOrEmpty(searchTerm))
-            {
-                // Chuyển từ khóa về chữ thường để tìm kiếm không phân biệt hoa thường
-                string keyword = searchTerm.Trim().ToLower();
-                products = products.Where(p => p.Name.ToLower().Contains(keyword) ||
-                                               p.Description.ToLower().Contains(keyword)).ToList();
-            }
-
-            // Truyền từ khóa ngược lại qua ViewBag để hiển thị trên thanh thông báo nếu muốn
-            ViewBag.SearchTerm = searchTerm;
-
-            // Sử dụng lại giao diện Index để hiển thị kết quả tìm kiếm cho đồng bộ thiết kế
-            return View("Index", products);
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            await _productRepository.DeleteAsync(id);
+            return RedirectToAction(nameof(Index));
         }
     }
 }

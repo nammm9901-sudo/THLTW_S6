@@ -1,14 +1,14 @@
 ﻿@model List<NoiThatCaoCap.Models.CartItem>
 
-<div class="container py-5" style="min-height: 60vh;">
-    <h2 class="font-cormorant mb-5 text-center" style="font-size: 2.5rem; letter-spacing: 2px;">GIỎ HÀNG THƯỢNG LƯU</h2>
+<div class="container py-5" style="min-height: 60vh; font-family: 'Montserrat', sans-serif;">
+    <h2 class="text-center mb-5 font-cormorant" style="font-size: 2.5rem; letter-spacing: 2px; font-family: 'Cormorant Garamond', serif;">GIỎ HÀNG THƯỢNG LƯU</h2>
 
     @if (Model == null || !Model.Any())
     {
         <div class="text-center py-5">
             <i class="bi bi-bag-x text-muted fs-1 d-block mb-3"></i>
-            <p class="font-montserrat text-muted" style="letter-spacing: 1px;">Hiện chưa có tuyệt tác nào được chọn trong giỏ hàng của bạn.</p>
-            <a asp-controller="Product" asp-action="Index" class="btn btn-dark rounded-0 mt-3 px-4 py-2 font-montserrat text-uppercase" style="font-size: 11px; letter-spacing: 2px;">Khám Phá Bộ Sưu Tập</a>
+            <p class="text-muted">Giỏ hàng quý tộc của bạn hiện đang trống rỗng.</p>
+            <a asp-controller="Product" asp-action="Index" class="btn btn-dark rounded-0 mt-3 px-4 py-2 text-uppercase" style="font-size: 11px; letter-spacing: 2px;">Khám Phá Cửa Hàng</a>
         </div>
     }
     else
@@ -16,14 +16,14 @@
         <div class="row g-5">
             <div class="col-lg-8">
                 <div class="table-responsive">
-                    <table class="table align-middle border-bottom" style="border-color: #eee;">
+                    <table class="table align-middle">
                         <thead>
-                            <tr class="font-montserrat text-uppercase text-muted" style="font-size: 11px; letter-spacing: 1px;">
-                                <th scope="col" colspan="2">Sản phẩm</th>
-                                <th scope="col">Giá bán</th>
-                                <th scope="col" class="text-center">Số lượng</th>
-                                <th scope="col" class="text-end">Tạm tính</th>
-                                <th scope="col"></th>
+                            <tr class="text-uppercase text-muted" style="font-size: 11px; letter-spacing: 1px;">
+                                <th colspan="2">Sản phẩm tuyệt tác</th>
+                                <th>Giá bán</th>
+                                <th class="text-center">Số lượng</th>
+                                <th class="text-end">Tạm tính</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,16 +34,18 @@
                                         <img src="@item.Product.ImageUrl" alt="@item.Product.Name" style="width: 80px; height: 80px; object-fit: cover;" />
                                     </td>
                                     <td>
-                                        <h5 class="font-cormorant fw-bold mb-0" style="font-size: 18px;">@item.Product.Name</h5>
-                                        <small class="text-muted font-montserrat" style="font-size: 10px;">Mã SP: #00@item.Product.Id</small>
+                                        <h5 class="fw-bold mb-0" style="font-size: 16px;">@item.Product.Name</h5>
+                                        <small class="text-muted" style="font-size: 10px;">Mã: #00@item.Product.Id</small>
                                     </td>
-                                    <td class="font-montserrat text-muted" style="font-size: 14px;">@String.Format("{0:N0}", item.Product.Price) VNĐ</td>
-                                    <td class="text-center font-montserrat" style="font-size: 14px;">@item.Quantity</td>
-                                    <td class="text-end font-montserrat fw-bold" style="font-size: 14px; color: #c5a880;">
+                                    <td class="text-muted" style="font-size: 14px;">@String.Format("{0:N0}", item.Product.Price) VNĐ</td>
+                                    <td class="text-center" style="font-size: 14px;">@item.Quantity</td>
+                                    <td class="text-end fw-bold" style="font-size: 14px; color: #C9A961;">
                                         @String.Format("{0:N0}", item.Product.Price * item.Quantity) VNĐ
                                     </td>
                                     <td class="text-end">
-                                        <a asp-action="RemoveFromCart" asp-route-id="@item.Product.Id" class="text-danger" title="Xóa bỏ"><i class="bi bi-x-lg"></i></a>
+                                        <a asp-controller="Cart" asp-action="RemoveFromCart" asp-route-id="@item.Product.Id" class="text-danger">
+                                            <i class="bi bi-x-lg"></i>
+                                        </a>
                                     </td>
                                 </tr>
                             }
@@ -53,23 +55,23 @@
             </div>
 
             <div class="col-lg-4">
-                <div class="p-4 border rounded-0 bg-light">
-                    <h4 class="font-cormorant mb-4" style="letter-spacing: 1px;">TỔNG GIÁ TRỊ ĐƠN HÀNG</h4>
-                    <div class="d-flex justify-content-between mb-3 font-montserrat small">
-                        <span>Tổng tạm tính:</span>
+                <div class="p-4 border bg-light">
+                    <h4 class="mb-4" style="letter-spacing: 1px;">ĐƠN HÀNG CHI TIẾT</h4>
+                    <div class="d-flex justify-content-between mb-3 small">
+                        <span>Tổng giá trị:</span>
                         <span>@String.Format("{0:N0}", Model.Sum(x => x.Product.Price * x.Quantity)) VNĐ</span>
                     </div>
-                    <div class="d-flex justify-content-between mb-4 font-montserrat small">
-                        <span>Giao hàng toàn quốc:</span>
-                        <span class="text-success fw-bold">Miễn phí</span>
+                    <div class="d-flex justify-content-between mb-4 small">
+                        <span>Giao hàng:</span>
+                        <span class="text-success fw-bold">Miễn phí VIP</span>
                     </div>
                     <hr />
-                    <div class="d-flex justify-content-between mb-4 font-montserrat">
+                    <div class="d-flex justify-content-between mb-4">
                         <span class="fw-bold">Thành tiền:</span>
-                        <span class="fw-bold fs-5" style="color: #c5a880;">@String.Format("{0:N0}", Model.Sum(x => x.Product.Price * x.Quantity)) VNĐ</span>
+                        <span class="fw-bold fs-5" style="color: #C9A961;">@String.Format("{0:N0}", Model.Sum(x => x.Product.Price * x.Quantity)) VNĐ</span>
                     </div>
-                    <button class="btn btn-dark w-100 rounded-0 py-3 font-montserrat text-uppercase fw-bold" style="font-size: 12px; letter-spacing: 2px;">
-                        Tiến Hành Thanh Toán <i class="bi bi-credit-card ms-2"></i>
+                    <button class="btn btn-dark w-100 rounded-0 py-3 text-uppercase fw-bold" style="font-size: 12px; letter-spacing: 2px;">
+                        TIẾN HÀNH ĐẶT HÀNG CAO CẤP
                     </button>
                 </div>
             </div>

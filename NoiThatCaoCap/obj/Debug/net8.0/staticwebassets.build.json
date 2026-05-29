@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MjW9QNMq0gLp8wqxRif6HaLN5K49Y3q+YT4zzPILeF4=",
+  "Hash": "g0y5abN4JuWjcl3elKowGZvFfGo9RYaGlypxK1z02Os=",
   "Source": "NoiThatCaoCap",
   "BasePath": "_content/NoiThatCaoCap",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "NoiThatCaoCap\\wwwroot",
       "Source": "NoiThatCaoCap",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "Pattern": "**"
     }
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.23\\staticwebassets\\QuickGrid.razor.js"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\obj\\Debug\\net8.0\\scopedcss\\bundle\\NoiThatCaoCap.styles.css",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\obj\\Debug\\net8.0\\scopedcss\\bundle\\NoiThatCaoCap.styles.css",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Computed",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "NoiThatCaoCap.styles.css",
       "AssetKind": "All",
@@ -71,13 +71,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\obj\\Debug\\net8.0\\scopedcss\\bundle\\NoiThatCaoCap.styles.css"
+      "OriginalItemSpec": "M:\\THLTW_S6\\NoiThatCaoCap\\obj\\Debug\\net8.0\\scopedcss\\bundle\\NoiThatCaoCap.styles.css"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\NoiThatCaoCap.bundle.scp.css",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\NoiThatCaoCap.bundle.scp.css",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Computed",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "NoiThatCaoCap.bundle.scp.css",
       "AssetKind": "All",
@@ -90,13 +90,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\NoiThatCaoCap.bundle.scp.css"
+      "OriginalItemSpec": "M:\\THLTW_S6\\NoiThatCaoCap\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\NoiThatCaoCap.bundle.scp.css"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\css\\site.css",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\css\\site.css",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\favicon.ico",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\favicon.ico",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\images\\bed.jpg",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\bed.jpg",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "images/bed.jpg",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bed.jpg"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\images\\cabinet.jpg",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\cabinet.jpg",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "images/cabinet.jpg",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\images\\cabinet.jpg"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\images\\chair.jpg",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\chair.jpg",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "images/chair.jpg",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\images\\chair.jpg"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\images\\chandelier.jpg",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\chandelier.jpg",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "images/chandelier.jpg",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\images\\chandelier.jpg"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\images\\decor.jpg",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\decor.jpg",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "images/decor.jpg",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\images\\decor.jpg"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\images\\dining.jpg",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\dining.jpg",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "images/dining.jpg",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\images\\dining.jpg"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\images\\lamp.jpg",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\lamp.jpg",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "images/lamp.jpg",
       "AssetKind": "All",
@@ -264,10 +264,67 @@
       "OriginalItemSpec": "wwwroot\\images\\lamp.jpg"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\images\\sofa.jpg",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\products\\6052c4a0-7c85-4cd7-a0e3-b0cd1be72fee_sofa.jpg",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
+      "BasePath": "_content/NoiThatCaoCap",
+      "RelativePath": "images/products/6052c4a0-7c85-4cd7-a0e3-b0cd1be72fee_sofa.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\6052c4a0-7c85-4cd7-a0e3-b0cd1be72fee_sofa.jpg"
+    },
+    {
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\products\\ac087760-cd28-4af8-9cfe-46ef24ac625f_bed.jpg",
+      "SourceId": "NoiThatCaoCap",
+      "SourceType": "Discovered",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
+      "BasePath": "_content/NoiThatCaoCap",
+      "RelativePath": "images/products/ac087760-cd28-4af8-9cfe-46ef24ac625f_bed.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\ac087760-cd28-4af8-9cfe-46ef24ac625f_bed.jpg"
+    },
+    {
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\products\\af2231b1-20d6-43e2-ba9b-11f29aa0757a_bed.jpg",
+      "SourceId": "NoiThatCaoCap",
+      "SourceType": "Discovered",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
+      "BasePath": "_content/NoiThatCaoCap",
+      "RelativePath": "images/products/af2231b1-20d6-43e2-ba9b-11f29aa0757a_bed.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\af2231b1-20d6-43e2-ba9b-11f29aa0757a_bed.jpg"
+    },
+    {
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\sofa.jpg",
+      "SourceId": "NoiThatCaoCap",
+      "SourceType": "Discovered",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "images/sofa.jpg",
       "AssetKind": "All",
@@ -283,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\images\\sofa.jpg"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\images\\teatable.jpg",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\teatable.jpg",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "images/teatable.jpg",
       "AssetKind": "All",
@@ -302,10 +359,10 @@
       "OriginalItemSpec": "wwwroot\\images\\teatable.jpg"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\images\\wardrobe.jpg",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\images\\wardrobe.jpg",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "images/wardrobe.jpg",
       "AssetKind": "All",
@@ -321,10 +378,10 @@
       "OriginalItemSpec": "wwwroot\\images\\wardrobe.jpg"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\js\\site.js",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\js\\site.js",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -340,10 +397,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -359,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -378,10 +435,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -397,10 +454,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -416,10 +473,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -435,10 +492,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -454,10 +511,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -473,10 +530,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -492,10 +549,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -511,10 +568,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -530,10 +587,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -549,10 +606,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -568,10 +625,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -587,10 +644,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -606,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -625,10 +682,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -644,10 +701,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -663,10 +720,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -682,10 +739,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -701,10 +758,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -720,10 +777,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -739,10 +796,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -758,10 +815,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -777,10 +834,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -796,10 +853,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -815,10 +872,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -834,10 +891,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -853,10 +910,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -872,10 +929,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -891,10 +948,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -910,10 +967,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -929,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -948,10 +1005,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -967,10 +1024,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -986,10 +1043,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -1005,10 +1062,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -1024,10 +1081,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -1043,10 +1100,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -1062,10 +1119,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -1081,10 +1138,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -1100,10 +1157,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -1119,10 +1176,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -1138,10 +1195,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -1157,10 +1214,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -1176,10 +1233,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -1195,10 +1252,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -1214,10 +1271,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -1233,10 +1290,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -1252,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -1271,10 +1328,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -1290,10 +1347,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -1309,10 +1366,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -1328,10 +1385,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1347,10 +1404,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1366,10 +1423,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1385,10 +1442,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1404,10 +1461,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "NoiThatCaoCap",
       "SourceType": "Discovered",
-      "ContentRoot": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\wwwroot\\",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
       "BasePath": "_content/NoiThatCaoCap",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",

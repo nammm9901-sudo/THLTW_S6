@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\NoiThatCaoCap.csproj": {}
+    "M:\\THLTW_S6\\NoiThatCaoCap\\NoiThatCaoCap.csproj": {}
   },
   "projects": {
-    "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\NoiThatCaoCap.csproj": {
+    "M:\\THLTW_S6\\NoiThatCaoCap\\NoiThatCaoCap.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\NoiThatCaoCap.csproj",
+        "projectUniqueName": "M:\\THLTW_S6\\NoiThatCaoCap\\NoiThatCaoCap.csproj",
         "projectName": "NoiThatCaoCap",
-        "projectPath": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\NoiThatCaoCap.csproj",
+        "projectPath": "M:\\THLTW_S6\\NoiThatCaoCap\\NoiThatCaoCap.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "M:\\Webbanhang\\NoiThatCaoCap\\NoiThatCaoCap\\obj\\",
+        "outputPath": "M:\\THLTW_S6\\NoiThatCaoCap\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -47,6 +47,20 @@
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.23, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.27, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.27, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.27, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",

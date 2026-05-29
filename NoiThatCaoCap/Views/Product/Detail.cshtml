@@ -4,71 +4,392 @@
     ViewData["Title"] = Model.Name + " | Chi Tiết Tuyệt Tác";
 }
 
-<div class="container premium-detail-container">
-    <div class="breadcrumbs-nav mb-5">
-        <a asp-action="Index">Cửa Hàng</a> <span>/</span>
-        <a href="#">Danh Mục</a> <span>/</span>
-        <span class="current-product">@Model.Name</span>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<style>
+    :root {
+        --lux-gold: #C9A961;
+        --lux-dark: #0D0D0D;
+        --lux-muted: #6B6B6B;
+        --lux-bg-soft: #F8F5F0;
+        --font-serif: 'Cormorant Garamond', serif;
+        --font-sans: 'Montserrat', sans-serif;
+    }
+
+    body {
+        font-family: var(--font-sans);
+        color: var(--lux-dark);
+        background-color: #ffffff;
+    }
+
+    .serif-heading {
+        font-family: var(--font-serif) !important;
+        font-weight: 600;
+    }
+
+    .btn-back-shop {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--lux-muted);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        transition: color 0.25s ease;
+    }
+
+        .btn-back-shop:hover {
+            color: var(--lux-gold);
+        }
+
+    /* =========================================
+           PURE CSS GALLERY HACK (CỘT TRÁI)
+           ========================================= */
+    .gallery-inputs {
+        display: none;
+    }
+
+    .main-view-box {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1 / 1; /* Hình vuông chuẩn hóa cho cột trái */
+        background-color: #fff;
+        overflow: hidden;
+        border: 1px solid rgba(13, 13, 13, 0.06);
+    }
+
+        .main-view-box img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+    #img1:checked ~ .main-view-box #pic1,
+    #img2:checked ~ .main-view-box #pic2,
+    #img3:checked ~ .main-view-box #pic3,
+    #img4:checked ~ .main-view-box #pic4 {
+        opacity: 1;
+        z-index: 2;
+    }
+
+    .sub-thumb-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        margin-top: 12px;
+    }
+
+    .thumb-label-item {
+        aspect-ratio: 1 / 1;
+        border: 1px solid rgba(13, 13, 13, 0.1);
+        cursor: pointer;
+        overflow: hidden;
+        transition: all 0.2s ease;
+    }
+
+        .thumb-label-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    #img1:checked ~ .sub-thumb-row label[for="img1"],
+    #img2:checked ~ .sub-thumb-row label[for="img2"],
+    #img3:checked ~ .sub-thumb-row label[for="img3"],
+    #img4:checked ~ .sub-thumb-row label[for="img4"] {
+        border: 2px solid var(--lux-gold);
+    }
+
+    /* =========================================
+           THÔNG TIN SẢN PHẨM (CỘT PHẢI)
+           ========================================= */
+    .lux-brand-tag {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: var(--lux-muted);
+        font-weight: 600;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .lux-title {
+        font-size: 40px;
+        margin-bottom: 15px;
+        line-height: 1.2;
+        letter-spacing: 0.5px;
+    }
+
+    .lux-price {
+        font-size: 26px;
+        color: var(--lux-gold);
+        font-weight: 500;
+        margin-bottom: 25px;
+    }
+
+    .lux-desc {
+        color: var(--lux-muted);
+        font-size: 15px;
+        line-height: 1.8;
+        text-align: left;
+        margin-bottom: 35px;
+    }
+
+    /* THÔNG SỐ KỸ THUẬT */
+    .specs-table {
+        margin-bottom: 35px;
+        border-top: 1px solid rgba(13, 13, 13, 0.08);
+    }
+
+    .spec-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 14px 0;
+        font-size: 14px;
+        border-bottom: 1px solid rgba(13, 13, 13, 0.08);
+    }
+
+        .spec-item .label {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--lux-muted);
+            font-size: 12px;
+        }
+
+        .spec-item .value {
+            font-weight: 600;
+        }
+
+    /* =========================================
+           ĐIỀU KHIỂN MUA HÀNG NẰM NGANG
+           ========================================= */
+    .action-group {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 40px;
+        align-items: stretch;
+    }
+
+    .quantity-wrapper {
+        border: 1px solid rgba(13, 13, 13, 0.15);
+        width: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .quantity-wrapper input {
+            border: none;
+            width: 100%;
+            text-align: center;
+            font-weight: 600;
+            background: transparent;
+        }
+
+    .btn-lux-submit {
+        flex-grow: 1;
+        background-color: var(--lux-dark);
+        color: #ffffff;
+        border: none;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+        font-size: 13px;
+        transition: all 0.3s ease;
+    }
+
+        .btn-lux-submit:hover {
+            background-color: var(--lux-gold);
+            color: var(--lux-dark);
+        }
+
+    .btn-lux-wishlist {
+        background-color: transparent;
+        color: var(--lux-dark);
+        border: 1px solid var(--lux-dark);
+        padding: 0 20px;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+        .btn-lux-wishlist:hover {
+            background-color: #f5f5f5;
+        }
+
+    /* =========================================
+           DỊCH VỤ CAM KẾT
+           ========================================= */
+    .badge-box {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        background-color: var(--lux-bg-soft);
+        padding: 15px;
+        border-radius: 2px;
+    }
+
+        .badge-box i {
+            color: var(--lux-gold);
+            font-size: 20px;
+        }
+
+        .badge-box h6 {
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .badge-box p {
+            color: var(--lux-muted);
+            font-size: 11px;
+            margin: 0;
+        }
+</style>
+
+<div class="container py-5">
+
+    <div class="mb-4">
+        <a asp-action="Index" class="btn-back-shop">
+            <i class="bi bi-arrow-left"></i> Back to Shop
+        </a>
     </div>
 
     <div class="row g-5">
+
         <div class="col-lg-6">
-            <div class="detail-img-wrapper">
-                <img src="@Model.ImageUrl" alt="@Model.Name" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=600';" />
+            <input type="radio" name="lux-gallery" id="img1" class="gallery-inputs" checked />
+            <input type="radio" name="lux-gallery" id="img2" class="gallery-inputs" />
+            <input type="radio" name="lux-gallery" id="img3" class="gallery-inputs" />
+            <input type="radio" name="lux-gallery" id="img4" class="gallery-inputs" />
+
+            <div class="main-view-box shadow-sm">
+                <img id="pic1" src="@Model.ImageUrl" alt="@Model.Name" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800';" />
+                <img id="pic2" src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800" alt="View 2" />
+                <img id="pic3" src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800" alt="View 3" />
+                <img id="pic4" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800" alt="View 4" />
+            </div>
+
+            <div class="sub-thumb-row">
+                <label for="img1" class="thumb-label-item">
+                    <img src="@Model.ImageUrl" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=150';" />
+                </label>
+                <label for="img2" class="thumb-label-item">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=150" />
+                </label>
+                <label for="img3" class="thumb-label-item">
+                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=150" />
+                </label>
+                <label for="img4" class="thumb-label-item">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=150" />
+                </label>
             </div>
         </div>
 
-        <div class="col-lg-6 product-specs-aside">
-            <span class="detail-brand-tag text-uppercase">LUXE LIVING CRAFTED</span>
-            <h1 class="detail-title font-cormorant">@Model.Name</h1>
-            <p class="detail-price font-montserrat">@String.Format("{0:N0}", Model.Price) VNĐ</p>
+        <div class="col-lg-6">
+            <span class="lux-brand-tag">Premium Crafted Collection</span>
+            <h1 class="lux-title serif-heading">@Model.Name</h1>
+            <div class="lux-price">@String.Format("{0:N0}", Model.Price) VNĐ</div>
 
-            <div class="detail-divider"></div>
+            <p class="lux-desc">
+                @if (string.IsNullOrEmpty(Model.Description))
+                {
+                    <text>Kiệt tác thiết kế nội thất mang phong cách tối giản nhưng vô cùng tinh tế. Từng đường nét cắt gọt tỉ mỉ kết hợp chất liệu thượng hạng, kiến tạo điểm nhấn vĩnh cửu cho không gian sống của giới thượng lưu.</text>
+                }
+                else
+                {
+                    @Model.Description
+                }
+            </p>
 
-            <p class="detail-description">@Model.Description</p>
-
-            <div class="premium-variant-selector mt-4">
-                <label class="variant-label font-montserrat">PHONG CÁCH CHẾ TÁC</label>
-                <div class="variant-options-group d-flex gap-3 mt-2">
-                    <button class="btn-variant active">Classic Luxe</button>
-                    <button class="btn-variant">Modern Minimalist</button>
+            <div class="specs-table">
+                <div class="spec-item">
+                    <span class="label">Chất liệu</span>
+                    <span class="value">@(string.IsNullOrEmpty(Model.Material) ? "Gỗ tự nhiên nguyên khối" : Model.Material)</span>
+                </div>
+                <div class="spec-item">
+                    <span class="label">Xuất xứ</span>
+                    <span class="value">@(string.IsNullOrEmpty(Model.Origin) ? "Nhập khẩu Châu Âu" : Model.Origin)</span>
+                </div>
+                <div class="spec-item">
+                    <span class="label">Bảo hành</span>
+                    <span class="value">05 Năm Toàn Cầu</span>
+                </div>
+                <div class="spec-item">
+                    <span class="label">Trạng thái</span>
+                    <span class="value text-success"><i class="bi bi-patch-check-fill me-1"></i> Sẵn sàng bàn giao</span>
                 </div>
             </div>
 
-            <div class="detail-actions-group d-flex gap-3 mt-5">
-                <button class="btn btn-add-to-cart font-montserrat flex-grow-1">
-                    THÊM VÀO GIỎ HÀNG <i class="bi bi-bag-plus ms-2"></i>
-                </button>
-                <a asp-action="Index" class="btn btn-back-store" title="Quay lại cửa hàng">
-                    <i class="bi bi-arrow-left"></i>
-                </a>
+            <form asp-controller="Cart" asp-action="AddToCart" method="get">
+                <input type="hidden" name="id" value="@Model.Id" />
+
+                <div class="action-group">
+                    <div class="quantity-wrapper">
+                        <input type="number" name="quantity" value="1" min="1" step="1" required />
+                    </div>
+
+                    <button type="submit" class="btn-lux-submit">
+                        <i class="bi bi-bag-plus me-2"></i> Add to Cart
+                    </button>
+
+                    <button type="submit" asp-controller="Cart" asp-action="AddToWishlist" asp-route-id="@Model.Id" class="btn-lux-wishlist" title="Thêm vào yêu thích">
+                        <i class="bi bi-heart"></i>
+                    </button>
+                </div>
+            </form>
+
+            <div class="row g-3">
+                <div class="col-12 col-sm-6">
+                    <div class="badge-box">
+                        <i class="bi bi-truck"></i>
+                        <div>
+                            <h6>Free Delivery</h6>
+                            <p>Miễn phí vận chuyển toàn quốc</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <div class="badge-box">
+                        <i class="bi bi-shield-check"></i>
+                        <div>
+                            <h6>Secure Payment</h6>
+                            <p>Bảo mật giao dịch tuyệt đối</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="detail-divider mt-5"></div>
-
-            <div class="technical-accordion mt-4">
-                <h3 class="tech-heading font-cormorant"><i class="bi bi-sliders me-2"></i> Thông Số Kỹ Thuật & Tư Vấn</h3>
-                <table class="table table-premium-specs mt-3">
-                    <tbody>
-                        <tr>
-                            <td>Chất liệu cốt lõi</td>
-                            <td class="text-end fw-medium text-dark">@Model.Material</td>
-                        </tr>
-                        <tr>
-                            <td>Nguồn gốc xuất xứ</td>
-                            <td class="text-end fw-medium text-dark">@Model.Origin</td>
-                        </tr>
-                        <tr>
-                            <td>Chế độ bảo hành</td>
-                            <td class="text-end fw-medium text-dark">05 - 10 Năm Toàn Cầu</td>
-                        </tr>
-                        <tr>
-                            <td>Tình trạng vật lý</td>
-                            <td class="text-end fw-medium text-dark text-success"><i class="bi bi-check-circle-fill me-1"></i> Sẵn sàng bàn giao</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
         </div>
     </div>
-</div>
+</div> @if (ViewBag.RelatedProducts != null)
+{
+    <div class="container mt-5 pt-5 border-top">
+        <h2 class="text-center serif-heading mb-5" style="font-size: 32px;">You May Also Like</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-5">
+            @foreach (var item in (List<NoiThatCaoCap.Models.Product>)ViewBag.RelatedProducts)
+            {
+                <div class="col">
+                    <a asp-action="Detail" asp-route-id="@item.Id" class="text-decoration-none text-dark d-block" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                        <div class="mb-3" style="aspect-ratio: 1/1; background: #f8f5f0; overflow: hidden;">
+                            <img src="@item.ImageUrl" style="width:100%; height:100%; object-fit:cover;" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=400';" />
+                        </div>
+                        <h4 class="serif-heading text-truncate mb-1" style="font-size: 18px;">@item.Name</h4>
+                        <div style="color:var(--lux-gold); font-weight:600;">@String.Format("{0:N0}", item.Price) VNĐ</div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+}

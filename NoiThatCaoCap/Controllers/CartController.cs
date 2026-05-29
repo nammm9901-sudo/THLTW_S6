@@ -2,6 +2,9 @@
 using NoiThatCaoCap.Models;
 using NoiThatCaoCap.Repositories;
 using NoiThatCaoCap.Extensions;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace NoiThatCaoCap.Controllers
 {
@@ -17,25 +20,39 @@ namespace NoiThatCaoCap.Controllers
         }
 
         #region XỬ LÝ GIỎ HÀNG (CART)
-        // Hiển thị trang giỏ hàng công phu
+        // 1. Trang hiển thị danh sách giỏ hàng
         public IActionResult Index()
         {
             var cart = HttpContext.Session.GetObjectFromJson<List<CartItem>>(CART_KEY) ?? new List<CartItem>();
             return View(cart);
         }
 
-        // Thêm sản phẩm vào giỏ hàng từ nút trên Thẻ sản phẩm
-        public IActionResult AddToCart(int id, int quantity = 1)
+        // 2. Chức năng thêm vào giỏ hàng (Đã fix đồng bộ tham số 'id' với View)
+        [HttpGet]
+        public async Task<IActionResult> AddToCart(int id, int quantity = 1)
         {
-            var product = _productRepository.GetAll()?.FirstOrDefault(p => p.Id == id);
+            var product = await _productRepository.GetByIdAsync(id);
             if (product == null) return NotFound();
+
+            var cleanProduct = new Product
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Price = product.Price,
+                ImageUrl = product.ImageUrl,
+                Description = product.Description,
+                Material = product.Material,
+                Origin = product.Origin
+                // Không bê thuộc tính Category vào đây để tránh bị lặp cấu trúc
+            };
 
             var cart = HttpContext.Session.GetObjectFromJson<List<CartItem>>(CART_KEY) ?? new List<CartItem>();
             var cartItem = cart.FirstOrDefault(item => item.Product.Id == id);
 
             if (cartItem == null)
             {
-                cart.Add(new CartItem { Product = product, Quantity = quantity });
+                // Dùng bản sao cleanProduct đã được làm sạch để lưu vào giỏ hàng
+                cart.Add(new CartItem { Product = cleanProduct, Quantity = quantity });
             }
             else
             {
@@ -46,7 +63,7 @@ namespace NoiThatCaoCap.Controllers
             return RedirectToAction("Index");
         }
 
-        // Xóa sản phẩm khỏi giỏ hàng
+        // 3. Xóa sản phẩm khỏi giỏ hàng
         public IActionResult RemoveFromCart(int id)
         {
             var cart = HttpContext.Session.GetObjectFromJson<List<CartItem>>(CART_KEY) ?? new List<CartItem>();
@@ -56,32 +73,45 @@ namespace NoiThatCaoCap.Controllers
         }
         #endregion
 
-        #region XỬ LÝ DANH SÁCH YÊU THÍCH (WISHLIST)
-        // Hiển thị trang mục yêu thích
+        #region XỬ LÝ MỤC YÊU THÍCH (WISHLIST)
+        // 1. Trang danh sách yêu thích
         public IActionResult Wishlist()
         {
             var wishlist = HttpContext.Session.GetObjectFromJson<List<Product>>(WISHLIST_KEY) ?? new List<Product>();
             return View(wishlist);
         }
 
-        // Thêm vào mục yêu thích (Nếu tồn tại rồi thì không thêm trùng)
-        public IActionResult AddToWishlist(int id)
+        // 2. Thêm vào danh sách yêu thích
+        [HttpGet]
+        public async Task<IActionResult> AddToWishlist(int id)
         {
-            var product = _productRepository.GetAll()?.FirstOrDefault(p => p.Id == id);
+            var product = await _productRepository.GetByIdAsync(id);
             if (product == null) return NotFound();
+
+            // SỬA LỖI CHO WISHLIST: Tạo bản sao sạch hoàn toàn trước khi đưa vào JSON Session
+            var cleanProduct = new Product
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Price = product.Price,
+                ImageUrl = product.ImageUrl,
+                Description = product.Description,
+                Material = product.Material,
+                Origin = product.Origin
+            };
 
             var wishlist = HttpContext.Session.GetObjectFromJson<List<Product>>(WISHLIST_KEY) ?? new List<Product>();
 
             if (!wishlist.Any(p => p.Id == id))
             {
-                wishlist.Add(product);
+                wishlist.Add(cleanProduct);
             }
 
             HttpContext.Session.SetObjectAsJson(WISHLIST_KEY, wishlist);
             return RedirectToAction("Wishlist");
         }
 
-        // Xóa sản phẩm khỏi danh sách yêu thích
+        // 3. Xóa khỏi danh sách yêu thích
         public IActionResult RemoveFromWishlist(int id)
         {
             var wishlist = HttpContext.Session.GetObjectFromJson<List<Product>>(WISHLIST_KEY) ?? new List<Product>();

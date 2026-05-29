@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NoiThatCaoCap")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+99e70c5bb4a3190f8f202484119a94c1a94f4b6b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+58beec5d465d271ad705f6676c222db372f6bcbe")]
 [assembly: System.Reflection.AssemblyProductAttribute("NoiThatCaoCap")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NoiThatCaoCap")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
