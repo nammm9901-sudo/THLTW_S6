@@ -1,0 +1,371 @@
+@page
+@model LoginModel
+@{
+    ViewData["Title"] = "Đăng Nhập";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+/* ── LUXE LIVING — Login Page ── */
+.luxe-auth-wrapper {
+    min-height: calc(100vh - 160px);
+    display: flex;
+    align-items: stretch;
+    background-color: var(--bg-cream);
+}
+
+/* Left panel — decorative */
+.luxe-auth-panel {
+    flex: 1;
+    background-color: #111111;
+    position: relative;
+    overflow: hidden;
+    display: none;
+}
+@@media (min-width: 992px) {
+    .luxe-auth-panel { display: block; }
+}
+.luxe-auth-panel-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.45;
+}
+.luxe-auth-panel-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, rgba(0,0,0,0.55) 0%, rgba(17,17,17,0.85) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 60px 55px;
+}
+.luxe-panel-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+.luxe-panel-quote em {
+    color: #c5a880;
+    font-style: italic;
+}
+.luxe-panel-sub {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+}
+.luxe-panel-line {
+    width: 40px;
+    height: 1px;
+    background: #c5a880;
+    margin-bottom: 24px;
+}
+
+/* Right panel — form */
+.luxe-auth-form-side {
+    width: 100%;
+    max-width: 540px;
+    padding: 70px 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--bg-cream);
+}
+@@media (max-width: 991px) {
+    .luxe-auth-form-side {
+        max-width: 100%;
+        padding: 50px 30px;
+        margin: 0 auto;
+    }
+}
+
+/* Form header */
+.luxe-auth-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c5a880;
+    margin-bottom: 14px;
+}
+.luxe-auth-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 500;
+    color: #111111;
+    line-height: 1.1;
+    margin-bottom: 8px;
+}
+.luxe-auth-subtitle {
+    font-size: 12px;
+    color: #999999;
+    letter-spacing: 0.3px;
+    margin-bottom: 40px;
+}
+.luxe-auth-subtitle a {
+    color: #c5a880;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+.luxe-auth-subtitle a:hover {
+    border-bottom-color: #c5a880;
+}
+
+/* Input fields */
+.luxe-field {
+    margin-bottom: 22px;
+}
+.luxe-field-label {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888888;
+    display: block;
+    margin-bottom: 8px;
+}
+.luxe-field-input {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid rgba(17,17,17,0.1);
+    border-radius: 2px;
+    padding: 14px 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: #111111;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+    box-sizing: border-box;
+}
+.luxe-field-input:focus {
+    border-color: #c5a880;
+    box-shadow: 0 0 0 4px rgba(197, 168, 128, 0.1);
+}
+.luxe-field-error {
+    font-size: 11px;
+    color: #c0392b;
+    margin-top: 5px;
+    letter-spacing: 0.3px;
+}
+
+/* Remember row */
+.luxe-remember-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.luxe-check-label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    cursor: pointer;
+    font-size: 11px;
+    color: #666;
+    letter-spacing: 0.5px;
+}
+.luxe-check-input {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid #cccccc;
+    background: #fff;
+    border-radius: 2px;
+    cursor: pointer;
+    flex-shrink: 0;
+    position: relative;
+    transition: border-color 0.2s;
+}
+.luxe-check-input:checked {
+    background: #c5a880;
+    border-color: #c5a880;
+}
+.luxe-check-input:checked::after {
+    content: '';
+    position: absolute;
+    left: 4px; top: 1px;
+    width: 5px; height: 9px;
+    border: 2px solid #fff;
+    border-top: none; border-left: none;
+    transform: rotate(45deg);
+}
+.luxe-forgot-link {
+    font-size: 11px;
+    color: #999;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.luxe-forgot-link:hover { color: #c5a880; }
+
+/* Submit button */
+.btn-luxe-submit {
+    width: 100%;
+    background: #111111;
+    color: #c5a880;
+    border: 1px solid #111111;
+    padding: 15px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+.btn-luxe-submit:hover {
+    background: #c5a880;
+    color: #ffffff;
+    border-color: #c5a880;
+    box-shadow: 0 8px 25px rgba(197, 168, 128, 0.3);
+}
+
+/* Validation summary */
+.luxe-validation-summary {
+    background: #fff5f5;
+    border: 1px solid #f5c6c6;
+    border-left: 3px solid #c0392b;
+    padding: 12px 16px;
+    border-radius: 2px;
+    margin-bottom: 22px;
+}
+.luxe-validation-summary ul {
+    margin: 0; padding: 0;
+    list-style: none;
+}
+.luxe-validation-summary li,
+.luxe-validation-summary p {
+    font-size: 12px;
+    color: #c0392b;
+    margin: 0;
+}
+
+/* Divider */
+.luxe-divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+.luxe-divider::before,
+.luxe-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(17,17,17,0.08);
+}
+.luxe-divider span {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #bbbbbb;
+    text-transform: uppercase;
+}
+
+/* Bottom register link */
+.luxe-register-prompt {
+    text-align: center;
+    margin-top: 28px;
+    font-size: 12px;
+    color: #999;
+}
+.luxe-register-prompt a {
+    color: #111111;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #111;
+    transition: color 0.2s, border-color 0.2s;
+}
+.luxe-register-prompt a:hover {
+    color: #c5a880;
+    border-bottom-color: #c5a880;
+}
+</style>
+
+<div class="luxe-auth-wrapper">
+
+    @* ── LEFT: Decorative Panel ── *@
+    <div class="luxe-auth-panel">
+        <img src="~/images/sofa.jpg" alt="Nội thất cao cấp" class="luxe-auth-panel-img" />
+        <div class="luxe-auth-panel-overlay">
+            <div class="luxe-panel-line"></div>
+            <p class="luxe-panel-quote">Không gian sống<br/>xứng tầm <em>đẳng cấp</em><br/>của bạn.</p>
+            <p class="luxe-panel-sub">LUXE LIVING — Kiến tạo từ năm 2010</p>
+        </div>
+    </div>
+
+    @* ── RIGHT: Form ── *@
+    <div class="luxe-auth-form-side">
+
+        <p class="luxe-auth-eyebrow">Chào mừng trở lại</p>
+        <h1 class="luxe-auth-title">Đăng<br/>Nhập</h1>
+        <p class="luxe-auth-subtitle">
+            Chưa có tài khoản?
+            <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Tạo tài khoản ngay</a>
+        </p>
+
+        <form id="account" method="post">
+
+            @* Validation Summary *@
+            <div asp-validation-summary="ModelOnly" class="luxe-validation-summary" role="alert"></div>
+
+            @* Email *@
+            <div class="luxe-field">
+                <label asp-for="Input.Email" class="luxe-field-label">Địa chỉ Email</label>
+                <input asp-for="Input.Email"
+                       class="luxe-field-input"
+                       autocomplete="username"
+                       aria-required="true"
+                       placeholder="email@example.com" />
+                <span asp-validation-for="Input.Email" class="luxe-field-error"></span>
+            </div>
+
+            @* Password *@
+            <div class="luxe-field">
+                <label asp-for="Input.Password" class="luxe-field-label">Mật khẩu</label>
+                <input asp-for="Input.Password"
+                       class="luxe-field-input"
+                       autocomplete="current-password"
+                       aria-required="true"
+                       placeholder="••••••••••" />
+                <span asp-validation-for="Input.Password" class="luxe-field-error"></span>
+            </div>
+
+            @* Remember me + Forgot password *@
+            <div class="luxe-remember-row">
+                <label class="luxe-check-label">
+                    <input asp-for="Input.RememberMe" type="checkbox" class="luxe-check-input" />
+                    Ghi nhớ đăng nhập
+                </label>
+                <a id="forgot-password" asp-page="./ForgotPassword" class="luxe-forgot-link">Quên mật khẩu?</a>
+            </div>
+
+            @* Submit *@
+            <button id="login-submit" type="submit" class="btn-luxe-submit">
+                Đăng Nhập
+            </button>
+
+        </form>
+
+        <div class="luxe-divider"><span>hoặc</span></div>
+
+        <div class="luxe-register-prompt">
+            Chưa có tài khoản?
+            <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Đăng ký thành viên</a>
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

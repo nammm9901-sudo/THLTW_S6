@@ -560,18 +560,25 @@ body {
 /* ==========================================================================
    9. HEADER UTILITIES (SEARCH, WISHLIST, CART)
    ========================================================================== */
-.navbar-utilities {
+/* --- Cấu trúc chung của Header --- */
+.custom-navbar .container-fluid {
     display: flex;
     align-items: center;
 }
 
-/* Định dạng các nút icon thô thành dạng mịn */
+.navbar-utilities {
+    display: flex;
+    align-items: center;
+    gap: 18px; /* Khoảng cách đồng nhất giữa các icon và cụm login */
+}
+
+/* --- Định dạng các nút icon (Hợp nhất từ 2 đoạn cũ) --- */
 .btn-utility-icon {
     background: none;
     border: none;
     color: var(--dark-charcoal, #222222);
-    font-size: 18px; /* Kích thước chuẩn các icon góc phải */
-    padding: 0;
+    font-size: 1.2rem; /* Thống nhất kích thước */
+    padding: 0 5px;
     cursor: pointer;
     text-decoration: none;
     transition: color 0.3s ease, transform 0.2s ease;
@@ -584,38 +591,56 @@ body {
         transform: scale(1.05);
     }
 
-/* Xử lý hiệu ứng thanh tìm kiếm co giãn kiểu Modern Luxury */
+/* --- Cụm Login/Register (Dọc) --- */
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    font-size: 0.8rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+}
+
+    .auth-container a {
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.2s;
+    }
+
+        .auth-container a:hover {
+            color: var(--gold-dim, #c5a880);
+        }
+
+/* --- Search Bar (Modern Luxury) --- */
 .search-premium-form {
     border-bottom: 1px solid transparent;
     transition: border-color 0.4s ease;
 }
 
 .search-input-field {
-    width: 0px; /* Ban đầu ẩn giấu thanh nhập liệu đi */
+    width: 0px;
     opacity: 0;
     border: none;
     outline: none;
     background: transparent;
     font-size: 12px;
     letter-spacing: 1px;
-    padding: 4px 0;
-    color: var(--dark-charcoal, #222222);
+    color: #222;
     transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease;
 }
 
-    /* Khi người dùng hover hoặc click vào form, ô tìm kiếm tự động trượt dài ra */
     .search-premium-form:hover .search-input-field,
     .search-input-field:focus {
-        width: 150px; /* Độ dài vừa vặn khi mở rộng ra */
+        width: 150px;
         opacity: 1;
     }
 
 .search-premium-form:hover,
 .search-premium-form:focus-within {
-    border-color: rgba(0, 0, 0, 0.15); /* Hiện đường gạch chân mờ sang trọng */
+    border-color: rgba(0, 0, 0, 0.15);
 }
 
-/* Badge số đếm đỏ/vàng nhỏ nhắn nằm góc trên icon */
+/* --- Badge --- */
 .badge-premium-counter {
     position: absolute;
     top: -6px;
@@ -623,23 +648,42 @@ body {
     background-color: #eaeaea;
     color: #666666;
     font-size: 8px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
     width: 14px;
     height: 14px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
 }
 
-    /* Khi có sản phẩm bên trong thì chuyển sang màu vàng gold nổi bật */
     .badge-premium-counter.active {
         background-color: var(--gold-dim, #c5a880);
         color: #ffffff;
     }
 
+/* Nút Admin Panel tinh tế */
+.btn-admin-panel {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #222222;
+    border: 1px solid #222222;
+    padding: 5px 12px;
+    border-radius: 2px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+    .btn-admin-panel:hover {
+        background-color: transparent;
+        color: #c5a880; /* Màu Gold của bạn */
+        border-color: #c5a880;
+    }
 /* ==========================================================================
    10. SIDEBAR
    ========================================================================== */
@@ -660,3 +704,151 @@ body {
         color: #c5a880 !important; /* Đổi màu vàng gold sang trọng */
         padding-left: 5px; /* Hiệu ứng nhích nhẹ chữ cực Pro */
     }
+
+/* ==========================================================================
+   11. Admin
+   ========================================================================== */
+/* Định dạng font chữ theo Concept */
+.font-serif {
+    font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+}
+
+.font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.text-gold {
+    color: #C9A961;
+}
+
+/* Container Tổng trang Quản trị */
+.luxe-admin-container {
+    background-color: #F8F5F0; /* Nền trắng kem luxury */
+    min-height: 100vh;
+    color: #0D0D0D;
+}
+
+.luxe-page-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+/* Card bao bọc form */
+.luxe-card-form {
+    background-color: #ffffff;
+    border: 1px solid rgba(13, 13, 13, 0.05);
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+/* Label & Input Cao cấp */
+.luxe-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #666666;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.luxe-input, .luxe-select {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 14px;
+    background-color: #F8F5F0;
+    color: #0D0D0D;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+    .luxe-input:focus, .luxe-select:focus {
+        background-color: #ffffff;
+        border-color: #C9A961; /* Khi focus đổi viền vàng Gold */
+        box-shadow: 0 0 0 4px rgba(201, 169, 97, 0.1);
+    }
+
+/* Các loại nút bấm */
+.btn-luxe-primary {
+    background-color: #0D0D0D;
+    color: #C9A961; /* Chữ vàng trên nền đen quý tộc */
+    border: 1px solid #0D0D0D;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    border-radius: 2px;
+}
+
+    .btn-luxe-primary:hover {
+        background-color: #C9A961;
+        color: #ffffff;
+        border-color: #C9A961;
+    }
+
+.btn-luxe-secondary {
+    background-color: transparent;
+    color: #0D0D0D;
+    border: 1px solid rgba(13, 13, 13, 0.2);
+    padding: 10px 20px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+    .btn-luxe-secondary:hover {
+        border-color: #0D0D0D;
+        background-color: rgba(13, 13, 13, 0.02);
+        color: #0D0D0D;
+    }
+
+/* Căn chỉnh khoảng cách chữ */
+.tracking-wider {
+    letter-spacing: 2px;
+}
+/* Custom trường upload file sang trọng */
+.luxe-file-input {
+    background-color: #F8F5F0 !important;
+    border: 1px dashed rgba(13, 13, 13, 0.2) !important;
+    color: #0D0D0D !important;
+    border-radius: 2px !important;
+    padding: 10px 15px !important;
+}
+
+    .luxe-file-input:focus {
+        border-color: #C9A961 !important;
+        box-shadow: none !important;
+    }
+
+/* Đơn vị tiền tệ nằm bên trong ô nhập liệu */
+.currency-badge {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Giữ cột đặc tính không bị trượt khi cuộn form dài */
+.positional-sticky {
+    position: relative;
+    top: 0;
+}
+
+@media (min-width: 992px) {
+    .positional-sticky {
+        position: sticky;
+        top: 40px;
+    }
+}

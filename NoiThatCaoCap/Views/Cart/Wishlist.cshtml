@@ -1,14 +1,38 @@
-﻿@model List<NoiThatCaoCap.Models.Product>
+@model List<NoiThatCaoCap.Models.Product>
 
-<div class="container py-5" style="min-height: 60vh; font-family: 'Montserrat', sans-serif;">
-    <h2 class="text-center mb-5" style="font-size: 2.5rem; letter-spacing: 2px; font-family: 'Cormorant Garamond', serif;">DANH SÁCH MONG ƯỚC</h2>
+@{
+    ViewData["Title"] = "Danh Sách Yêu Thích - LUXE LIVING";
+}
+
+<div class="container py-5" style="min-height:60vh; font-family:'Montserrat',sans-serif;">
+
+    <h2 class="text-center mb-2 font-cormorant"
+        style="font-size:2.5rem; letter-spacing:2px; font-family:'Cormorant Garamond',serif;">
+        DANH SÁCH YÊU THÍCH
+    </h2>
+    <p class="text-center text-muted mb-5 font-montserrat" style="font-size:12px; letter-spacing:1px;">
+        @(Model?.Count ?? 0) tuyệt tác đã lưu
+    </p>
+
+    @if (TempData["WishMsg"] != null)
+    {
+        <div class="alert alert-info alert-dismissible fade show text-center mb-4"
+             style="font-size:13px; border-radius:0; border:none; background:#f0f4f8;">
+            <i class="bi bi-heart me-2"></i>@TempData["WishMsg"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
 
     @if (Model == null || !Model.Any())
     {
         <div class="text-center py-5">
-            <i class="bi bi-heart text-muted fs-1 d-block mb-3"></i>
-            <p class="text-muted">Bạn chưa lưu giữ kiệt tác nghệ thuật nào.</p>
-            <a asp-controller="Product" asp-action="Index" class="btn btn-outline-dark rounded-0 mt-3 px-4 py-2 text-uppercase" style="font-size: 11px; letter-spacing: 2px;">Xem Sản Phẩm</a>
+            <i class="bi bi-heart text-muted d-block mb-3" style="font-size:3rem;"></i>
+            <p class="text-muted font-montserrat" style="font-size:14px;">Bạn chưa lưu giữ kiệt tác nghệ thuật nào.</p>
+            <a asp-controller="Product" asp-action="Index"
+               class="btn btn-outline-dark rounded-0 mt-3 px-4 py-2 text-uppercase"
+               style="font-size:11px; letter-spacing:2px;">
+                Xem Sản Phẩm
+            </a>
         </div>
     }
     else
@@ -16,26 +40,78 @@
         <div class="row g-4">
             @foreach (var item in Model)
             {
-                <div class="col-lg-3 col-md-6 position-relative">
-                    <a asp-controller="Cart" asp-action="RemoveFromWishlist" asp-route-id="@item.Id" class="position-absolute btn btn-sm bg-white text-danger shadow-sm rounded-circle" style="top: 15px; right: 25px; z-index: 5; padding: 4px 8px;">
-                        <i class="bi bi-x-lg" style="font-size: 10px;"></i>
-                    </a>
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="border bg-white h-100 d-flex flex-column" style="position:relative; transition:box-shadow .2s;"
+                         onmouseenter="this.style.boxShadow='0 8px 32px rgba(0,0,0,.12)'"
+                         onmouseleave="this.style.boxShadow='none'">
 
-                    <div class="border p-2 bg-white text-center">
-                        <div style="height: 240px; overflow: hidden;">
-                            <img src="@item.ImageUrl" alt="@item.Name" style="width: 100%; height: 100%; object-fit: cover;" />
-                        </div>
-                        <div class="p-3">
-                            <h4 style="font-size: 18px; font-family: 'Cormorant Garamond', serif;" class="text-truncate">@item.Name</h4>
-                            <p class="small mb-3" style="color: #C9A961; font-weight:600;">@String.Format("{0:N0}", item.Price) VNĐ</p>
+                        <!-- Nút xóa -->
+                        <a asp-action="RemoveFromWishlist" asp-route-id="@item.Id"
+                           class="position-absolute btn btn-sm bg-white shadow-sm"
+                           style="top:10px; right:10px; z-index:5; width:30px; height:30px;
+                                  border-radius:50%; padding:0; display:flex; align-items:center; justify-content:center;
+                                  border:1px solid #ddd; color:#999;"
+                           title="Xóa khỏi yêu thích"
+                           onmouseenter="this.style.color='#dc3545'; this.style.borderColor='#dc3545'"
+                           onmouseleave="this.style.color='#999'; this.style.borderColor='#ddd'">
+                            <i class="bi bi-x" style="font-size:14px;"></i>
+                        </a>
 
-                            <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@item.Id" class="btn btn-dark btn-sm rounded-0 w-100 text-uppercase" style="font-size: 10px; letter-spacing: 1px;">
-                                <i class="bi bi-bag-plus me-1"></i> Thêm Vào Giỏ Hàng
+                        <!-- Ảnh sản phẩm -->
+                        <a asp-controller="Product" asp-action="Detail" asp-route-id="@item.Id">
+                            <div style="height:220px; overflow:hidden; background:#f8f5f0;">
+                                <img src="@item.ImageUrl"
+                                     alt="@item.Name"
+                                     style="width:100%; height:100%; object-fit:cover; transition:transform .4s;"
+                                     onmouseenter="this.style.transform='scale(1.05)'"
+                                     onmouseleave="this.style.transform='scale(1)'"
+                                     onerror="this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=400'" />
+                            </div>
+                        </a>
+
+                        <!-- Info -->
+                        <div class="p-3 d-flex flex-column flex-grow-1">
+                            <a asp-controller="Product" asp-action="Detail" asp-route-id="@item.Id"
+                               class="text-decoration-none text-dark">
+                                <h5 class="mb-1 text-truncate"
+                                    style="font-family:'Cormorant Garamond',serif; font-size:16px;">
+                                    @item.Name
+                                </h5>
                             </a>
+                            @if (!string.IsNullOrEmpty(item.Material))
+                            {
+                                <small class="text-muted d-block mb-1" style="font-size:10px; letter-spacing:0.5px;">@item.Material</small>
+                            }
+                            <p class="mb-3 fw-bold" style="color:#C9A961; font-size:14px;">
+                                @String.Format("{0:N0}", item.Price) đ
+                            </p>
+
+                            <div class="d-flex gap-2 mt-auto">
+                                <!-- Chuyển vào giỏ hàng -->
+                                <a asp-action="MoveToCart" asp-route-id="@item.Id"
+                                   class="btn btn-dark btn-sm rounded-0 flex-grow-1 text-uppercase"
+                                   style="font-size:10px; letter-spacing:1px; color:#bfa15f; border:1px solid #bfa15f; background:#111;">
+                                    <i class="bi bi-bag-plus me-1"></i>Thêm Vào Giỏ
+                                </a>
+                                <!-- Xem chi tiết -->
+                                <a asp-controller="Product" asp-action="Detail" asp-route-id="@item.Id"
+                                   class="btn btn-outline-secondary btn-sm rounded-0"
+                                   style="font-size:11px;" title="Xem chi tiết">
+                                    <i class="bi bi-eye"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             }
+        </div>
+
+        <div class="text-center mt-5">
+            <a asp-controller="Product" asp-action="Index"
+               class="text-decoration-none text-dark font-montserrat"
+               style="font-size:11px; letter-spacing:1px; text-transform:uppercase; border-bottom:1px solid #333; padding-bottom:2px;">
+                <i class="bi bi-arrow-left me-1"></i>Tiếp Tục Khám Phá
+            </a>
         </div>
     }
 </div>

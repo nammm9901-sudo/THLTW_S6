@@ -17,32 +17,40 @@
 <body>
     <header class="custom-navbar">
         <div class="container-fluid d-flex align-items-center justify-content-between">
-            <a class="navbar-logo" asp-controller="Product" asp-action="Index">LUXE LIVING</a>
+            <a class="navbar-logo" asp-area="" asp-controller="Product" asp-action="Index">LUXE LIVING</a>
 
             <nav class="navbar-menu d-none d-lg-flex">
-                <a asp-controller="Product" asp-action="Index">Tất Cả</a>
-                <a asp-controller="Product" asp-action="Index" asp-route-category="1">Phòng Khách</a>
-                <a asp-controller="Product" asp-action="Index" asp-route-category="2">Phòng Ăn</a>
-                <a asp-controller="Product" asp-action="Index" asp-route-category="3">Phòng Ngủ</a>
+                <a asp-area="" asp-controller="Product" asp-action="Index">Tất Cả</a>
+                <a asp-area="" asp-controller="Product" asp-action="Index" asp-route-category="1">Phòng Khách</a>
+                <a asp-area="" asp-controller="Product" asp-action="Index" asp-route-category="2">Phòng Ăn</a>
+                <a asp-area="" asp-controller="Product" asp-action="Index" asp-route-category="3">Phòng Ngủ</a>
             </nav>
 
-            <div class="navbar-utilities d-flex align-items-center gap-4">
+            <div class="navbar-utilities d-flex align-items-center gap-3">
 
-                <form asp-controller="Product" asp-action="Search" method="get" class="search-premium-form d-flex align-items-center position-relative">
-                    <input type="text" name="searchTerm" class="search-input-field font-montserrat" placeholder="Tìm tuyệt tác..." value="@ViewBag.SearchTerm" />
+                <form asp-area="" asp-controller="Product" asp-action="Index" method="get" class="search-premium-form d-flex align-items-center position-relative">
+                    <input type="text" name="search" class="search-input-field font-montserrat" placeholder="Tìm tuyệt tác..." value="@ViewBag.SearchTerm" autocomplete="off" />
                     <button type="submit" class="btn-utility-icon" title="Tìm kiếm">
                         <i class="bi bi-search"></i>
                     </button>
                 </form>
 
-                <a asp-controller="Cart" asp-action="Wishlist" class="btn-utility-icon position-relative" title="Danh sách yêu thích">
-                    <i class="bi bi-heart"></i> <span class="badge-premium-counter">0</span>
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    <a asp-area="Admin" asp-controller="Product" asp-action="Index" class="btn-admin-panel" title="Hệ thống quản trị">
+                        <i class="bi bi-shield-lock me-1"></i> Admin
+                    </a>
+                }
+
+                <partial name="_LoginPartial" />
+
+                <a asp-area="" asp-controller="Cart" asp-action="Wishlist" class="btn-utility-icon position-relative" title="Danh sách yêu thích">
+                    <i class="bi bi-heart"></i>
                 </a>
 
-                <a asp-controller="Cart" asp-action="Index" class="btn-utility-icon position-relative" title="Giỏ hàng của bạn">
+                <a asp-area="" asp-controller="Cart" asp-action="Index" class="btn-utility-icon position-relative" title="Giỏ hàng của bạn">
                     <i class="bi bi-bag"></i> <span class="badge-premium-counter active">1</span>
                 </a>
-
             </div>
         </div>
     </header>

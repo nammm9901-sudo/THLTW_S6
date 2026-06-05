@@ -8,7 +8,7 @@ namespace NoiThatCaoCap.Models
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
 
-        [Range(0.01, 10000000000.00)]
+        [Range(1, 10000000000.00)]
         [Column(TypeName = "decimal(18,2)")]
         public decimal Price { get; set; }
         public string? Description { get; set; }

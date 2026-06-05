@@ -1,0 +1,208 @@
+@page
+@model LogoutModel
+@{
+    ViewData["Title"] = "Đăng Xuất";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+.luxe-logout-page {
+    min-height: calc(100vh - 160px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-cream);
+    padding: 60px 20px;
+}
+
+.luxe-logout-card {
+    text-align: center;
+    max-width: 460px;
+    width: 100%;
+}
+
+.luxe-logout-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #f4efea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 28px;
+    border: 1px solid rgba(197, 168, 128, 0.25);
+}
+
+.luxe-logout-icon i {
+    font-size: 28px;
+    color: #c5a880;
+}
+
+.luxe-logout-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c5a880;
+    margin-bottom: 14px;
+}
+
+.luxe-logout-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 500;
+    color: #111111;
+    line-height: 1.15;
+    margin-bottom: 12px;
+}
+
+.luxe-logout-message {
+    font-size: 13px;
+    color: #888888;
+    line-height: 1.8;
+    margin-bottom: 36px;
+    letter-spacing: 0.3px;
+}
+
+.luxe-logout-divider {
+    width: 40px;
+    height: 1px;
+    background: #c5a880;
+    margin: 0 auto 36px;
+}
+
+.luxe-logout-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+.btn-luxe-return {
+    display: inline-block;
+    background: #111111;
+    color: #c5a880;
+    border: 1px solid #111111;
+    padding: 14px 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.btn-luxe-return:hover {
+    background: #c5a880;
+    color: #ffffff;
+    border-color: #c5a880;
+    box-shadow: 0 8px 25px rgba(197, 168, 128, 0.3);
+}
+
+.btn-luxe-login-again {
+    display: inline-block;
+    background: transparent;
+    color: #111111;
+    border: 1px solid rgba(17,17,17,0.2);
+    padding: 14px 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.btn-luxe-login-again:hover {
+    border-color: #111111;
+    background: rgba(17,17,17,0.03);
+    color: #111111;
+}
+
+/* Confirm logout form (nếu user chưa logout) */
+.luxe-logout-confirm {
+    text-align: center;
+}
+.luxe-logout-confirm p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 24px;
+}
+.btn-luxe-confirm-logout {
+    background: #c0392b;
+    color: #ffffff;
+    border: none;
+    padding: 14px 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 2px;
+}
+.btn-luxe-confirm-logout:hover {
+    background: #a93226;
+    box-shadow: 0 8px 20px rgba(192, 57, 43, 0.25);
+}
+</style>
+
+<div class="luxe-logout-page">
+    <div class="luxe-logout-card">
+
+        <div class="luxe-logout-icon">
+            <i class="bi bi-door-open"></i>
+        </div>
+
+        @if (User.Identity?.IsAuthenticated ?? false)
+        {
+            @* User chưa logout — hiện nút xác nhận *@
+            <p class="luxe-logout-eyebrow">Xác nhận</p>
+            <h1 class="luxe-logout-title">Đăng Xuất?</h1>
+            <div class="luxe-logout-divider"></div>
+            <div class="luxe-logout-confirm">
+                <p>Bạn có chắc muốn kết thúc phiên làm việc này không?</p>
+                <form asp-area="Identity"
+                      asp-page="/Account/Logout"
+                      asp-route-returnUrl="@Url.Action("Index", "Product", new { area = "" })"
+                      method="post">
+                    <button type="submit" class="btn-luxe-confirm-logout">
+                        Xác nhận đăng xuất
+                    </button>
+                </form>
+            </div>
+        }
+        else
+        {
+            @* Đã logout thành công *@
+            <p class="luxe-logout-eyebrow">Tạm biệt</p>
+            <h1 class="luxe-logout-title">Đã Đăng<br/>Xuất</h1>
+            <div class="luxe-logout-divider"></div>
+            <p class="luxe-logout-message">
+                Cảm ơn bạn đã ghé thăm LUXE LIVING.<br/>
+                Hẹn gặp lại bạn trong lần tiếp theo.
+            </p>
+            <div class="luxe-logout-actions">
+                <a asp-area="" asp-controller="Product" asp-action="Index" class="btn-luxe-return">
+                    Khám phá bộ sưu tập
+                </a>
+                <a asp-area="Identity" asp-page="/Account/Login" class="btn-luxe-login-again">
+                    Đăng nhập lại
+                </a>
+            </div>
+        }
+
+    </div>
+</div>
+

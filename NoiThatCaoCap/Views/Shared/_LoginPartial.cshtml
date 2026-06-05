@@ -1,0 +1,414 @@
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@* =====================================================
+   LUXE LIVING — _LoginPartial.cshtml
+   Đặt component này trong <header> / navbar của _Layout
+   ===================================================== *@
+
+@if (SignInManager.IsSignedIn(User))
+{
+    @* ── LOGGED IN: User avatar + dropdown ── *@
+    <div class="ll-user" id="llUser">
+
+        <button class="ll-user__trigger" id="llTrigger"
+                aria-haspopup="true" aria-expanded="false"
+                aria-label="Tài khoản của @UserManager.GetUserName(User)">
+            <span class="ll-user__avatar">
+                @{ var name = UserManager.GetUserName(User) ?? "U"; }
+                @name[0].ToString().ToUpper()
+            </span>
+            <span class="ll-user__name">@name</span>
+            <span class="ll-user__caret" aria-hidden="true">▾</span>
+        </button>
+
+        <div class="ll-user__dropdown" id="llDropdown" role="menu">
+            <div class="ll-user__header">
+                <div class="ll-user__avatar ll-user__avatar--lg">
+                    @name[0].ToString().ToUpper()
+                </div>
+                <div>
+                    <p class="ll-user__hello">Xin chào,</p>
+                    <p class="ll-user__fullname">@name</p>
+                </div>
+            </div>
+
+            <div class="ll-user__divider"></div>
+
+            <ul class="ll-user__menu" role="none">
+                <li role="none">
+                    <a class="ll-user__item" role="menuitem"
+                       asp-area="Identity" asp-page="/Account/Manage/Index">
+                        <span class="ll-user__icon">👤</span>
+                        <span>Hồ Sơ Cá Nhân</span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a class="ll-user__item" role="menuitem"
+                       asp-controller="Cart" asp-action="Index">
+                        <span class="ll-user__icon">📦</span>
+                        <span>Đơn Hàng Của Tôi</span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a class="ll-user__item" role="menuitem"
+                       asp-controller="Cart" asp-action="Wishlist">
+                        <span class="ll-user__icon">♡</span>
+                        <span>Danh Sách Yêu Thích</span>
+                    </a>
+                </li>
+                <li role="none">
+                    <a class="ll-user__item" role="menuitem"
+                       asp-controller="Booking" asp-action="MyBookings">
+                        <span class="ll-user__icon">🏛️</span>
+                        <span>Lịch Hẹn Showroom</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="ll-user__divider"></div>
+
+            <form id="logoutForm"
+                  asp-area="Identity"
+                  asp-page="/Account/Logout"
+                  asp-route-returnUrl="@Url.Action("Index", "Product", new { area = "" })">
+                <button type="submit" class="ll-user__logout" role="menuitem">
+                    <span class="ll-user__icon">↩</span>
+                    <span>Đăng Xuất</span>
+                </button>
+            </form>
+        </div>
+    </div>
+}
+else
+{
+    @* ── GUEST: Register + Login buttons ── *@
+    <div class="ll-auth">
+        <a class="ll-auth__register"
+           id="register"
+           asp-area="Identity"
+           asp-page="/Account/Register">
+            Đăng Ký
+        </a>
+        <a class="ll-auth__login"
+           id="login"
+           asp-area="Identity"
+           asp-page="/Account/Login">
+            Đăng Nhập
+        </a>
+    </div>
+}
+
+@* =====================================================
+   STYLES — nhúng trực tiếp trong partial để self-contained.
+   Trong production có thể chuyển sang site.css / luxe.css
+   ===================================================== *@
+<style>
+/* ── Shared tokens (nếu _Layout đã khai báo thì xóa phần này) ── */
+:root {
+  --ll-gold:        #C9A961;
+  --ll-gold-light:  #E8D5A3;
+  --ll-gold-dim:    rgba(201, 169, 97, 0.15);
+  --ll-gold-border: rgba(201, 169, 97, 0.22);
+  --ll-black:       #0D0D0D;
+  --ll-black-2:     #161616;
+  --ll-black-3:     #1e1e1e;
+  --ll-cream:       #F8F5F0;
+  --ll-muted:       rgba(248, 245, 240, 0.42);
+  --ll-sans:        'Montserrat', system-ui, sans-serif;
+  --ll-serif:       'Playfair Display', Georgia, serif;
+}
+
+/* ── Base reset for partial ── */
+.ll-user,
+.ll-auth {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--ll-sans);
+}
+
+/* ════════════════════════════════
+   LOGGED-IN: Trigger button
+   ════════════════════════════════ */
+.ll-user {
+  position: relative;
+}
+
+.ll-user__trigger {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: transparent;
+  border: 1px solid var(--ll-gold-border);
+  padding: 7px 14px 7px 8px;
+  color: var(--ll-cream);
+  cursor: pointer;
+  font-family: var(--ll-sans);
+  transition: border-color .25s, background .25s;
+  outline: none;
+}
+.ll-user__trigger:hover,
+.ll-user__trigger[aria-expanded="true"] {
+  border-color: var(--ll-gold);
+  background: var(--ll-gold-dim);
+}
+
+/* Avatar circle */
+.ll-user__avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--ll-gold);
+  color: var(--ll-black);
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0;
+}
+.ll-user__avatar--lg {
+  width: 44px;
+  height: 44px;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.ll-user__name {
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: var(--ll-cream);
+  max-width: 110px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ll-user__caret {
+  font-size: 10px;
+  color: var(--ll-gold);
+  transition: transform .25s;
+  line-height: 1;
+}
+.ll-user__trigger[aria-expanded="true"] .ll-user__caret {
+  transform: rotate(180deg);
+}
+
+/* ════════════════════════════════
+   DROPDOWN PANEL
+   ════════════════════════════════ */
+.ll-user__dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 240px;
+  background: var(--ll-black-2);
+  border: 1px solid var(--ll-gold-border);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .7);
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: opacity .25s, transform .25s;
+  z-index: 9999;
+}
+.ll-user__dropdown.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Dropdown header */
+.ll-user__header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  background: var(--ll-black-3);
+}
+.ll-user__hello {
+  font-size: 9.5px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ll-muted);
+  margin-bottom: 2px;
+}
+.ll-user__fullname {
+  font-family: var(--ll-serif);
+  font-size: 15px;
+  color: var(--ll-cream);
+  font-weight: 400;
+  max-width: 148px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ll-user__divider {
+  height: 1px;
+  background: var(--ll-gold-border);
+}
+
+/* Menu items */
+.ll-user__menu {
+  list-style: none;
+  padding: 8px 0;
+}
+.ll-user__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 20px;
+  font-size: 11.5px;
+  letter-spacing: .5px;
+  color: var(--ll-muted);
+  text-decoration: none;
+  transition: color .2s, background .2s;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font-family: var(--ll-sans);
+  cursor: pointer;
+}
+.ll-user__item:hover {
+  color: var(--ll-cream);
+  background: rgba(255,255,255,.03);
+}
+.ll-user__item:hover .ll-user__icon {
+  color: var(--ll-gold);
+}
+
+.ll-user__icon {
+  font-size: 14px;
+  width: 18px;
+  text-align: center;
+  flex-shrink: 0;
+  transition: color .2s;
+}
+
+/* Logout button */
+.ll-user__logout {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 20px;
+  width: 100%;
+  font-size: 11.5px;
+  letter-spacing: .5px;
+  color: #e07070;
+  background: none;
+  border: none;
+  font-family: var(--ll-sans);
+  cursor: pointer;
+  transition: color .2s, background .2s;
+  text-align: left;
+}
+.ll-user__logout:hover {
+  color: #f08080;
+  background: rgba(224, 112, 112, .06);
+}
+.ll-user__logout .ll-user__icon {
+  color: inherit;
+}
+
+/* ════════════════════════════════
+   GUEST: Auth buttons
+   ════════════════════════════════ */
+.ll-auth__register {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ll-muted);
+  text-decoration: none;
+  padding: 9px 0;
+  border-bottom: 1px solid transparent;
+  transition: color .25s, border-color .25s;
+}
+.ll-auth__register:hover {
+  color: var(--ll-gold);
+  border-bottom-color: var(--ll-gold);
+}
+
+.ll-auth__login {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ll-black);
+  background: var(--ll-gold);
+  padding: 10px 22px;
+  text-decoration: none;
+  border: 1px solid var(--ll-gold);
+  transition: background .25s, color .25s;
+}
+.ll-auth__login:hover {
+  background: var(--ll-gold-light);
+  border-color: var(--ll-gold-light);
+}
+
+/* ════════════════════════════════
+   MOBILE adjustments
+   ════════════════════════════════ */
+@@media (max-width: 768px) {
+  .ll-user__name { display: none; }
+  .ll-user__trigger { padding: 7px 10px; }
+  .ll-user__dropdown { right: -12px; }
+  .ll-auth__register { display: none; }
+  .ll-auth__login { padding: 9px 18px; font-size: 9.5px; }
+}
+</style>
+
+@* =====================================================
+   JAVASCRIPT — Toggle dropdown + click-outside to close
+   ===================================================== *@
+<script>
+(function () {
+  var trigger  = document.getElementById('llTrigger');
+  var dropdown = document.getElementById('llDropdown');
+  if (!trigger || !dropdown) return;
+
+  function open() {
+    dropdown.classList.add('open');
+    trigger.setAttribute('aria-expanded', 'true');
+  }
+  function close() {
+    dropdown.classList.remove('open');
+    trigger.setAttribute('aria-expanded', 'false');
+  }
+  function toggle() {
+    dropdown.classList.contains('open') ? close() : open();
+  }
+
+  trigger.addEventListener('click', function (e) {
+    e.stopPropagation();
+    toggle();
+  });
+
+  // Close on outside click
+  document.addEventListener('click', function (e) {
+    if (!document.getElementById('llUser').contains(e.target)) close();
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') close();
+  });
+
+  // Keyboard navigation inside dropdown
+  trigger.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    if (e.key === 'ArrowDown') {
+      e.preventDefault(); open();
+      var first = dropdown.querySelector('.ll-user__item, .ll-user__logout');
+      if (first) first.focus();
+    }
+  });
+}());
+</script>

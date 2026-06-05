@@ -1,49 +1,109 @@
-﻿@model List<NoiThatCaoCap.Models.CartItem>
+@model List<NoiThatCaoCap.Models.CartItem>
 
-<div class="container py-5" style="min-height: 60vh; font-family: 'Montserrat', sans-serif;">
-    <h2 class="text-center mb-5 font-cormorant" style="font-size: 2.5rem; letter-spacing: 2px; font-family: 'Cormorant Garamond', serif;">GIỎ HÀNG THƯỢNG LƯU</h2>
+@{
+    ViewData["Title"] = "Giỏ Hàng - LUXE LIVING";
+}
+
+<div class="container py-5" style="min-height:60vh; font-family:'Montserrat',sans-serif;">
+
+    <h2 class="text-center mb-5 font-cormorant"
+        style="font-size:2.5rem; letter-spacing:2px; font-family:'Cormorant Garamond',serif;">
+        GIỎ HÀNG THƯỢNG LƯU
+    </h2>
+
+    @if (TempData["CartMsg"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show text-center mb-4"
+             style="font-size:13px; border-radius:0; border:none; background:#f0f7f0;">
+            <i class="bi bi-check-circle me-2"></i>@TempData["CartMsg"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
 
     @if (Model == null || !Model.Any())
     {
         <div class="text-center py-5">
             <i class="bi bi-bag-x text-muted fs-1 d-block mb-3"></i>
-            <p class="text-muted">Giỏ hàng quý tộc của bạn hiện đang trống rỗng.</p>
-            <a asp-controller="Product" asp-action="Index" class="btn btn-dark rounded-0 mt-3 px-4 py-2 text-uppercase" style="font-size: 11px; letter-spacing: 2px;">Khám Phá Cửa Hàng</a>
+            <p class="text-muted font-montserrat" style="font-size:14px;">Giỏ hàng của bạn hiện đang trống.</p>
+            <a asp-controller="Product" asp-action="Index"
+               class="btn btn-dark rounded-0 mt-3 px-4 py-2 text-uppercase"
+               style="font-size:11px; letter-spacing:2px;">
+                Khám Phá Cửa Hàng
+            </a>
         </div>
     }
     else
     {
         <div class="row g-5">
+            <!-- DANH SÁCH SẢN PHẨM -->
             <div class="col-lg-8">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-muted font-montserrat" style="font-size:12px; letter-spacing:1px;">
+                        @Model.Sum(x => x.Quantity) SẢN PHẨM
+                    </span>
+                    <a asp-action="ClearCart" class="text-danger text-decoration-none"
+                       style="font-size:12px; letter-spacing:0.5px;"
+                       onclick="return confirm('Xóa toàn bộ giỏ hàng?')">
+                        <i class="bi bi-trash me-1"></i>Xóa tất cả
+                    </a>
+                </div>
+
                 <div class="table-responsive">
-                    <table class="table align-middle">
+                    <table class="table align-middle" style="border-collapse:separate; border-spacing:0 8px;">
                         <thead>
-                            <tr class="text-uppercase text-muted" style="font-size: 11px; letter-spacing: 1px;">
-                                <th colspan="2">Sản phẩm tuyệt tác</th>
-                                <th>Giá bán</th>
-                                <th class="text-center">Số lượng</th>
-                                <th class="text-end">Tạm tính</th>
-                                <th></th>
+                            <tr class="text-uppercase text-muted"
+                                style="font-size:10px; letter-spacing:1.5px; border-bottom:1px solid #e0d8cc;">
+                                <th colspan="2" class="pb-3">Sản Phẩm</th>
+                                <th class="pb-3">Đơn Giá</th>
+                                <th class="text-center pb-3">Số Lượng</th>
+                                <th class="text-end pb-3">Tạm Tính</th>
+                                <th class="pb-3"></th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach (var item in Model)
                             {
-                                <tr>
-                                    <td style="width: 100px;">
-                                        <img src="@item.Product.ImageUrl" alt="@item.Product.Name" style="width: 80px; height: 80px; object-fit: cover;" />
+                                <tr style="border-bottom:1px solid #f0ece4;">
+                                    <td style="width:90px; padding:16px 8px 16px 0;">
+                                        <img src="@item.Product.ImageUrl"
+                                             alt="@item.Product.Name"
+                                             style="width:78px; height:78px; object-fit:cover; border-radius:2px;"
+                                             onerror="this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=80'" />
                                     </td>
-                                    <td>
-                                        <h5 class="fw-bold mb-0" style="font-size: 16px;">@item.Product.Name</h5>
-                                        <small class="text-muted" style="font-size: 10px;">Mã: #00@item.Product.Id</small>
+                                    <td style="padding:16px 12px;">
+                                        <a asp-controller="Product" asp-action="Detail" asp-route-id="@item.Product.Id"
+                                           class="text-decoration-none text-dark fw-semibold d-block"
+                                           style="font-family:'Cormorant Garamond',serif; font-size:15px;">
+                                            @item.Product.Name
+                                        </a>
+                                        @if (!string.IsNullOrEmpty(item.Product.Material))
+                                        {
+                                            <small class="text-muted" style="font-size:10px; letter-spacing:0.5px;">@item.Product.Material</small>
+                                        }
                                     </td>
-                                    <td class="text-muted" style="font-size: 14px;">@String.Format("{0:N0}", item.Product.Price) VNĐ</td>
-                                    <td class="text-center" style="font-size: 14px;">@item.Quantity</td>
-                                    <td class="text-end fw-bold" style="font-size: 14px; color: #C9A961;">
-                                        @String.Format("{0:N0}", item.Product.Price * item.Quantity) VNĐ
+                                    <td class="text-muted" style="font-size:13px; white-space:nowrap;">
+                                        @String.Format("{0:N0}", item.Product.Price) đ
                                     </td>
-                                    <td class="text-end">
-                                        <a asp-controller="Cart" asp-action="RemoveFromCart" asp-route-id="@item.Product.Id" class="text-danger">
+                                    <td class="text-center" style="min-width:130px;">
+                                        <form asp-action="UpdateQuantity" method="post" class="d-flex align-items-center justify-content-center gap-1">
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" name="id" value="@item.Product.Id" />
+                                            <button type="submit" name="quantity" value="@(item.Quantity - 1)"
+                                                    class="btn btn-sm btn-outline-secondary rounded-0"
+                                                    style="width:28px; height:28px; padding:0; font-size:14px; line-height:1;">−</button>
+                                            <span class="fw-bold mx-2" style="font-size:14px; min-width:20px; text-align:center;">@item.Quantity</span>
+                                            <button type="submit" name="quantity" value="@(item.Quantity + 1)"
+                                                    class="btn btn-sm btn-outline-secondary rounded-0"
+                                                    style="width:28px; height:28px; padding:0; font-size:14px; line-height:1;">+</button>
+                                        </form>
+                                    </td>
+                                    <td class="text-end fw-bold" style="font-size:14px; color:#C9A961; white-space:nowrap;">
+                                        @String.Format("{0:N0}", item.Product.Price * item.Quantity) đ
+                                    </td>
+                                    <td class="text-end ps-2">
+                                        <a asp-action="RemoveFromCart" asp-route-id="@item.Product.Id"
+                                           class="text-muted" style="font-size:13px;" title="Xóa"
+                                           onclick="return confirm('Xóa sản phẩm này khỏi giỏ?')">
                                             <i class="bi bi-x-lg"></i>
                                         </a>
                                     </td>
@@ -52,27 +112,51 @@
                         </tbody>
                     </table>
                 </div>
+
+                <div class="mt-3">
+                    <a asp-controller="Product" asp-action="Index"
+                       class="text-decoration-none text-dark font-montserrat"
+                       style="font-size:11px; letter-spacing:1px; text-transform:uppercase; border-bottom:1px solid #333; padding-bottom:2px;">
+                        <i class="bi bi-arrow-left me-1"></i>Tiếp Tục Mua Sắm
+                    </a>
+                </div>
             </div>
 
+            <!-- TỔNG ĐƠN HÀNG -->
             <div class="col-lg-4">
-                <div class="p-4 border bg-light">
-                    <h4 class="mb-4" style="letter-spacing: 1px;">ĐƠN HÀNG CHI TIẾT</h4>
-                    <div class="d-flex justify-content-between mb-3 small">
-                        <span>Tổng giá trị:</span>
-                        <span>@String.Format("{0:N0}", Model.Sum(x => x.Product.Price * x.Quantity)) VNĐ</span>
+                <div class="p-4" style="background:#faf9f7; border:1px solid #e0d8cc;">
+                    <h5 class="font-cormorant mb-4"
+                        style="font-size:1.4rem; letter-spacing:1px; border-bottom:1px solid #e0d8cc; padding-bottom:12px;">
+                        Chi Tiết Đơn Hàng
+                    </h5>
+
+                    <div class="d-flex justify-content-between mb-2 font-montserrat" style="font-size:12px;">
+                        <span class="text-muted">Tạm tính (@Model.Sum(x => x.Quantity) SP)</span>
+                        <span>@String.Format("{0:N0}", Model.Sum(x => x.Product.Price * x.Quantity)) đ</span>
                     </div>
-                    <div class="d-flex justify-content-between mb-4 small">
-                        <span>Giao hàng:</span>
+                    <div class="d-flex justify-content-between mb-4 font-montserrat" style="font-size:12px;">
+                        <span class="text-muted">Vận chuyển</span>
                         <span class="text-success fw-bold">Miễn phí VIP</span>
                     </div>
-                    <hr />
+
+                    <hr style="border-color:#e0d8cc;" />
+
                     <div class="d-flex justify-content-between mb-4">
-                        <span class="fw-bold">Thành tiền:</span>
-                        <span class="fw-bold fs-5" style="color: #C9A961;">@String.Format("{0:N0}", Model.Sum(x => x.Product.Price * x.Quantity)) VNĐ</span>
+                        <span class="fw-bold font-montserrat" style="font-size:13px; letter-spacing:0.5px;">THÀNH TIỀN</span>
+                        <span class="fw-bold fs-5" style="color:#C9A961; font-family:'Cormorant Garamond',serif;">
+                            @String.Format("{0:N0}", Model.Sum(x => x.Product.Price * x.Quantity)) đ
+                        </span>
                     </div>
-                    <button class="btn btn-dark w-100 rounded-0 py-3 text-uppercase fw-bold" style="font-size: 12px; letter-spacing: 2px;">
-                        TIẾN HÀNH ĐẶT HÀNG CAO CẤP
+
+                    <button class="btn btn-dark w-100 rounded-0 py-3 text-uppercase fw-bold font-montserrat"
+                            style="font-size:11px; letter-spacing:2.5px; background:#111; border:1px solid #bfa15f; color:#bfa15f;">
+                        <i class="bi bi-bag-check me-2"></i>Tiến Hành Đặt Hàng
                     </button>
+
+                    <div class="d-flex justify-content-center gap-3 mt-3">
+                        <i class="bi bi-lock-fill text-muted" style="font-size:11px;"></i>
+                        <small class="text-muted font-montserrat" style="font-size:10px; letter-spacing:0.5px;">Thanh toán bảo mật 100%</small>
+                    </div>
                 </div>
             </div>
         </div>

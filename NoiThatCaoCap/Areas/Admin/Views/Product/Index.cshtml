@@ -1,0 +1,110 @@
+﻿@model NoiThatCaoCap.Models.Product
+
+@{
+    ViewData["Title"] = "Khởi Tạo Tuyệt Tác - LUXE LIVING Admin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="luxe-admin-container">
+    <div class="container py-5">
+
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <div>
+                <span class="text-uppercase tracking-wider text-muted font-montserrat small d-block mb-2">Hệ thống Quản trị Dashboard</span>
+                <h1 class="luxe-page-title font-serif">Khởi Tạo Tuyệt Tác</h1>
+            </div>
+            <div>
+                <a asp-action="Index" class="btn-luxe-secondary font-montserrat">
+                    <i class="bi bi-arrow-left me-2"></i> Trở về danh sách
+                </a>
+            </div>
+        </div>
+
+        <form asp-action="Create" method="post" enctype="multipart/form-data" class="luxe-form-premium">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-4"></div>
+
+            <div class="row g-5">
+                <div class="col-lg-7">
+                    <div class="luxe-card-form p-4 mb-4">
+                        <h5 class="font-serif border-bottom pb-3 mb-4 text-gold">Thông Tin Bản Thể</h5>
+
+                        <div class="mb-4">
+                            <label asp-for="Name" class="luxe-label font-montserrat">Tên Tuyệt Tác Nội Thất</label>
+                            <input asp-for="Name" class="luxe-input font-montserrat" placeholder="Ví dụ: Sofa Da Bò Ý Royal Elite" />
+                            <span asp-validation-for="Name" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="Description" class="luxe-label font-montserrat">Câu Chuyện & Ý Tưởng Thiết Kế</label>
+                            <textarea asp-for="Description" class="luxe-input font-montserrat" rows="8" placeholder="Mô tả chi tiết về nguồn cảm hứng nghệ thuật, thông số kích thước hình học hoặc ý đồ sắp đặt không gian của kiến trúc sư..."></textarea>
+                            <span asp-validation-for="Description" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="luxe-card-form p-4">
+                        <h5 class="font-serif border-bottom pb-3 mb-3 text-gold">Bộ Sưu Tập Hình Ảnh Premium</h5>
+                        <p class="text-muted font-montserrat small mb-4">Hỗ trợ tải lên nhiều hình ảnh độ phân giải cao cùng lúc để làm slide trình chiếu góc cạnh sản phẩm.</p>
+
+                        <div class="mb-4">
+                            <label asp-for="ImageUrl" class="luxe-label font-montserrat">Ảnh Hiển Thị Đại Diện (Thumbnail)</label>
+                            <input type="file" name="mainImage" class="form-control luxe-file-input font-montserrat" accept="image/*" />
+                            <span asp-validation-for="ImageUrl" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="luxe-label font-montserrat">Các Góc Cạnh Ảnh Chi Tiết (Album)</label>
+                            <input type="file" name="detailImages" class="form-control luxe-file-input font-montserrat" accept="image/*" multiple />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="luxe-card-form p-4 positional-sticky">
+                        <h5 class="font-serif border-bottom pb-3 mb-4 text-gold">Đặc Tính Định Danh</h5>
+
+                        <div class="mb-4">
+                            <label asp-for="Price" class="luxe-label font-montserrat">Giá Trị Sở Hữu (VNĐ)</label>
+                            <div class="position-relative">
+                                <input asp-for="Price" type="number" step="0.01" class="luxe-input font-montserrat pe-5" placeholder="0.00" />
+                                <span class="currency-badge font-montserrat text-muted">đ</span>
+                            </div>
+                            <span asp-validation-for="Price" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="CategoryId" class="luxe-label font-montserrat">Không Gian Trưng Bày Độc Bản</label>
+                            <select asp-for="CategoryId" class="luxe-select font-montserrat" asp-items="ViewBag.CategoryId">
+                                <option value="" disabled selected>-- Lựa chọn không gian thiết kế --</option>
+                            </select>
+                            <span asp-validation-for="CategoryId" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="Material" class="luxe-label font-montserrat">Chất Liệu Chế Tác Thượng Hạng</label>
+                            <input asp-for="Material" class="luxe-input font-montserrat" placeholder="Ví dụ: Gỗ Óc Chó Bắc Mỹ, Da Bò Thô Nubuck..." />
+                            <span asp-validation-for="Material" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-5">
+                            <label asp-for="Origin" class="luxe-label font-montserrat">Nơi Khởi Nguồn Biểu Tượng (Xuất Xứ)</label>
+                            <input asp-for="Origin" class="luxe-input font-montserrat" placeholder="Ví dụ: Chế tác thủ công từ Milano, Ý" />
+                            <span asp-validation-for="Origin" class="text-danger small"></span>
+                        </div>
+
+                        <div class="pt-2">
+                            <button type="submit" class="btn-luxe-primary w-100 font-montserrat py-3">
+                                <i class="bi bi-bookmark-plus me-2"></i> Lưu Vào Bộ Sưu Tập
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

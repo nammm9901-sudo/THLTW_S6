@@ -116,123 +116,125 @@
 
         <div class="row">
 
-            <!-- SIDEBAR -->
+            <!-- SIDEBAR LỌC -->
             <aside class="col-lg-3 col-md-4 mb-5 pe-lg-4">
 
                 <form asp-controller="Product"
                       asp-action="Index"
                       method="get"
-                      class="sidebar-filter-wrapper p-4 bg-light"
-                      style="border-radius:8px;">
+                      id="filterForm">
 
-                    <h4 class="mb-4">
-                        Lọc Sản Phẩm
-                    </h4>
+                    @if (!string.IsNullOrEmpty(ViewBag.SearchTerm))
+                    {
+                        <input type="hidden" name="search" value="@ViewBag.SearchTerm" />
+                    }
 
-                    <!-- DANH MỤC -->
-                    <div class="mb-4">
+                    <div class="sidebar-filter-wrapper p-4" style="background:#faf9f7; border:1px solid #e8e0d4; border-radius:8px; position:sticky; top:90px;">
 
-                        <h6>Danh mục</h6>
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="font-cormorant mb-0" style="font-size:1.3rem; letter-spacing:1px;">Lọc Sản Phẩm</h5>
+                            @{
+                                bool hasFilter = (ViewBag.SelectedCategories?.Count > 0)
+                                             || (ViewBag.SelectedPrices?.Count > 0)
+                                             || (ViewBag.SelectedMaterials?.Count > 0);
+                            }
+                            @if (hasFilter)
+                            {
+                                <a asp-controller="Product" asp-action="Index"
+                                   asp-route-search="@ViewBag.SearchTerm"
+                                   class="text-decoration-none"
+                                   style="font-size:11px; color:#999; letter-spacing:0.5px;">
+                                    <i class="bi bi-x-circle me-1"></i>Xóa lọc
+                                </a>
+                            }
+                        </div>
 
-                        @foreach (var category in ViewBag.Categories)
-                        {
-                            <div>
+                        <!-- DANH MỤC -->
+                        <div class="mb-4">
+                            <h6 class="font-montserrat text-uppercase mb-3"
+                                style="font-size:10px; letter-spacing:2px; color:#888; border-bottom:1px solid #e0d8cc; padding-bottom:8px;">
+                                Danh Mục
+                            </h6>
+                            @foreach (var category in ViewBag.Categories)
+                            {
+                                <div class="filter-check-item mb-2 d-flex align-items-center gap-2">
+                                    <input type="checkbox"
+                                           class="filter-checkbox"
+                                           name="categories"
+                                           value="@category.Id"
+                                           id="cat_@category.Id"
+                                           @(((List<int>)ViewBag.SelectedCategories).Contains((int)category.Id) ? "checked" : "") />
+                                    <label for="cat_@category.Id"
+                                           class="font-montserrat mb-0 user-select-none"
+                                           style="font-size:12px; cursor:pointer; color:#444;">
+                                        @category.Name
+                                        <small class="text-muted ms-1">(@(category.Products?.Count ?? 0))</small>
+                                    </label>
+                                </div>
+                            }
+                        </div>
 
-                                <input type="checkbox"
-                                       name="categories"
-                                       value="@category.Id"
-                                @(ViewBag.SelectedCategories.Contains(category.Id) ? "checked" : "") />
+                        <!-- MỨC GIÁ -->
+                        <div class="mb-4">
+                            <h6 class="font-montserrat text-uppercase mb-3"
+                                style="font-size:10px; letter-spacing:2px; color:#888; border-bottom:1px solid #e0d8cc; padding-bottom:8px;">
+                                Mức Giá
+                            </h6>
+                            @{
+                                var priceOptions = new[] {
+                                    ("Under20",  "Dưới 20 triệu"),
+                                    ("20to50",   "20 – 50 triệu"),
+                                    ("50to100",  "50 – 100 triệu"),
+                                    ("Above100", "Trên 100 triệu")
+                                };
+                            }
+                            @foreach (var (val, label) in priceOptions)
+                            {
+                                <div class="filter-check-item mb-2 d-flex align-items-center gap-2">
+                                    <input type="checkbox"
+                                           class="filter-checkbox"
+                                           name="prices"
+                                           value="@val"
+                                           id="price_@val"
+                                           @(((List<string>)ViewBag.SelectedPrices).Contains(val) ? "checked" : "") />
+                                    <label for="price_@val"
+                                           class="font-montserrat mb-0 user-select-none"
+                                           style="font-size:12px; cursor:pointer; color:#444;">@label</label>
+                                </div>
+                            }
+                        </div>
 
-                                @category.Name
+                        <!-- CHẤT LIỆU -->
+                        <div class="mb-4">
+                            <h6 class="font-montserrat text-uppercase mb-3"
+                                style="font-size:10px; letter-spacing:2px; color:#888; border-bottom:1px solid #e0d8cc; padding-bottom:8px;">
+                                Chất Liệu
+                            </h6>
+                            @{
+                                var materialOptions = new[] { "Gỗ Óc Chó", "Gỗ Sồi", "Da", "Vải Linen", "Đá Marble", "Kim Loại" };
+                            }
+                            @foreach (var mat in materialOptions)
+                            {
+                                <div class="filter-check-item mb-2 d-flex align-items-center gap-2">
+                                    <input type="checkbox"
+                                           class="filter-checkbox"
+                                           name="materials"
+                                           value="@mat"
+                                           id="mat_@mat.Replace(" ","_")"
+                                           @(((List<string>)ViewBag.SelectedMaterials).Contains(mat) ? "checked" : "") />
+                                    <label for="mat_@mat.Replace(" ","_")"
+                                           class="font-montserrat mb-0 user-select-none"
+                                           style="font-size:12px; cursor:pointer; color:#444;">@mat</label>
+                                </div>
+                            }
+                        </div>
 
-                            </div>
-                        }
+                        <button type="submit" class="btn w-100 py-2 font-montserrat fw-bold"
+                                style="background:#111; color:#bfa15f; border:1px solid #bfa15f; font-size:11px; letter-spacing:2px; text-transform:uppercase;">
+                            <i class="bi bi-funnel me-1"></i>Áp Dụng Lọc
+                        </button>
 
                     </div>
-
-                    <!-- MỨC GIÁ -->
-                    <div class="mb-4">
-
-                        <h6>Mức giá</h6>
-
-                        <div>
-                            <input type="checkbox"
-                                   name="prices"
-                                   value="Under20"
-                            @(ViewBag.SelectedPrices.Contains("Under20") ? "checked" : "") />
-
-                            Dưới 20 triệu
-                        </div>
-
-                        <div>
-                            <input type="checkbox"
-                                   name="prices"
-                                   value="20to50"
-                            @(ViewBag.SelectedPrices.Contains("20to50") ? "checked" : "") />
-
-                            20 - 50 triệu
-                        </div>
-
-                        <div>
-                            <input type="checkbox"
-                                   name="prices"
-                                   value="50to100"
-                            @(ViewBag.SelectedPrices.Contains("50to100") ? "checked" : "") />
-
-                            50 - 100 triệu
-                        </div>
-
-                        <div>
-                            <input type="checkbox"
-                                   name="prices"
-                                   value="Above100"
-                            @(ViewBag.SelectedPrices.Contains("Above100") ? "checked" : "") />
-
-                            Trên 100 triệu
-                        </div>
-
-                    </div>
-
-                    <!-- CHẤT LIỆU -->
-                    <div class="mb-4">
-
-                        <h6>Chất liệu</h6>
-
-                        <div>
-                            <input type="checkbox"
-                                   name="materials"
-                                   value="Gỗ Óc Chó"
-                            @(ViewBag.SelectedMaterials.Contains("Gỗ Óc Chó") ? "checked" : "") />
-
-                            Gỗ Óc Chó
-                        </div>
-
-                        <div>
-                            <input type="checkbox"
-                                   name="materials"
-                                   value="Gỗ Sồi"
-                            @(ViewBag.SelectedMaterials.Contains("Gỗ Sồi") ? "checked" : "") />
-
-                            Gỗ Sồi
-                        </div>
-
-                        <div>
-                            <input type="checkbox"
-                                   name="materials"
-                                   value="Da"
-                            @(ViewBag.SelectedMaterials.Contains("Da") ? "checked" : "") />
-
-                            Da
-                        </div>
-
-                    </div>
-
-                    <button type="submit"
-                            class="btn btn-dark w-100">
-
-                        Áp Dụng Lọc
-
-                    </button>
 
                 </form>
 
@@ -250,41 +252,15 @@
 
                     <div class="d-flex gap-2">
 
-                        <!-- THÊM DANH MỤC -->
-                        <a asp-controller="Category"
-                           asp-action="Add"
-                           class="btn font-montserrat fw-bold text-uppercase"
-                           style="background-color: #bfa15f;
-                                  color: #fff;
-                                  border: 1px solid #bfa15f;
-                                  padding: 8px 20px;
-                                  border-radius: 4px;
-                                  font-size: 13px;
-                                  letter-spacing: 1px;">
-
-                            <i class="bi bi-tags-fill me-2"></i>
-                            Thêm Danh Mục
-
-                        </a>
-
-                        <!-- THÊM SẢN PHẨM -->
-                        <a asp-controller="Product"
-                           asp-action="Add"
-                           class="btn font-montserrat fw-bold text-uppercase"
-                           style="background-color: #111;
-                                  color: #fff;
-                                  border: 1px solid #bfa15f;
-                                  padding: 8px 20px;
-                                  border-radius: 4px;
-                                  font-size: 13px;
-                                  letter-spacing: 1px;">
-
-                            <i class="bi bi-plus-lg me-2"
-                               style="color: #bfa15f;"></i>
-
-                            Thêm Sản Phẩm Mới
-
-                        </a>
+                        @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                        {
+                            <a asp-area="Admin" asp-controller="Product" asp-action="Create"
+                               class="btn font-montserrat fw-bold text-uppercase"
+                               style="background-color:#111; color:#fff; border:1px solid #bfa15f;
+                                      padding:8px 20px; border-radius:4px; font-size:13px; letter-spacing:1px;">
+                                <i class="bi bi-plus-lg me-2" style="color:#bfa15f;"></i>Thêm Sản Phẩm
+                            </a>
+                        }
 
                     </div>
 
