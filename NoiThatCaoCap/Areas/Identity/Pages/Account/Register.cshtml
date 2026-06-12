@@ -6,9 +6,6 @@
 }
 
 <style>
-/* ── LUXE LIVING — Register Page ── */
-/* Reuses same base variables as Login, only extending what's new */
-
 .luxe-auth-wrapper {
     min-height: calc(100vh - 160px);
     display: flex;
@@ -16,7 +13,6 @@
     background-color: var(--bg-cream);
 }
 
-/* Left decorative panel */
 .luxe-auth-panel {
     flex: 1;
     background-color: #111111;
@@ -52,10 +48,7 @@
     line-height: 1.3;
     margin-bottom: 20px;
 }
-.luxe-panel-quote em {
-    color: #c5a880;
-    font-style: italic;
-}
+.luxe-panel-quote em { color: #c5a880; font-style: italic; }
 .luxe-panel-sub {
     font-size: 11px;
     font-weight: 500;
@@ -69,8 +62,6 @@
     background: #c5a880;
     margin-bottom: 24px;
 }
-
-/* Benefits list in left panel */
 .luxe-benefits {
     list-style: none;
     padding: 0;
@@ -86,13 +77,8 @@
     align-items: center;
     gap: 10px;
 }
-.luxe-benefits li::before {
-    content: '✦';
-    color: #c5a880;
-    font-size: 8px;
-}
+.luxe-benefits li::before { content: '✦'; color: #c5a880; font-size: 8px; }
 
-/* Right form side */
 .luxe-auth-form-side {
     width: 100%;
     max-width: 560px;
@@ -110,7 +96,6 @@
     }
 }
 
-/* Form header */
 .luxe-auth-eyebrow {
     font-size: 10px;
     font-weight: 600;
@@ -140,24 +125,9 @@
     border-bottom: 1px solid transparent;
     transition: border-color 0.2s;
 }
-.luxe-auth-subtitle a:hover {
-    border-bottom-color: #c5a880;
-}
+.luxe-auth-subtitle a:hover { border-bottom-color: #c5a880; }
 
-/* Two-column grid for name + email row */
-.luxe-field-grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-}
-@@media (max-width: 600px) {
-    .luxe-field-grid-2 { grid-template-columns: 1fr; }
-}
-
-/* Fields */
-.luxe-field {
-    margin-bottom: 18px;
-}
+.luxe-field { margin-bottom: 18px; }
 .luxe-field-label {
     font-size: 9.5px;
     font-weight: 700;
@@ -184,44 +154,9 @@
     border-color: #c5a880;
     box-shadow: 0 0 0 4px rgba(197, 168, 128, 0.1);
 }
-.luxe-field-select {
-    width: 100%;
-    background: #ffffff;
-    border: 1px solid rgba(17,17,17,0.1);
-    border-radius: 2px;
-    padding: 13px 18px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    color: #111111;
-    transition: border-color 0.3s, box-shadow 0.3s;
-    outline: none;
-    box-sizing: border-box;
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c5a880' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 16px center;
-    cursor: pointer;
-}
-.luxe-field-select:focus {
-    border-color: #c5a880;
-    box-shadow: 0 0 0 4px rgba(197, 168, 128, 0.1);
-}
-.luxe-field-error {
-    font-size: 11px;
-    color: #c0392b;
-    margin-top: 5px;
-    letter-spacing: 0.3px;
-}
+.luxe-field-error { font-size: 11px; color: #c0392b; margin-top: 5px; letter-spacing: 0.3px; }
+.luxe-password-hint { font-size: 10px; color: #aaaaaa; letter-spacing: 0.3px; margin-top: 6px; }
 
-/* Password strength indicator */
-.luxe-password-hint {
-    font-size: 10px;
-    color: #aaaaaa;
-    letter-spacing: 0.3px;
-    margin-top: 6px;
-}
-
-/* Submit */
 .btn-luxe-submit {
     width: 100%;
     background: #111111;
@@ -245,7 +180,6 @@
     box-shadow: 0 8px 25px rgba(197, 168, 128, 0.3);
 }
 
-/* Validation summary */
 .luxe-validation-summary {
     background: #fff5f5;
     border: 1px solid #f5c6c6;
@@ -254,18 +188,10 @@
     border-radius: 2px;
     margin-bottom: 20px;
 }
-.luxe-validation-summary ul {
-    margin: 0; padding: 0;
-    list-style: none;
-}
+.luxe-validation-summary ul { margin: 0; padding: 0; list-style: none; }
 .luxe-validation-summary li,
-.luxe-validation-summary p {
-    font-size: 12px;
-    color: #c0392b;
-    margin: 0;
-}
+.luxe-validation-summary p { font-size: 12px; color: #c0392b; margin: 0; }
 
-/* Login prompt */
 .luxe-login-prompt {
     text-align: center;
     margin-top: 22px;
@@ -280,12 +206,8 @@
     border-bottom: 1px solid #111;
     transition: color 0.2s, border-color 0.2s;
 }
-.luxe-login-prompt a:hover {
-    color: #c5a880;
-    border-bottom-color: #c5a880;
-}
+.luxe-login-prompt a:hover { color: #c5a880; border-bottom-color: #c5a880; }
 
-/* Section heading inside form */
 .luxe-section-divider {
     display: flex;
     align-items: center;
@@ -293,12 +215,7 @@
     margin: 22px 0 18px;
 }
 .luxe-section-divider::before,
-.luxe-section-divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: rgba(17,17,17,0.07);
-}
+.luxe-section-divider::after { content: ''; flex: 1; height: 1px; background: rgba(17,17,17,0.07); }
 .luxe-section-divider span {
     font-size: 9px;
     letter-spacing: 2.5px;
@@ -388,14 +305,8 @@
                 <span asp-validation-for="Input.ConfirmPassword" class="luxe-field-error"></span>
             </div>
 
-            @* Role *@
-            <div class="luxe-field">
-                <label asp-for="Input.Role" class="luxe-field-label">Loại tài khoản</label>
-                <select asp-for="Input.Role" asp-items="@Model.Input.RoleList" class="luxe-field-select">
-                    <option disabled selected value="">— Chọn loại tài khoản —</option>
-                </select>
-                <span asp-validation-for="Input.Role" class="luxe-field-error"></span>
-            </div>
+            @* Hidden role field - always defaults to Customer *@
+            <input type="hidden" asp-for="Input.Role" value="" />
 
             @* Submit *@
             <button id="registerSubmit" type="submit" class="btn-luxe-submit">

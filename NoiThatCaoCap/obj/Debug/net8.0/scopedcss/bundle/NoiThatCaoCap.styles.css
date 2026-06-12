@@ -1,5 +1,299 @@
 @import '_content/Microsoft.AspNetCore.Components.QuickGrid/Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css';
 
+/* _content/NoiThatCaoCap/Areas/Admin/Views/Shared/_AdminLayout.cshtml.rz.scp.css */
+/* --- Khai báo mã màu Luxe Living chuẩn ảnh mẫu --- */
+:root[b-07mrf302o0] {
+    --bg-dark-deep: #0D0D0D; /* Đen nền ngoài */
+    --bg-dark-card: #141414; /* Đen của Card nền trong */
+    --color-gold: #C9A961; /* Vàng Gold Luxury */
+    --color-gold-hover: #E5C783; /* Vàng sáng khi hover */
+    --text-cream: #F8F5F0; /* Trắng kem */
+    --text-muted: #7E7A74; /* Chữ mờ xám */
+    --sidebar-width: 280px;
+}
+
+/* --- Khởi tạo chung --- */
+body[b-07mrf302o0] {
+    background-color: var(--bg-dark-deep) !important;
+    color: var(--text-cream) !important;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.luxe-admin-container[b-07mrf302o0] {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- THIẾT KẾ SIDEBAR --- */
+.luxe-sidebar[b-07mrf302o0] {
+    width: var(--sidebar-width);
+    background-color: var(--bg-dark-deep);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Khu vực Logo thương hiệu */
+.luxe-logo-zone[b-07mrf302o0] {
+    padding: 35px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-box[b-07mrf302o0] {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--color-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(45deg);
+}
+
+    .logo-box i[b-07mrf302o0] {
+        transform: rotate(-45deg);
+        color: var(--color-gold);
+        font-size: 1.1rem;
+    }
+
+.logo-text h2[b-07mrf302o0] {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-cream);
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.logo-text span[b-07mrf302o0] {
+    font-size: 0.65rem;
+    color: var(--color-gold);
+    letter-spacing: 2px;
+    display: block;
+}
+
+/* Menu danh sách */
+.luxe-menu[b-07mrf302o0] {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.luxe-menu-item[b-07mrf302o0] {
+    display: flex;
+    align-items: center;
+    padding: 14px 30px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: all 0.25s ease;
+    letter-spacing: 0.5px;
+}
+
+    .luxe-menu-item i:first-child[b-07mrf302o0] {
+        width: 25px;
+        margin-right: 15px;
+        font-size: 1.1rem;
+    }
+
+    /* Trạng thái Hover và Active chuẩn ảnh */
+    .luxe-menu-item:hover[b-07mrf302o0] {
+        color: var(--text-cream);
+    }
+
+    .luxe-menu-item.active[b-07mrf302o0] {
+        color: var(--color-gold) !important;
+        background: linear-gradient(90deg, rgba(201, 169, 97, 0.08) 0%, rgba(201, 169, 97, 0) 100%);
+        border-left: 3px solid var(--color-gold);
+        padding-left: 27px; /* Cân bằng lại border */
+    }
+
+.arrow-icon[b-07mrf302o0] {
+    font-size: 0.75rem;
+}
+
+/* Sidebar Bottom Actions */
+.luxe-sidebar-footer[b-07mrf302o0] {
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-action-btn[b-07mrf302o0] {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: color 0.2s;
+}
+
+    .footer-action-btn:hover[b-07mrf302o0] {
+        color: var(--text-cream);
+    }
+
+.logout-btn:hover[b-07mrf302o0] {
+    color: #e74c3c; /* Giữ màu đỏ nhẹ khi log out */
+}
+
+/* --- THIẾT KẾ MAIN CONTENT & TOPBAR --- */
+.luxe-main-content[b-07mrf302o0] {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-dark-deep);
+}
+
+.luxe-topbar[b-07mrf302o0] {
+    padding: 30px 40px 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.topbar-welcome h1[b-07mrf302o0] {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.1rem;
+    font-weight: 600;
+    color: var(--text-cream);
+    margin: 0 0 6px 0;
+}
+
+.topbar-welcome p[b-07mrf302o0] {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.topbar-actions[b-07mrf302o0] {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Thanh tìm kiếm bo tròn nhẹ đặc trưng */
+.luxe-search-box[b-07mrf302o0] {
+    position: relative;
+    background-color: #161616;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    padding: 8px 15px 8px 40px;
+    width: 260px;
+}
+
+    .luxe-search-box i[b-07mrf302o0] {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--text-muted);
+        font-size: 0.9rem;
+    }
+
+    .luxe-search-box input[b-07mrf302o0] {
+        background: none;
+        border: none;
+        color: var(--text-cream);
+        width: 100%;
+        font-size: 0.9rem;
+        outline: none;
+    }
+
+        .luxe-search-box input[b-07mrf302o0]::placeholder {
+            color: #55524e;
+        }
+
+/* Nút Thông báo */
+.luxe-notification-btn[b-07mrf302o0] {
+    background-color: #161616;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-cream);
+    position: relative;
+    cursor: pointer;
+}
+
+.badge-dot[b-07mrf302o0] {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-gold);
+    border-radius: 50%;
+    top: 12px;
+    right: 12px;
+}
+
+/* Khối User Profile */
+.luxe-profile-dropdown[b-07mrf302o0] {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.avatar-circle[b-07mrf302o0] {
+    width: 38px;
+    height: 38px;
+    background-color: var(--color-gold);
+    color: var(--bg-dark-deep);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.profile-info[b-07mrf302o0] {
+    display: flex;
+    flex-direction: column;
+}
+
+    .profile-info .p-name[b-07mrf302o0] {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--text-cream);
+        line-height: 1.2;
+    }
+
+    .profile-info .p-role[b-07mrf302o0] {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+    }
+
+.arrow-down[b-07mrf302o0] {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-left: 5px;
+}
+
+/* Khung Body động chứa view con */
+.luxe-view-body[b-07mrf302o0] {
+    padding: 20px 40px 40px 40px;
+    flex-grow: 1;
+}
 /* _content/NoiThatCaoCap/Views/Shared/_Layout.cshtml.rz.scp.css */
 /* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */

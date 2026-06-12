@@ -1,0 +1,255 @@
+@model NoiThatCaoCap.Models.Order
+
+@{
+    ViewData["Title"] = "Đặt Hàng Thành Công - LUXE LIVING";
+}
+
+<style>
+.success-wrap {
+    min-height: 70vh;
+    padding: 80px 0;
+    font-family: 'Montserrat', sans-serif;
+    background: #fdfcfa;
+}
+
+.success-icon {
+    width: 90px; height: 90px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #C9A961, #E8D5A3);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 28px;
+    font-size: 40px;
+    color: #111;
+    box-shadow: 0 8px 32px rgba(201,169,97,.35);
+}
+
+.success-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    letter-spacing: 2px;
+    color: #111;
+}
+
+.success-sub {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #888;
+}
+
+.info-card {
+    background: #fff;
+    border: 1px solid #e0d8cc;
+    padding: 28px 32px;
+    margin-top: 36px;
+}
+
+.info-card h5 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #C9A961;
+    border-bottom: 1px solid #e0d8cc;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12.5px;
+    padding: 6px 0;
+    border-bottom: 1px solid #f5f2ed;
+}
+
+.info-row .label { color: #999; }
+.info-row .value { font-weight: 600; color: #222; }
+
+.order-item-row {
+    display: flex;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid #f0ece4;
+    align-items: center;
+}
+
+.order-item-row img {
+    width: 60px; height: 60px;
+    object-fit: cover; flex-shrink: 0;
+}
+
+.item-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.item-meta { font-size: 11px; color: #888; }
+
+.item-price {
+    margin-left: auto;
+    font-size: 14px;
+    font-weight: 700;
+    color: #C9A961;
+    white-space: nowrap;
+}
+
+.total-final {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 2px solid #e0d8cc;
+}
+
+.total-final .label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.total-final .amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: #C9A961;
+    font-weight: 600;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: rgba(201,169,97,.15);
+    color: #C9A961;
+    border: 1px solid rgba(201,169,97,.4);
+    font-weight: 600;
+}
+
+.btn-shop {
+    display: inline-block;
+    background: #111;
+    color: #C9A961;
+    border: 1px solid #C9A961;
+    padding: 14px 40px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    transition: background .25s;
+    margin-top: 32px;
+}
+
+.btn-shop:hover {
+    background: #1e1e1e;
+    color: #E8D5A3;
+}
+
+.btn-profile {
+    display: inline-block;
+    background: transparent;
+    color: #555;
+    border: 1px solid #ccc;
+    padding: 14px 40px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 32px;
+    margin-left: 12px;
+    transition: border-color .2s, color .2s;
+}
+
+.btn-profile:hover { border-color: #888; color: #222; }
+</style>
+
+<div class="success-wrap">
+    <div class="container">
+        <div class="text-center">
+            <div class="success-icon">✓</div>
+            <h2 class="success-title">Đặt Hàng Thành Công!</h2>
+            <p class="success-sub mt-2">Cảm ơn bạn đã tin tưởng LUXE LIVING — đơn hàng #@Model.Id đã được ghi nhận</p>
+        </div>
+
+        <div class="row justify-content-center mt-2">
+            <div class="col-lg-8">
+
+                <!-- Thông tin đơn hàng -->
+                <div class="info-card">
+                    <h5><i class="bi bi-info-circle me-2"></i>Thông Tin Đơn Hàng</h5>
+                    <div class="info-row">
+                        <span class="label">Mã đơn hàng</span>
+                        <span class="value">#@Model.Id</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Ngày đặt</span>
+                        <span class="value">@Model.OrderDate.ToString("dd/MM/yyyy HH:mm")</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Người nhận</span>
+                        <span class="value">@Model.ReceiverName</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Điện thoại</span>
+                        <span class="value">@Model.ReceiverPhone</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Địa chỉ giao</span>
+                        <span class="value" style="max-width:60%; text-align:right;">@Model.ShippingAddress</span>
+                    </div>
+                    @if (!string.IsNullOrEmpty(Model.Note))
+                    {
+                        <div class="info-row">
+                            <span class="label">Ghi chú</span>
+                            <span class="value">@Model.Note</span>
+                        </div>
+                    }
+                    <div class="info-row">
+                        <span class="label">Trạng thái</span>
+                        <span><span class="status-badge">Chờ Xác Nhận</span></span>
+                    </div>
+                </div>
+
+                <!-- Chi tiết sản phẩm -->
+                <div class="info-card">
+                    <h5><i class="bi bi-box-seam me-2"></i>Sản Phẩm Đã Đặt</h5>
+
+                    @foreach (var d in Model.OrderDetails)
+                    {
+                        <div class="order-item-row">
+                            <img src="@d.ProductImageUrl" alt="@d.ProductName"
+                                 onerror="this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=80'" />
+                            <div>
+                                <div class="item-name">@d.ProductName</div>
+                                <div class="item-meta">@d.Quantity chiếc &nbsp;×&nbsp; @String.Format("{0:N0}", d.UnitPrice) đ</div>
+                            </div>
+                            <div class="item-price">@String.Format("{0:N0}", d.UnitPrice * d.Quantity) đ</div>
+                        </div>
+                    }
+
+                    <div class="total-final">
+                        <span class="label">Tổng thanh toán</span>
+                        <span class="amount">@String.Format("{0:N0}", Model.TotalPrice) đ</span>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <a asp-controller="Product" asp-action="Index" class="btn-shop">
+                        <i class="bi bi-bag me-2"></i>Tiếp Tục Mua Sắm
+                    </a>
+                    <a asp-controller="Order" asp-action="Profile" class="btn-profile">
+                        <i class="bi bi-person me-2"></i>Hồ Sơ Của Tôi
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

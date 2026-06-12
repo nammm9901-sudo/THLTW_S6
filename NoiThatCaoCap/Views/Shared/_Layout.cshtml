@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using NoiThatCaoCap.Extensions
+@using NoiThatCaoCap.Models
+<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="utf-8" />
@@ -44,12 +46,16 @@
 
                 <partial name="_LoginPartial" />
 
-                <a asp-area="" asp-controller="Cart" asp-action="Wishlist" class="btn-utility-icon position-relative" title="Danh sách yêu thích">
-                    <i class="bi bi-heart"></i>
-                </a>
-
                 <a asp-area="" asp-controller="Cart" asp-action="Index" class="btn-utility-icon position-relative" title="Giỏ hàng của bạn">
-                    <i class="bi bi-bag"></i> <span class="badge-premium-counter active">1</span>
+                    <i class="bi bi-bag"></i>
+                    @{
+                        var _cart = Context.Session.GetObjectFromJson<List<CartItem>>("PremiumCart");
+                        var _cartCount = _cart?.Sum(i => i.Quantity) ?? 0;
+                    }
+                    @if (_cartCount > 0)
+                    {
+                        <span class="badge-premium-counter active">@_cartCount</span>
+                    }
                 </a>
             </div>
         </div>

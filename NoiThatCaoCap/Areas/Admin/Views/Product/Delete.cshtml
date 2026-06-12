@@ -1,0 +1,51 @@
+@model NoiThatCaoCap.Models.Product
+
+@{
+    ViewData["Title"] = "Xác Nhận Xóa";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#fff;margin:0">Xác Nhận Xóa</h1>
+    <a asp-area="Admin" asp-controller="Product" asp-action="Index" class="btn-action-luxe edit" style="padding:10px 20px;font-size:12px;border-radius:4px;text-decoration:none">
+        <i class="fa-solid fa-arrow-left me-2"></i> Trở về
+    </a>
+</div>
+
+<div class="luxe-card" style="max-width:600px;">
+    <div class="luxe-card-header" style="border-bottom:1px solid rgba(192,57,43,0.3);">
+        <h2 class="luxe-card-title" style="color:#e74c3c;"><i class="fa-solid fa-triangle-exclamation me-2"></i>Cảnh báo xóa sản phẩm</h2>
+    </div>
+    <div class="p-4">
+        <p style="color:rgba(255,255,255,0.7);font-size:14px;margin-bottom:24px;">
+            Bạn có chắc chắn muốn xóa sản phẩm này không? Hành động này không thể hoàn tác.
+        </p>
+
+        <div style="display:flex;gap:16px;align-items:center;padding:16px;background:rgba(255,255,255,0.03);border-radius:6px;border:1px solid rgba(255,255,255,0.08);margin-bottom:24px;">
+            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+            {
+                <img src="@Model.ImageUrl" alt="@Model.Name"
+                     style="width:80px;height:80px;object-fit:cover;border-radius:4px;flex-shrink:0;"
+                     onerror="this.src='https://placehold.co/80x80/141414/C9A961?text=LUXE'" />
+            }
+            <div>
+                <div style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#fff;margin-bottom:4px;">@Model.Name</div>
+                <div style="font-size:12px;color:rgba(255,255,255,0.4);">SKU: #@Model.Id.ToString("D4")</div>
+                <div style="font-size:13px;color:#c5a880;margin-top:4px;">@String.Format("{0:N0}", Model.Price) ₫</div>
+            </div>
+        </div>
+
+        <form asp-area="Admin" asp-controller="Product" asp-action="Delete" asp-route-id="@Model.Id" method="post">
+            @Html.AntiForgeryToken()
+            <div class="d-flex gap-3">
+                <button type="submit" class="btn-luxe" style="background:#c0392b;color:#fff;border:none;padding:11px 24px;border-radius:4px;font-size:12px;letter-spacing:1.5px;font-weight:700;text-transform:uppercase;cursor:pointer;flex:1;">
+                    <i class="fa-solid fa-trash me-2"></i> Xác nhận xóa
+                </button>
+                <a asp-area="Admin" asp-controller="Product" asp-action="Index"
+                   class="btn-action-luxe edit" style="padding:11px 24px;border-radius:4px;text-decoration:none;font-size:12px;">
+                    Hủy
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

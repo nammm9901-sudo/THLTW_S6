@@ -1,0 +1,673 @@
+﻿/* ==========================================================================
+   1. ĐỊNH DẠNG HỆ MÀU & NỀN TẢNG (LUXE LIVING ADMIN)
+   ========================================================================== */
+:root {
+    --bg-dark-deep: #0D0D0D; /* Đen nền ngoài */
+    --bg-dark-card: #141414; /* Đen của Card nền trong */
+    --color-gold: #C9A961; /* Vàng Gold Luxury */
+    --color-gold-hover: #E5C783; /* Vàng sáng khi hover */
+    --text-cream: #F8F5F0; /* Trắng kem */
+    --text-muted: #7E7A74; /* Chữ mờ xám */
+    --sidebar-width: 280px;
+}
+
+body {
+    background-color: var(--bg-dark-deep) !important;
+    color: var(--text-cream) !important;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.luxe-admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   2. GIAO DIỆN THANH MENU SIDEBAR (BÊN TRÁI)
+   ========================================================================== */
+.luxe-sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--bg-dark-deep);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+.luxe-logo-zone {
+    padding: 35px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-box {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--color-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(45deg);
+}
+
+    .logo-box i {
+        transform: rotate(-45deg);
+        color: var(--color-gold);
+        font-size: 1.1rem;
+    }
+
+.logo-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-cream);
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.logo-text span {
+    font-size: 0.65rem;
+    color: var(--color-gold);
+    letter-spacing: 2px;
+    display: block;
+}
+
+.luxe-menu {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.luxe-menu-item {
+    display: flex;
+    align-items: center;
+    padding: 14px 30px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: all 0.25s ease;
+    letter-spacing: 0.5px;
+}
+
+    .luxe-menu-item i:first-child {
+        width: 25px;
+        margin-right: 15px;
+        font-size: 1.1rem;
+    }
+
+    .luxe-menu-item:hover {
+        color: var(--text-cream);
+    }
+
+    .luxe-menu-item.active {
+        color: var(--color-gold) !important;
+        background: linear-gradient(90deg, rgba(201, 169, 97, 0.08) 0%, rgba(201, 169, 97, 0) 100%);
+        border-left: 3px solid var(--color-gold);
+        padding-left: 27px;
+    }
+
+.arrow-icon {
+    font-size: 0.75rem;
+}
+
+.luxe-sidebar-footer {
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-action-btn {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: color 0.2s;
+}
+
+    .footer-action-btn:hover {
+        color: var(--text-cream);
+    }
+
+.logout-btn:hover {
+    color: #e74c3c;
+}
+
+/* ==========================================================================
+   3. KHU VỰC TOPBAR & NỘI DUNG CHÍNH (BÊN PHẢI)
+   ========================================================================== */
+.luxe-main-content {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-dark-deep);
+}
+
+.luxe-topbar {
+    padding: 30px 40px 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.topbar-welcome h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.1rem;
+    font-weight: 600;
+    color: var(--text-cream);
+    margin: 0 0 6px 0;
+}
+
+.topbar-welcome p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.luxe-search-box {
+    position: relative;
+    background-color: #161616;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    padding: 8px 15px 8px 40px;
+    width: 260px;
+}
+
+    .luxe-search-box i {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--text-muted);
+        font-size: 0.9rem;
+    }
+
+    .luxe-search-box input {
+        background: none;
+        border: none;
+        color: var(--text-cream);
+        width: 100%;
+        font-size: 0.9rem;
+        outline: none;
+    }
+
+.luxe-notification-btn {
+    background-color: #161616;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-cream);
+    position: relative;
+    cursor: pointer;
+}
+
+.badge-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-gold);
+    border-radius: 50%;
+    top: 12px;
+    right: 12px;
+}
+
+.luxe-profile-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.avatar-circle {
+    width: 38px;
+    height: 38px;
+    background-color: var(--color-gold);
+    color: var(--bg-dark-deep);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+    .profile-info .p-name {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--text-cream);
+        line-height: 1.2;
+    }
+
+    .profile-info .p-role {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+    }
+
+.arrow-down {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-left: 5px;
+}
+
+.luxe-view-body {
+    padding: 20px 40px 40px 40px;
+    flex-grow: 1;
+}
+
+/* ==========================================================================
+   4. PHẦN CSS RIÊNG CHO TRANG DANH SÁCH SẢN PHẨM (INDEX)
+   ========================================================================== */
+.luxe-counter {
+    font-size: 0.9rem;
+    color: #7E7A74;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn-luxe {
+    padding: 10px 24px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-luxe-gold {
+    background-color: #C9A961;
+    color: #0D0D0D !important;
+}
+
+    .btn-luxe-gold:hover {
+        background-color: #0D0D0D;
+        color: #C9A961 !important;
+        border-color: #C9A961;
+    }
+
+.luxe-card {
+    background-color: #141414;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 30px;
+}
+
+.luxe-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #F8F5F0;
+    margin: 0;
+}
+
+.luxe-table-search {
+    position: relative;
+    background-color: #0D0D0D;
+    border: 1px solid rgba(201, 169, 97, 0.15);
+    padding: 6px 12px 6px 35px;
+    width: 240px;
+}
+
+    .luxe-table-search i {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #7E7A74;
+        font-size: 0.8rem;
+    }
+
+    .luxe-table-search input {
+        background: none;
+        border: none;
+        color: #F8F5F0;
+        font-size: 0.85rem;
+        width: 100%;
+        outline: none;
+    }
+
+.luxe-table {
+    width: 100%;
+    border-collapse: collapse;
+    vertical-align: middle;
+}
+
+    .luxe-table th {
+        background-color: #0D0D0D;
+        color: #C9A961;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 16px;
+        border-bottom: 2px solid rgba(201, 169, 97, 0.2);
+    }
+
+    .luxe-table td {
+        padding: 18px 16px;
+        color: #F8F5F0;
+        font-size: 0.9rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        background-color: #141414;
+    }
+
+    .luxe-table tbody tr:hover td {
+        background-color: #1a1a1a;
+    }
+
+.img-wrapper {
+    width: 55px;
+    height: 55px;
+    border: 1px solid rgba(201, 169, 97, 0.2);
+    overflow: hidden;
+    background-color: #0D0D0D;
+}
+
+    .img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.product-name {
+    display: block;
+    font-weight: 500;
+    color: #F8F5F0;
+    margin-bottom: 2px;
+}
+
+.product-id {
+    display: block;
+    font-size: 0.75rem;
+    color: #7E7A74;
+}
+
+.badge-luxe-category {
+    font-size: 0.75rem;
+    color: #C9A961;
+    border: 1px solid rgba(201, 169, 97, 0.3);
+    padding: 3px 10px;
+}
+
+.product-price {
+    font-weight: 500;
+    color: #C9A961;
+}
+
+.text-muted-luxe {
+    color: #9C9892;
+    font-size: 0.85rem;
+}
+
+.action-buttons-group {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.btn-action-luxe {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: #0D0D0D;
+    color: #7E7A74;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+    .btn-action-luxe:hover {
+        color: #F8F5F0;
+    }
+
+    .btn-action-luxe.edit:hover {
+        border-color: #C9A961;
+        color: #C9A961;
+    }
+
+    .btn-action-luxe.delete:hover {
+        border-color: #d9534f;
+        color: #d9534f;
+    }
+
+.empty-table-state {
+    text-align: center !important;
+    padding: 60px 0 !important;
+    color: #7E7A74 !important;
+}
+
+    .empty-table-state i {
+        font-size: 2.5rem;
+        color: rgba(201, 169, 97, 0.2);
+        margin-bottom: 15px;
+        display: block;
+    }
+
+/* ==========================================================================
+   5. BỔ SUNG CSS CHO FORM THÊM MỚI (CREATE) & LOGOUT BUTTON
+   ========================================================================== */
+.btn-back-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.2s ease;
+}
+
+    .btn-back-link:hover {
+        color: var(--color-gold);
+    }
+
+.text-muted-luxe-form {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+.form-group-luxe {
+    display: flex;
+    flex-direction: column;
+}
+
+.luxe-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.luxe-input {
+    background-color: #0D0D0D !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: var(--text-cream) !important;
+    padding: 12px 16px;
+    font-size: 0.9rem;
+    border-radius: 0px !important; /* Kiểu dáng Minimal thẳng góc */
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+    .luxe-input:focus {
+        border-color: var(--color-gold) !important;
+        box-shadow: none !important;
+    }
+
+.luxe-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23C9A961'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 18px;
+}
+
+/* Khung tải ảnh Luxury */
+.luxe-image-upload-box {
+    border: 1px dashed rgba(201, 169, 97, 0.3);
+    background-color: #0D0D0D;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: border-color 0.2s;
+}
+
+    .luxe-image-upload-box:hover {
+        border-color: var(--color-gold);
+    }
+
+.luxe-file-hidden {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.upload-trigger-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.cloud-icon {
+    font-size: 2.2rem;
+    color: rgba(201, 169, 97, 0.4);
+}
+
+.upload-text {
+    font-size: 0.8rem;
+}
+
+.border-top-luxe {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.btn-luxe-secondary {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 30px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+    .btn-luxe-secondary:hover {
+        color: var(--text-cream);
+        border-color: var(--text-cream);
+    }
+
+.text-danger-luxe {
+    font-size: 0.75rem;
+    color: #e74c3c;
+    margin-top: 4px;
+}
+
+/* Định dạng riêng nút đăng xuất dạng nút bấm thuần */
+.logout-btn-submit {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+    .logout-btn-submit:hover {
+        color: #e74c3c !important;
+    }
+/* ==========================================================================
+   ADDITIONAL MISSING STYLES - Added for completeness
+   ========================================================================== */
+
+/* Card header (used in product/category views) */
+.luxe-card-header {
+    padding: 0 0 18px 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Notification/home button in topbar */
+.luxe-notification-btn {
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: none;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+.luxe-notification-btn:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+}
+
+/* Success alert banner */
+.alert-luxe-success {
+    background: rgba(39, 174, 96, 0.12);
+    border: 1px solid rgba(39, 174, 96, 0.35);
+    color: #2ecc71;
+    border-radius: 4px;
+    padding: 12px 16px;
+    font-size: 13px;
+}

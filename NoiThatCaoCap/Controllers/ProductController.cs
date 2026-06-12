@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -99,6 +100,7 @@ namespace NoiThatCaoCap.Controllers
 
         // GET: /Product/Add
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Add()
         {
             ViewBag.CategoryId = new SelectList(await GetCategoriesAsync(), "Id", "Name");
@@ -107,6 +109,7 @@ namespace NoiThatCaoCap.Controllers
 
         // POST: /Product/Add
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Add(Product product, List<IFormFile> ImageFiles)
         {
@@ -140,6 +143,7 @@ namespace NoiThatCaoCap.Controllers
 
         // GET: /Product/Update/5
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Update(int id)
         {
             var product = await _productRepository.GetByIdAsync(id);
@@ -150,6 +154,7 @@ namespace NoiThatCaoCap.Controllers
 
         // POST: /Product/Update/5
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(Product product, List<IFormFile> ImageFiles)
         {
@@ -186,6 +191,7 @@ namespace NoiThatCaoCap.Controllers
         }
 
         // GET: /Product/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)
         {
             var p = await _productRepository.GetByIdAsync(id);
@@ -194,6 +200,7 @@ namespace NoiThatCaoCap.Controllers
 
         // POST: /Product/Delete/5
         [HttpPost, ActionName("Delete")]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {

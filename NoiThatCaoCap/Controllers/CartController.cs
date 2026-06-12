@@ -98,72 +98,28 @@ namespace NoiThatCaoCap.Controllers
         }
 
         // ─────────────────────────────────────────────
-        //  WISHLIST
+        //  DANH SÁCH YÊU THÍCH / WISHLIST
         // ─────────────────────────────────────────────
 
-        // Hiển thị danh sách yêu thích
-        public IActionResult Wishlist()
-        {
-            var wishlist = GetWishlist();
-            return View(wishlist);
-        }
-
-        // Toggle: thêm nếu chưa có, xóa nếu đã có
         [HttpGet]
         public async Task<IActionResult> AddToWishlist(int id)
         {
             var product = await _productRepository.GetByIdAsync(id);
             if (product == null) return NotFound();
 
-            var wishlist = GetWishlist();
-            var existed = wishlist.Any(p => p.Id == id);
+            var wishlist = HttpContext.Session.GetObjectFromJson<List<int>>(WISHLIST_KEY)
+                           ?? new List<int>();
 
-            if (!existed)
-                wishlist.Add(CleanProduct(product));
+            if (!wishlist.Contains(id))
+                wishlist.Add(id);
 
-            SaveWishlist(wishlist);
+            HttpContext.Session.SetObjectAsJson(WISHLIST_KEY, wishlist);
 
-            // Hỗ trợ AJAX (gọi bằng fetch từ JS)
             if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
-                return Json(new { success = true, added = !existed, count = wishlist.Count });
+                return Json(new { success = true, count = wishlist.Count });
 
-            TempData["WishMsg"] = existed ? "Sản phẩm đã có trong danh sách yêu thích."
-                                          : "Đã thêm vào danh sách yêu thích!";
-            return RedirectToAction("Wishlist");
-        }
-
-        // Chuyển từ wishlist sang giỏ hàng
-        [HttpGet]
-        public async Task<IActionResult> MoveToCart(int id)
-        {
-            var product = await _productRepository.GetByIdAsync(id);
-            if (product == null) return NotFound();
-
-            // Thêm vào giỏ
-            var cart = GetCart();
-            var existing = cart.FirstOrDefault(i => i.Product.Id == id);
-            if (existing != null)
-                existing.Quantity++;
-            else
-                cart.Add(new CartItem { Product = CleanProduct(product), Quantity = 1 });
-            SaveCart(cart);
-
-            // Xóa khỏi wishlist
-            var wishlist = GetWishlist();
-            wishlist.RemoveAll(p => p.Id == id);
-            SaveWishlist(wishlist);
-
-            TempData["CartMsg"] = "Đã chuyển sản phẩm vào giỏ hàng!";
-            return RedirectToAction("Wishlist");
-        }
-
-        // Xóa khỏi wishlist
-        public IActionResult RemoveFromWishlist(int id)
-        {
-            var wishlist = GetWishlist();
-            wishlist.RemoveAll(p => p.Id == id);
-            SaveWishlist(wishlist);
-            return RedirectToAction("Wishlist");
+            TempData["CartMsg"] = "Đã thêm vào danh sách yêu thích!";
+            return RedirectToAction("Index", "Product");
         }
 
         // ─────────────────────────────────────────────
@@ -177,12 +133,6 @@ namespace NoiThatCaoCap.Controllers
         private void SaveCart(List<CartItem> cart)
             => HttpContext.Session.SetObjectAsJson(CART_KEY, cart);
 
-        private List<Product> GetWishlist()
-            => HttpContext.Session.GetObjectFromJson<List<Product>>(WISHLIST_KEY)
-               ?? new List<Product>();
-
-        private void SaveWishlist(List<Product> wishlist)
-            => HttpContext.Session.SetObjectAsJson(WISHLIST_KEY, wishlist);
 
         /// <summary>
         /// Tạo bản sao Product sạch (không có navigation property) để tránh lỗi JSON circular reference trong Session.

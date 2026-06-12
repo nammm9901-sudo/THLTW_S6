@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8iv59lpnxQzRSvxb3+8/ty1c6LtRehZYYIYKsXC03MI=",
+  "Hash": "UBfyjH76yGzIAeyDPue7Ny+GVbJtuTfbH9EmY1a+8Fk=",
   "Source": "NoiThatCaoCap",
   "BasePath": "_content/NoiThatCaoCap",
   "Mode": "Default",
@@ -1231,6 +1231,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "M:\\THLTW_S6\\NoiThatCaoCap\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\NoiThatCaoCap.bundle.scp.css"
+    },
+    {
+      "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\css\\admin.css",
+      "SourceId": "NoiThatCaoCap",
+      "SourceType": "Discovered",
+      "ContentRoot": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\",
+      "BasePath": "_content/NoiThatCaoCap",
+      "RelativePath": "css/admin.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\admin.css"
     },
     {
       "Identity": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\css\\site.css",

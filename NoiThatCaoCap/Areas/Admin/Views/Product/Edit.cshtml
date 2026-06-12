@@ -1,0 +1,139 @@
+@model NoiThatCaoCap.Models.Product
+
+@{
+    ViewData["Title"] = "Chỉnh Sửa Sản Phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <span class="text-uppercase tracking-wider text-muted small d-block mb-1" style="font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.4)">Quản lý sản phẩm</span>
+        <h1 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#fff;margin:0">Chỉnh Sửa Sản Phẩm</h1>
+    </div>
+    <a asp-area="Admin" asp-controller="Product" asp-action="Index" class="btn-action-luxe edit" style="padding:10px 20px;font-size:12px;border-radius:4px;text-decoration:none">
+        <i class="fa-solid fa-arrow-left me-2"></i> Trở về danh sách
+    </a>
+</div>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert" style="background:rgba(192,57,43,0.15);border:1px solid rgba(192,57,43,0.4);color:#e74c3c;border-radius:4px;padding:12px 16px;margin-bottom:20px;font-size:13px;">
+        <i class="fa-solid fa-triangle-exclamation me-2"></i>@TempData["Error"]
+    </div>
+}
+
+<div class="luxe-card">
+    <div class="luxe-card-header">
+        <h2 class="luxe-card-title">Thông tin sản phẩm #@Model.Id.ToString("D4")</h2>
+    </div>
+    <div class="p-4">
+        <form asp-area="Admin" asp-controller="Product" asp-action="Edit" method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Id" />
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3" style="font-size:13px;"></div>
+
+            <div class="row g-4">
+                <div class="col-lg-7">
+
+                    <div class="mb-4">
+                        <label asp-for="Name" class="luxe-form-label">Tên sản phẩm <span class="text-danger">*</span></label>
+                        <input asp-for="Name" class="luxe-form-control" placeholder="Ví dụ: Sofa Da Bò Ý Royal Elite" />
+                        <span asp-validation-for="Name" class="text-danger" style="font-size:12px;"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="Description" class="luxe-form-label">Mô tả sản phẩm</label>
+                        <textarea asp-for="Description" class="luxe-form-control" rows="6" placeholder="Mô tả chi tiết..."></textarea>
+                        <span asp-validation-for="Description" class="text-danger" style="font-size:12px;"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="luxe-form-label">Ảnh đại diện hiện tại</label>
+                        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                        {
+                            <div class="mb-2">
+                                <img src="@Model.ImageUrl" alt="@Model.Name"
+                                     style="width:120px;height:120px;object-fit:cover;border-radius:4px;border:1px solid rgba(197,168,128,0.3);"
+                                     onerror="this.src='https://placehold.co/120x120/141414/C9A961?text=LUXE'" />
+                            </div>
+                        }
+                        <label class="luxe-form-label" style="font-size:11px;margin-top:8px;">Thay ảnh mới (để trống nếu không thay)</label>
+                        <input type="file" name="mainImage" class="luxe-form-control" accept="image/*" style="padding:8px;" />
+                    </div>
+
+                </div>
+
+                <div class="col-lg-5">
+
+                    <div class="mb-4">
+                        <label asp-for="Price" class="luxe-form-label">Giá (VNĐ) <span class="text-danger">*</span></label>
+                        <input asp-for="Price" type="number" step="0.01" class="luxe-form-control" placeholder="0" />
+                        <span asp-validation-for="Price" class="text-danger" style="font-size:12px;"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="CategoryId" class="luxe-form-label">Danh mục <span class="text-danger">*</span></label>
+                        <select asp-for="CategoryId" class="luxe-form-control" asp-items="ViewBag.CategoryId">
+                            <option value="">-- Chọn danh mục --</option>
+                        </select>
+                        <span asp-validation-for="CategoryId" class="text-danger" style="font-size:12px;"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="Material" class="luxe-form-label">Chất liệu</label>
+                        <input asp-for="Material" class="luxe-form-control" placeholder="Gỗ Óc Chó, Da Bò, ..." />
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="Origin" class="luxe-form-label">Xuất xứ</label>
+                        <input asp-for="Origin" class="luxe-form-control" placeholder="Ý, Đức, Việt Nam, ..." />
+                    </div>
+
+                    <div class="d-flex gap-3 mt-4">
+                        <button type="submit" class="btn-luxe btn-luxe-gold flex-fill">
+                            <i class="fa-solid fa-floppy-disk me-2"></i> Lưu thay đổi
+                        </button>
+                        <a asp-area="Admin" asp-controller="Product" asp-action="Index" class="btn-action-luxe" style="padding:11px 18px;border-radius:4px;text-decoration:none">
+                            Hủy
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+.luxe-form-label {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 8px;
+}
+.luxe-form-control {
+    width: 100%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    padding: 11px 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: #ffffff;
+    transition: border-color 0.25s;
+    outline: none;
+    box-sizing: border-box;
+}
+.luxe-form-control:focus {
+    border-color: #c5a880;
+    box-shadow: 0 0 0 3px rgba(197,168,128,0.15);
+}
+.luxe-form-control option { background: #1a1a1a; color: #fff; }
+textarea.luxe-form-control { resize: vertical; }
+</style>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

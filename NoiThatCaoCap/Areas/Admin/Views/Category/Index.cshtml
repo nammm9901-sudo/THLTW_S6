@@ -1,0 +1,87 @@
+@model IEnumerable<NoiThatCaoCap.Models.Category>
+
+@{
+    ViewData["Title"] = "Quản Lý Danh Mục";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert-luxe-success mb-4">
+        <i class="fa-solid fa-check-circle me-2"></i>@TempData["Success"]
+    </div>
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <span class="luxe-counter">Tổng cộng @Model.Count() danh mục</span>
+    </div>
+    <a asp-area="Admin" asp-controller="Category" asp-action="Create" class="btn-luxe btn-luxe-gold">
+        <i class="fa-solid fa-plus me-2"></i> Thêm danh mục mới
+    </a>
+</div>
+
+<div class="luxe-card">
+    <div class="luxe-card-header">
+        <h2 class="luxe-card-title">Danh Sách Danh Mục</h2>
+    </div>
+    <div class="table-responsive">
+        <table class="luxe-table">
+            <thead>
+                <tr>
+                    <th style="width:60px;">#</th>
+                    <th>Tên danh mục</th>
+                    <th>Mô tả</th>
+                    <th>Số sản phẩm</th>
+                    <th style="width:120px;text-align:center;">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var cat in Model)
+                {
+                    <tr>
+                        <td style="color:rgba(255,255,255,0.3);font-size:12px;">@cat.Id</td>
+                        <td><span class="product-name">@cat.Name</span></td>
+                        <td class="text-muted-luxe">@(cat.Description ?? "—")</td>
+                        <td>
+                            <span class="badge-luxe-category">@(cat.Products?.Count ?? 0) sản phẩm</span>
+                        </td>
+                        <td>
+                            <div class="action-buttons-group">
+                                <a asp-area="Admin" asp-controller="Category" asp-action="Edit" asp-route-id="@cat.Id"
+                                   class="btn-action-luxe edit" title="Chỉnh sửa">
+                                    <i class="fa-regular fa-pen-to-square"></i>
+                                </a>
+                                <a asp-area="Admin" asp-controller="Category" asp-action="Delete" asp-route-id="@cat.Id"
+                                   class="btn-action-luxe delete" title="Xóa">
+                                    <i class="fa-regular fa-trash-can"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+                @if (!Model.Any())
+                {
+                    <tr>
+                        <td colspan="5" class="empty-table-state">
+                            <i class="fa-solid fa-tags"></i>
+                            <p>Chưa có danh mục nào. Hãy thêm danh mục đầu tiên.</p>
+                            <a asp-area="Admin" asp-controller="Category" asp-action="Create" class="btn-luxe btn-luxe-gold mt-2">Thêm ngay</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+.alert-luxe-success {
+    background: rgba(39,174,96,0.12);
+    border: 1px solid rgba(39,174,96,0.35);
+    color: #2ecc71;
+    border-radius: 4px;
+    padding: 12px 16px;
+    font-size: 13px;
+}
+</style>

@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\NoiThatCaoCap.bundle.scp.css"
     },
     {
+      "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\css\\admin.css",
+      "PackagePath": "staticwebassets\\css\\admin.css"
+    },
+    {
       "Id": "M:\\THLTW_S6\\NoiThatCaoCap\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

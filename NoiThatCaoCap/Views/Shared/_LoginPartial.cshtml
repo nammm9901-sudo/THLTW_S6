@@ -40,23 +40,17 @@
             <ul class="ll-user__menu" role="none">
                 <li role="none">
                     <a class="ll-user__item" role="menuitem"
-                       asp-area="Identity" asp-page="/Account/Manage/Index">
+                       asp-area="" asp-controller="Order" asp-action="Profile">
                         <span class="ll-user__icon">👤</span>
                         <span>Hồ Sơ Cá Nhân</span>
                     </a>
                 </li>
                 <li role="none">
                     <a class="ll-user__item" role="menuitem"
-                       asp-controller="Cart" asp-action="Index">
+                       asp-area="" asp-controller="Order" asp-action="Profile"
+                       onclick="sessionStorage.setItem('profileTab','orders'); return true;">
                         <span class="ll-user__icon">📦</span>
                         <span>Đơn Hàng Của Tôi</span>
-                    </a>
-                </li>
-                <li role="none">
-                    <a class="ll-user__item" role="menuitem"
-                       asp-controller="Cart" asp-action="Wishlist">
-                        <span class="ll-user__icon">♡</span>
-                        <span>Danh Sách Yêu Thích</span>
                     </a>
                 </li>
                 <li role="none">
