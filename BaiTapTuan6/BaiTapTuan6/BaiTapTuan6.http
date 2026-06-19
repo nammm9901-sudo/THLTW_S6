@@ -1,0 +1,6 @@
+@BaiTapTuan6_HostAddress = http://localhost:7285
+
+GET {{BaiTapTuan6_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

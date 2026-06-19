@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Management Dashboard</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/style.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            --secondary-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --danger-gradient: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            --card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 0 1px 1px rgba(0, 0, 0, 0.02);
+            --hover-shadow: 0 20px 40px -15px rgba(124, 58, 237, 0.15);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            min-height: 100vh;
+        }
+
+        .header-bg {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 2.5rem 0;
+            margin-bottom: 2.5rem;
+            border-bottom-left-radius: 24px;
+            border-bottom-right-radius: 24px;
+            box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.3);
+        }
+
+        .card {
+            border: none;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .card-header-custom {
+            background: transparent;
+            border-bottom: 1px solid #f1f5f9;
+            padding: 1.5rem 1.5rem 1rem 1.5rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-control, .form-textarea {
+            border-radius: 10px;
+            border: 1px solid #cbd5e1;
+            padding: 0.625rem 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .form-control:focus {
+            border-color: #7c3aed;
+            box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15);
+        }
+
+        .btn-primary-gradient {
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 0.625rem 1.5rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
+        }
+
+        .btn-primary-gradient:hover {
+            opacity: 0.95;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(124, 58, 237, 0.3);
+            color: white;
+        }
+
+        .btn-success-gradient {
+            background: var(--secondary-gradient);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 0.625rem 1.5rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .btn-success-gradient:hover {
+            opacity: 0.95;
+            transform: translateY(-1px);
+            color: white;
+        }
+
+        .table-responsive-custom {
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .table-custom {
+            margin-bottom: 0;
+        }
+
+        .table-custom th {
+            background-color: #f1f5f9;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .table-custom td {
+            padding: 1.25rem 1rem;
+            vertical-align: middle;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .table-custom tr:last-child td {
+            border-bottom: none;
+        }
+
+        .badge-price {
+            background-color: #e0e7ff;
+            color: #4338ca;
+            font-weight: 700;
+            padding: 0.35em 0.65em;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* Modal styling */
+        .modal-content-custom {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .action-btn {
+            width: 32px;
+            height: 32px;
+            padding: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .action-btn:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header-bg text-center">
+        <div class="container">
+            <h1 class="fw-bold mb-1"><i class="bi bi-journal-bookmark-fill me-2"></i>Book Management System</h1>
+            <p class="lead opacity-75 mb-0">HUTECH Web Programming Lab 6 - RESTful API Client</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mb-5">
+        <div class="row g-4">
+            <!-- Left Column: Form Info -->
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-header-custom">
+                        <i class="bi bi-pencil-square text-primary"></i>
+                        <span id="formTitle">Add New Book</span>
+                    </div>
+                    <div class="card-body p-4">
+                        <form id="bookForm" novalidate>
+                            <input type="hidden" id="bookId" value="0">
+                            
+                            <div class="mb-3">
+                                <label for="bookName" class="form-label fw-semibold">Book Title</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-light border-end-0"><i class="bi bi-book"></i></span>
+                                    <input type="text" class="form-control border-start-0" id="bookName" placeholder="Enter book title" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="bookPrice" class="form-label fw-semibold">Price (VND)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-light border-end-0"><i class="bi bi-currency-dollar"></i></span>
+                                    <input type="number" class="form-control border-start-0" id="bookPrice" placeholder="Enter price" min="1" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="bookDescription" class="form-label fw-semibold">Description</label>
+                                <textarea class="form-control" id="bookDescription" rows="4" placeholder="Describe the book..." required></textarea>
+                            </div>
+                            
+                            <div class="d-grid gap-2">
+                                <button type="submit" id="btnSubmit" class="btn btn-primary-gradient">
+                                    <i class="bi bi-plus-circle me-2"></i>Add Book
+                                </button>
+                                <button type="button" id="btnReset" class="btn btn-light" style="display: none;">
+                                    Cancel
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Book List Table -->
+            <div class="col-lg-8">
+                <div class="card h-100">
+                    <div class="card-header-custom d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="bi bi-grid-3x3-gap-fill text-success"></i>
+                            <span>Book Inventory</span>
+                        </div>
+                        <button id="btnRefresh" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+                            <i class="bi bi-arrow-clockwise me-1"></i>Refresh
+                        </button>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive table-responsive-custom">
+                            <table class="table table-custom align-middle">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 80px;">ID</th>
+                                        <th>Book Details</th>
+                                        <th style="width: 150px;">Price</th>
+                                        <th style="width: 180px;" class="text-end">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bookList">
+                                    <!-- Dynamic rows loaded here -->
+                                    <tr>
+                                        <td colspan="4" class="text-center py-5 text-muted">
+                                            <div class="spinner-border text-primary spinner-border-sm me-2" role="status"></div>
+                                            Loading book inventory...
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal for Book Detail -->
+    <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold" id="detailModalLabel">Book Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="text-center mb-4">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-light rounded-circle mb-3" style="width: 80px; height: 80px;">
+                            <i class="bi bi-book text-primary" style="font-size: 2.5rem;"></i>
+                        </div>
+                        <h4 class="fw-bold mb-1" id="detailName">-</h4>
+                        <span class="badge badge-price fs-6 mt-2" id="detailPrice">- VND</span>
+                    </div>
+                    <div class="mb-3">
+                        <h6 class="fw-bold text-uppercase text-muted" style="font-size: 0.75rem;">Description</h6>
+                        <p class="text-secondary bg-light p-3 rounded-3" id="detailDescription">-</p>
+                    </div>
+                    <div class="row g-2 text-center" style="font-size: 0.85rem;">
+                        <div class="col-6 bg-light p-2 rounded-2">
+                            <span class="text-muted d-block">System ID</span>
+                            <strong id="detailId">-</strong>
+                        </div>
+                        <div class="col-6 bg-light p-2 rounded-2">
+                            <span class="text-muted d-block">Status</span>
+                            <span class="text-success fw-bold"><i class="bi bi-check-circle-fill me-1"></i>Available</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-secondary w-100 rounded-3" data-bs-dismiss="modal">Close Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 Bundle JS (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom logic -->
+    <script src="js/main.js"></script>
+</body>
+</html>
